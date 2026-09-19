@@ -5426,6 +5426,7 @@
       if (currentQuestions.length === 0 || isQuizSubmitted) return;
       const data = {
         questionIds: currentQuestions.map(q => q.id),
+        shuffledQuestions: currentQuestions,
         currentIndex,
         userAnswers,
         flaggedQuestions: [...flaggedQuestions],
@@ -5733,6 +5734,32 @@
       return arr;
     }
 
+    // Reordena as alternativas de UMA questao e reatribui as letras A-D de
+    // acordo com a nova posicao, recalculando qual letra passa a ser a
+    // correta. Nao altera o conteudo das alternativas nem qual delas e a
+    // certa - so a ordem/posicao. Retorna uma copia; nunca muta QUESTIONS_DATABASE.
+    function shuffleQuestionOptions(q, random) {
+      const letters = q.options.map(o => o.letter);
+      const order = shuffleArray(q.options.map((_, i) => i), random);
+      const newOptions = order.map((origIdx, pos) => ({
+        letter: letters[pos],
+        text: q.options[origIdx].text,
+        rationale: q.options[origIdx].rationale
+      }));
+      const originalCorrectIdx = q.options.findIndex(o => o.letter === q.correctLetter);
+      const newCorrectLetter = letters[order.indexOf(originalCorrectIdx)];
+      return Object.assign({}, q, { options: newOptions, correctLetter: newCorrectLetter });
+    }
+
+    // Embaralha as alternativas de cada questao da tentativa, sempre com
+    // Math.random - de propósito NUNCA com o RNG semeado pelo codigo de
+    // sessao (esse so sincroniza QUAIS questoes e em que ORDEM aparecem
+    // entre participantes; a posicao das alternativas dentro de cada questao
+    // continua independente por pessoa, pra ninguem colar so pela letra).
+    function shuffleQuestionsForAttempt(questions) {
+      return questions.map(q => shuffleQuestionOptions(q, Math.random));
+    }
+
     function pickBalancedQuestions(pool, count, random, avoidRepeats) {
       const rng = random || Math.random;
       const seenIds = avoidRepeats ? loadSeenQuestionIds() : new Set();
@@ -5793,7 +5820,14 @@
     });
 
     function beginQuiz(questions, resumeState) {
-      currentQuestions = questions;
+      if (resumeState && Array.isArray(resumeState.shuffledQuestions) && resumeState.shuffledQuestions.length > 0) {
+        // Retomando um simulado salvo: reusa o EXATO embaralhamento ja
+        // mostrado nessa tentativa, em vez de sortear de novo (senao as
+        // respostas ja marcadas ficariam atras da letra errada).
+        currentQuestions = resumeState.shuffledQuestions;
+      } else {
+        currentQuestions = shuffleQuestionsForAttempt(questions);
+      }
 
       if (resumeState) {
         currentIndex = Math.min(resumeState.currentIndex || 0, questions.length - 1);
@@ -6709,7 +6743,9 @@
     document.getElementById('btnResumeQuiz').addEventListener('click', () => {
       const saved = loadSavedProgress();
       if (!saved) return;
-      const questions = saved.questionIds.map(id => QUESTIONS_DATABASE.find(q => q.id === id)).filter(Boolean);
+      const questions = Array.isArray(saved.shuffledQuestions) && saved.shuffledQuestions.length > 0
+        ? saved.shuffledQuestions
+        : saved.questionIds.map(id => QUESTIONS_DATABASE.find(q => q.id === id)).filter(Boolean);
       if (questions.length === 0) {
         clearSavedProgress();
         document.getElementById('resumeBanner').classList.add('hidden');
