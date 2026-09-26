@@ -283,8 +283,8 @@
       <div class="flex flex-wrap gap-2">
         <button id="btn-hint" class="px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 text-sm hover:bg-slate-100 dark:hover:bg-slate-700">💡 Dica</button>
         <div class="flex-1"></div>
-        <button id="btn-prev" class="px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 text-sm hover:bg-slate-100 dark:hover:bg-slate-700">← Anterior</button>
-        <button id="btn-next" class="px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium">Próxima →</button>
+        <button id="btn-prev" title="Anterior (←)" class="px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 text-sm hover:bg-slate-100 dark:hover:bg-slate-700">← Anterior</button>
+        <button id="btn-next" title="Próxima (→)" class="px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium">Próxima →</button>
         <button id="btn-finish" class="hidden px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium">Finalizar simulado ✓</button>
       </div>
     </div>
@@ -410,6 +410,10 @@
       <div>
         <p class="font-medium text-slate-800 dark:text-slate-100">✏️ Durante a questão</p>
         <p>Selecione qualquer trecho do enunciado para grifar/marcar texto importante. O cronômetro mede o tempo total e por questão (e pausa se você trocar de aba).</p>
+      </div>
+      <div>
+        <p class="font-medium text-slate-800 dark:text-slate-100">⌨️ Atalhos de teclado</p>
+        <p><strong>← / →</strong> questão anterior / próxima · <strong>A–D</strong> ou <strong>1–4</strong> marcam a alternativa · <strong>Enter</strong> confere a resposta (modo Tutor) · <strong>F</strong> marca para revisão · <strong>H</strong> mostra a dica.</p>
       </div>
       <div>
         <p class="font-medium text-slate-800 dark:text-slate-100">🎯 Depois do simulado</p>
@@ -7686,6 +7690,30 @@ function goNext() {
   }
 }
 
+function handleQuizShortcut(e) {
+  if (App.currentScreen !== "quiz") return;
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  if (["modal-retry", "modal-import", "modal-howto"].some((id) => !document.getElementById(id).classList.contains("hidden"))) return;
+  const tag = e.target.tagName;
+  if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || e.target.isContentEditable) return;
+
+  const key = e.key.toLowerCase();
+  let optionIdx = ["a", "b", "c", "d"].indexOf(key);
+  if (optionIdx < 0) optionIdx = ["1", "2", "3", "4"].indexOf(key);
+
+  if (optionIdx >= 0 && optionIdx < currentQuestion().options.length) selectOption(optionIdx);
+  else if (e.key === "ArrowRight") goNext();
+  else if (e.key === "ArrowLeft") goPrev();
+  else if (e.key === "Enter") {
+    // Enter em um botão focado já aciona o próprio botão.
+    if (tag === "BUTTON" || document.getElementById("btn-check-answer").classList.contains("hidden")) return;
+    checkAnswer();
+  } else if (key === "f") document.getElementById("btn-mark-review").click();
+  else if (key === "h") document.getElementById("btn-hint").click();
+  else return;
+  e.preventDefault();
+}
+
 function confirmQuitQuiz() {
   const unanswered = App.attempt.questions.filter((q) => q.answerIndex === null).length;
   if (unanswered > 0) {
@@ -8232,6 +8260,7 @@ function init() {
     finishQuiz();
   });
   document.getElementById("btn-quit-quiz").addEventListener("click", confirmQuitQuiz);
+  document.addEventListener("keydown", handleQuizShortcut);
 
   // Results
   document.getElementById("btn-review-all").addEventListener("click", () => {
