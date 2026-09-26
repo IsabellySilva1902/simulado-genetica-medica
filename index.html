@@ -265,7 +265,7 @@
       </div>
 
       <p id="q-prompt" class="text-base sm:text-lg font-medium mb-1.5 leading-relaxed select-text"></p>
-      <p class="text-xs text-slate-400 dark:text-slate-500 mb-3">🖍️ Selecione um trecho do enunciado para grifar. Clique num grifo para apagá-lo.</p>
+      <p class="text-xs text-slate-400 dark:text-slate-500 mb-3">🖍️ Selecione um trecho do enunciado, de uma tabela ou de um gráfico para grifar. Clique num grifo para apagá-lo.</p>
 
       <div id="q-visual-container"></div>
 
@@ -7543,6 +7543,121 @@ function removeHighlight(index) {
   renderQuizQuestion();
 }
 
+/* Grifo em tabelas e gráficos: os trechos ficam em q.visualHighlights como
+   posições de caractere no texto do bloco da figura, como no enunciado.
+   Em HTML (tabelas) o trecho vira <mark>; em SVG (gráficos, heredogramas),
+   vira um <tspan> com um retângulo amarelo desenhado por trás. */
+const SVG_NS = "http://www.w3.org/2000/svg";
+
+function drawSvgHighlightBg(tspan) {
+  const textEl = tspan.closest("text");
+  if (!textEl) return;
+  let offset = 0;
+  const tw = document.createTreeWalker(textEl, NodeFilter.SHOW_TEXT);
+  while (tw.nextNode() && !tspan.contains(tw.currentNode)) offset += tw.currentNode.data.length;
+  let x1 = Infinity, y1 = Infinity, x2 = -Infinity, y2 = -Infinity;
+  try {
+    for (let i = offset; i < offset + tspan.textContent.length; i++) {
+      const b = textEl.getExtentOfChar(i);
+      x1 = Math.min(x1, b.x); y1 = Math.min(y1, b.y);
+      x2 = Math.max(x2, b.x + b.width); y2 = Math.max(y2, b.y + b.height);
+    }
+  } catch (err) {
+    return; // SVG ainda não desenhado na tela: fica só o texto marcado
+  }
+  if (!isFinite(x1)) return;
+  const rect = document.createElementNS(SVG_NS, "rect");
+  rect.setAttribute("x", x1 - 1.5);
+  rect.setAttribute("y", y1);
+  rect.setAttribute("width", x2 - x1 + 3);
+  rect.setAttribute("height", y2 - y1);
+  rect.setAttribute("rx", 2);
+  rect.setAttribute("fill", "#fde047");
+  if (textEl.getAttribute("transform")) rect.setAttribute("transform", textEl.getAttribute("transform"));
+  rect.dataset.vhlIndex = tspan.dataset.vhlIndex;
+  textEl.parentNode.insertBefore(rect, textEl);
+  return rect;
+}
+
+function applyVisualHighlights(root, ranges, interactive) {
+  if (!root || !ranges || !ranges.length) return;
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  const pieces = [];
+  let pos = 0;
+  while (walker.nextNode()) {
+    const node = walker.currentNode;
+    const start = pos;
+    pos += node.data.length;
+    const parent = node.parentNode;
+    const inSvg = parent.namespaceURI === SVG_NS;
+    if (inSvg && parent.localName !== "text" && parent.localName !== "tspan") continue;
+    const segs = [];
+    ranges.forEach((r, ri) => {
+      const s = Math.max(r.start, start) - start;
+      const e = Math.min(r.end, pos) - start;
+      if (s < e && node.data.slice(s, e).trim()) segs.push({ s, e, ri });
+    });
+    if (segs.length) pieces.push({ node, inSvg, segs });
+  }
+
+  const svgMarks = [];
+  pieces.forEach(({ node, inSvg, segs }) => {
+    const frag = document.createDocumentFragment();
+    let cursor = 0;
+    segs.forEach(({ s, e, ri }) => {
+      if (s > cursor) frag.appendChild(document.createTextNode(node.data.slice(cursor, s)));
+      let wrap;
+      if (inSvg) {
+        wrap = document.createElementNS(SVG_NS, "tspan");
+        wrap.setAttribute("class", "hl-svg");
+        svgMarks.push(wrap);
+      } else {
+        wrap = document.createElement("mark");
+        wrap.className = "hl-mark bg-yellow-200 dark:bg-yellow-300 text-slate-900 rounded px-0.5";
+      }
+      wrap.dataset.vhlIndex = ri;
+      wrap.textContent = node.data.slice(s, e);
+      frag.appendChild(wrap);
+      cursor = e;
+    });
+    if (cursor < node.data.length) frag.appendChild(document.createTextNode(node.data.slice(cursor)));
+    node.parentNode.replaceChild(frag, node);
+  });
+
+  // Na revisão a lista é montada antes de a tela aparecer; sem layout não dá
+  // para medir o texto, então o fundo amarelo é desenhado no quadro seguinte.
+  const makeRemovable = (el) => {
+    if (!interactive || !el) return;
+    el.style.cursor = "pointer";
+    if (el.localName === "mark") el.title = "Clique para apagar o grifo";
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+      removeVisualHighlight(Number(el.dataset.vhlIndex));
+    });
+  };
+  root.querySelectorAll("[data-vhl-index]").forEach(makeRemovable);
+  const drawAll = () => svgMarks.forEach((tspan) => makeRemovable(drawSvgHighlightBg(tspan)));
+  if (root.getClientRects().length) drawAll();
+  else requestAnimationFrame(drawAll);
+}
+
+function handleVisualSelection() {
+  const root = document.querySelector("#q-visual-container .q-visual");
+  if (!root) return;
+  const range = getPromptSelectionRange(root);
+  if (!range) return;
+  const q = currentQuestion();
+  q.visualHighlights = mergeHighlightRanges((q.visualHighlights || []).concat(range));
+  window.getSelection().removeAllRanges();
+  renderQuizQuestion();
+}
+
+function removeVisualHighlight(index) {
+  const q = currentQuestion();
+  q.visualHighlights.splice(index, 1);
+  renderQuizQuestion();
+}
+
 function renderQuizQuestion() {
   switchTimerToCurrentQuestion();
   const q = currentQuestion();
@@ -7566,8 +7681,9 @@ function renderQuizQuestion() {
       removeHighlight(Number(markEl.dataset.hlIndex));
     })
   );
-  document.getElementById("btn-clear-highlights").classList.toggle("hidden", q.highlights.length === 0);
+  document.getElementById("btn-clear-highlights").classList.toggle("hidden", q.highlights.length === 0 && !(q.visualHighlights || []).length);
   document.getElementById("q-visual-container").innerHTML = renderVisual(q);
+  applyVisualHighlights(document.querySelector("#q-visual-container .q-visual"), q.visualHighlights, true);
 
   document.getElementById("mark-label").textContent = q.marked ? "Marcada" : "Marcar";
   document.getElementById("btn-mark-review").className =
@@ -7917,7 +8033,7 @@ function renderReview() {
           ${badge}
         </div>
         <p class="font-medium mb-3">${qi + 1}. ${renderHighlightedText(q.prompt, q.highlights)}</p>
-        ${renderVisual(q)}
+        <div data-review-visual="${qi}">${renderVisual(q)}</div>
         <div class="space-y-2 mb-3">${optionsHtml}</div>
         <div class="rounded-lg bg-amber-50 dark:bg-amber-900/20 border border-amber-100 dark:border-amber-800 p-2.5 text-xs text-amber-700 dark:text-amber-300">
           💡 ${escapeHtml(q.clinicalPointers)}
@@ -7925,6 +8041,10 @@ function renderReview() {
       </div>`;
     })
     .join("");
+  listEl.querySelectorAll("[data-review-visual]").forEach((el) => {
+    const q = list[Number(el.dataset.reviewVisual)];
+    applyVisualHighlights(el.querySelector(".q-visual"), q.visualHighlights, false);
+  });
 }
 
 /* =========================================================================
@@ -8245,11 +8365,15 @@ function init() {
   document.getElementById("btn-clear-highlights").addEventListener("click", () => {
     const q = currentQuestion();
     q.highlights = [];
+    q.visualHighlights = [];
     renderQuizQuestion();
   });
   const promptEl = document.getElementById("q-prompt");
   promptEl.addEventListener("mouseup", handlePromptSelection);
   promptEl.addEventListener("touchend", handlePromptSelection);
+  const visualEl = document.getElementById("q-visual-container");
+  visualEl.addEventListener("mouseup", handleVisualSelection);
+  visualEl.addEventListener("touchend", handleVisualSelection);
   document.getElementById("btn-prev").addEventListener("click", goPrev);
   document.getElementById("btn-next").addEventListener("click", goNext);
   document.getElementById("btn-finish").addEventListener("click", () => {
