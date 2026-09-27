@@ -6896,6 +6896,646 @@ const QUESTIONS_DATABASE = [
     ],
     "correctLetter": "A",
     "clinicalPointers": "Consanguinidade eleva especialmente o risco de doenças autossômicas recessivas raras (compartilhamento de alelo de ancestral comum); efeito proporcionalmente maior quanto mais rara a doença."
+  },
+  {
+    "id": 201,
+    "code": "PROB-01",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Autossômica recessiva - menino afetado (regra do 'e')",
+    "difficulty": "Básica",
+    "prompt": "O albinismo oculocutâneo tem herança autossômica recessiva. Um casal de fenótipo normal teve uma primeira filha albina. Qual a probabilidade de o próximo filho do casal ser um menino albino?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/8",
+        "rationale": "CORRETA. Pais normais com filha albina são ambos heterozigotos (Aa × Aa), e a chance de uma criança ser albina (aa) é 1/4. Ser menino (1/2) e ser albino (1/4) são eventos independentes que precisam ocorrer juntos: 1/4 × 1/2 = 1/8."
+      },
+      {
+        "letter": "B",
+        "text": "1/4",
+        "rationale": "Incorreta. 1/4 é a chance de a criança ser albina, qualquer que seja o sexo. A pergunta exige também que seja menino, o que multiplica por 1/2."
+      },
+      {
+        "letter": "C",
+        "text": "3/8",
+        "rationale": "Incorreta. 3/8 (3/4 × 1/2) é a probabilidade de nascer um menino com pigmentação normal, e não um menino albino."
+      },
+      {
+        "letter": "D",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 é apenas a chance de a criança ser do sexo masculino; falta considerar a chance de ela ser albina (1/4)."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "O nascimento da filha albina revela o genótipo dos pais. Depois, pense se ser menino e ser albino são eventos que precisam acontecer ao mesmo tempo."
+  },
+  {
+    "id": 202,
+    "code": "PROB-02",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Recessiva ligada ao X - menino afetado",
+    "difficulty": "Básica",
+    "prompt": "A hemofilia A tem herança recessiva ligada ao X. Juliana não tem hemofilia, mas seu pai é hemofílico. Ela se casa com Pedro, que não tem a doença. Qual a probabilidade de o primeiro filho do casal ser um menino hemofílico?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 é a chance de ser hemofílico entre os filhos homens, ou seja, sabendo-se que a criança é menino. A pergunta pede, antes do nascimento, a chance de a criança ser um menino e hemofílico."
+      },
+      {
+        "letter": "B",
+        "text": "1/8",
+        "rationale": "Incorreta. 1/8 multiplica mais um 1/2 do que o necessário, como se Juliana tivesse apenas 50% de chance de ser portadora. Filha de homem hemofílico é portadora obrigatória."
+      },
+      {
+        "letter": "C",
+        "text": "1/4",
+        "rationale": "CORRETA. Juliana recebeu do pai o X com o alelo da hemofilia: é portadora obrigatória (XᴴXʰ). Pedro é XᴴY. Para nascer um menino hemofílico, a criança precisa receber o Y do pai (1/2) e o Xʰ da mãe (1/2): 1/2 × 1/2 = 1/4."
+      },
+      {
+        "letter": "D",
+        "text": "0",
+        "rationale": "Incorreta. Uma mulher não afetada pode transmitir o alelo recessivo que recebeu do pai hemofílico; metade de seus filhos homens tende a ser afetada."
+      }
+    ],
+    "correctLetter": "C",
+    "clinicalPointers": "Pense em qual X Juliana recebeu do pai. Para o bebê ser um menino, ele precisa receber o Y de Pedro."
+  },
+  {
+    "id": 203,
+    "code": "PROB-03",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Recessiva ligada ao X - filha afetada com pai normal",
+    "difficulty": "Básica",
+    "prompt": "O daltonismo tem herança recessiva ligada ao X. Beatriz tem visão normal, mas seu pai é daltônico. Ela se casa com Tiago, que tem visão normal. Qual a probabilidade de o casal ter uma filha daltônica?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/4",
+        "rationale": "Incorreta. 1/4 é a chance de o casal ter um menino daltônico (Y do pai × Xᵈ da mãe), e não uma menina daltônica."
+      },
+      {
+        "letter": "B",
+        "text": "0",
+        "rationale": "CORRETA. Beatriz é portadora (XᴰXᵈ), mas Tiago tem visão normal (XᴰY) e transmite seu único X, normal, a todas as filhas. Assim, nenhuma filha pode ser daltônica (no máximo, portadora)."
+      },
+      {
+        "letter": "C",
+        "text": "1/8",
+        "rationale": "Incorreta. 1/8 supõe que Tiago poderia transmitir um X com o alelo do daltonismo; como ele tem visão normal, seu X é normal."
+      },
+      {
+        "letter": "D",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 é a chance de uma filha ser portadora, e não afetada: ela recebe o Xᴰ do pai e tem 1/2 de chance de receber o Xᵈ da mãe."
+      }
+    ],
+    "correctLetter": "B",
+    "clinicalPointers": "Para uma menina ser daltônica, ela precisa de dois X com o alelo recessivo. Pense em qual X ela recebe do pai."
+  },
+  {
+    "id": 204,
+    "code": "PROB-04",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Autossômica dominante - duas meninas afetadas",
+    "difficulty": "Básica",
+    "prompt": "Nesta família, a polidactilia tem herança autossômica dominante com penetrância completa. Diego tem polidactilia, assim como sua mãe; seu pai não tem. Ele se casa com Sofia, que não tem polidactilia. Qual a probabilidade de os dois primeiros filhos do casal serem meninas com polidactilia?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/4",
+        "rationale": "Incorreta. 1/4 é a chance para uma única gestação. A pergunta pede que os dois primeiros filhos sejam meninas afetadas."
+      },
+      {
+        "letter": "B",
+        "text": "1/32",
+        "rationale": "Incorreta. 1/32 multiplica mais um 1/2 do que o necessário, contando o sexo três vezes."
+      },
+      {
+        "letter": "C",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 é a chance de uma criança herdar a polidactilia, sem considerar o sexo nem o segundo filho."
+      },
+      {
+        "letter": "D",
+        "text": "1/16",
+        "rationale": "CORRETA. Diego é afetado, mas recebeu do pai não afetado um alelo normal: é Aa. Sofia é aa. Menina com polidactilia = 1/2 (herdar A) × 1/2 (ser menina) = 1/4 por gestação. Dois filhos independentes: 1/4 × 1/4 = 1/16."
+      }
+    ],
+    "correctLetter": "D",
+    "clinicalPointers": "O pai de Diego ajuda a definir o genótipo dele. Calcule a chance para uma gestação e depois para as duas."
+  },
+  {
+    "id": 205,
+    "code": "PROB-05",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Autossômica recessiva - menina não afetada",
+    "difficulty": "Básica",
+    "prompt": "A fenilcetonúria tem herança autossômica recessiva. Paula e Hugo não têm a doença e já têm um filho com fenilcetonúria. Qual a probabilidade de o próximo filho do casal ser uma menina sem fenilcetonúria?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "3/4",
+        "rationale": "Incorreta. 3/4 é a chance de a criança não ter a doença, qualquer que seja o sexo; falta multiplicar pela chance de ser menina (1/2)."
+      },
+      {
+        "letter": "B",
+        "text": "1/8",
+        "rationale": "Incorreta. 1/8 (1/4 × 1/2) é a chance de nascer uma menina com fenilcetonúria, e não sem a doença."
+      },
+      {
+        "letter": "C",
+        "text": "3/8",
+        "rationale": "CORRETA. Pais normais com filho afetado são Aa × Aa; a chance de a criança não ter a doença é 3/4 (AA ou Aa). Ser menina (1/2) e não ser afetada (3/4) precisam ocorrer juntos: 3/4 × 1/2 = 3/8."
+      },
+      {
+        "letter": "D",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 é apenas a chance de a criança ser menina; falta considerar a chance de ela não ter a doença (3/4)."
+      }
+    ],
+    "correctLetter": "C",
+    "clinicalPointers": "O filho já nascido revela o genótipo dos pais. Ser menina e não ter a doença precisam acontecer juntos."
+  },
+  {
+    "id": 206,
+    "code": "PROB-06",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Autossômica dominante - menina afetada",
+    "difficulty": "Básica",
+    "prompt": "A acondroplasia tem herança autossômica dominante. Rodrigo tem acondroplasia, assim como seu pai; sua mãe tem estatura normal. Ele se casa com Elisa, que tem estatura normal. Qual a probabilidade de o primeiro filho do casal ser uma menina com acondroplasia?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/4",
+        "rationale": "CORRETA. Rodrigo é afetado, mas recebeu um alelo normal da mãe: é Aa. Elisa é aa. A chance de a criança herdar o alelo dominante é 1/2; a de ser menina, 1/2. Juntas: 1/2 × 1/2 = 1/4."
+      },
+      {
+        "letter": "B",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 é a chance de a criança ter acondroplasia, qualquer que seja o sexo; falta multiplicar pela chance de ser menina."
+      },
+      {
+        "letter": "C",
+        "text": "1/8",
+        "rationale": "Incorreta. 1/8 (1/4 × 1/2) trata a doença como recessiva, usando 1/4 como chance de ser afetada. Na herança dominante, uma única cópia herdada de Rodrigo já basta (1/2)."
+      },
+      {
+        "letter": "D",
+        "text": "3/4",
+        "rationale": "Incorreta. 3/4 seria a chance de uma criança afetada se os dois genitores fossem Aa; aqui Elisa não é afetada, e o sexo também não foi considerado."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "A mãe de Rodrigo ajuda a definir quantas cópias do alelo ele tem. Depois, combine a chance de herdar a doença com a de ser menina."
+  },
+  {
+    "id": 207,
+    "code": "PROB-07",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Recessiva ligada ao X - probabilidade condicional ao sexo",
+    "difficulty": "Intermediária",
+    "prompt": "A distrofia muscular de Duchenne tem herança recessiva ligada ao X. Marta não tem a doença, mas teve dois filhos com Duchenne, de pais diferentes, ambos sem a doença. Desconsidere mutações novas. Marta está grávida de novo, e a ultrassonografia mostra que o bebê é um menino. Qual a probabilidade de esse menino ter Duchenne?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/4",
+        "rationale": "Incorreta. 1/4 é a chance, antes de conhecer o sexo, de uma criança dessa gestação ser um menino afetado. Como o sexo já é conhecido, não se multiplica pelo 1/2 do sexo."
+      },
+      {
+        "letter": "B",
+        "text": "1/8",
+        "rationale": "Incorreta. 1/8 multiplica duas vezes por 1/2 (sexo e portadora), mas o sexo já é conhecido e Marta é portadora certa pelos dois filhos afetados."
+      },
+      {
+        "letter": "C",
+        "text": "1",
+        "rationale": "Incorreta. Uma mãe portadora tem um X normal e um X alterado; cada filho homem tem 1/2 de chance de receber cada um deles, e não certeza de ser afetado."
+      },
+      {
+        "letter": "D",
+        "text": "1/2",
+        "rationale": "CORRETA. Dois filhos afetados de pais diferentes, sem mutação nova, indicam que Marta é portadora (XᴰXᵈ). Como já se sabe que o bebê é menino, ele recebeu o Y do pai; resta apenas qual X de Marta ele herdou: 1/2 de chance de ser o Xᵈ."
+      }
+    ],
+    "correctLetter": "D",
+    "clinicalPointers": "O sexo do bebê já é conhecido. A pergunta é sobre o risco dentro desse grupo, e não sobre a chance de o bebê ser menino."
+  },
+  {
+    "id": 208,
+    "code": "PROB-08",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Recessiva ligada ao X - filha afetada com pai afetado",
+    "difficulty": "Intermediária",
+    "prompt": "O daltonismo tem herança recessiva ligada ao X. Renata tem visão normal, mas seu pai é daltônico. Ela se casa com Bruno, que é daltônico. Qual a probabilidade de o primeiro filho do casal ser uma menina daltônica?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 é a chance de ser daltônica entre as filhas, ou seja, sabendo-se que é menina. A pergunta inclui a chance de a criança ser menina."
+      },
+      {
+        "letter": "B",
+        "text": "1/4",
+        "rationale": "CORRETA. Renata é portadora (XᴰXᵈ); Bruno é XᵈY. Para nascer uma menina daltônica, a criança precisa receber o X do pai, que é sempre Xᵈ (isso ocorre em 1/2 dos nascimentos, justamente os de menina), e o Xᵈ da mãe (1/2): 1/2 × 1/2 = 1/4."
+      },
+      {
+        "letter": "C",
+        "text": "0",
+        "rationale": "Incorreta. Meninas podem ser daltônicas quando recebem o alelo recessivo dos dois genitores, como pode ocorrer com pai daltônico e mãe portadora."
+      },
+      {
+        "letter": "D",
+        "text": "1/8",
+        "rationale": "Incorreta. 1/8 multiplica um 1/2 a mais, como se Bruno transmitisse o Xᵈ só em metade das vezes. Toda filha recebe dele o seu único X, que é Xᵈ."
+      }
+    ],
+    "correctLetter": "B",
+    "clinicalPointers": "Descubra o genótipo de Renata pelo pai dela. Uma menina recebe um X de cada genitor; considere também a chance de a criança ser menina."
+  },
+  {
+    "id": 209,
+    "code": "PROB-09",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Dominante ligada ao X - duas filhas afetadas",
+    "difficulty": "Intermediária",
+    "prompt": "O raquitismo hipofosfatêmico tem herança dominante ligada ao X. Fábio tem a doença; sua esposa, Lívia, não tem, nem há casos na família dela. Qual a probabilidade de os dois primeiros filhos do casal serem meninas com raquitismo hipofosfatêmico?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/4",
+        "rationale": "CORRETA. Fábio é XᴿY e transmite seu X alterado a todas as filhas; logo, toda menina será afetada. A chance de uma criança ser menina afetada é, portanto, a chance de ser menina: 1/2. Dois filhos: 1/2 × 1/2 = 1/4."
+      },
+      {
+        "letter": "B",
+        "text": "1/16",
+        "rationale": "Incorreta. 1/16 usa 1/4 por gestação (1/2 de ser menina × 1/2 de ser afetada), mas toda filha de homem afetado recebe o X alterado; a chance de afetada entre as meninas é 1."
+      },
+      {
+        "letter": "C",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 é a chance para um único filho. A pergunta exige que os dois primeiros filhos sejam meninas afetadas."
+      },
+      {
+        "letter": "D",
+        "text": "1",
+        "rationale": "Incorreta. É certo que as filhas serão afetadas, mas não é certo que os dois primeiros filhos serão meninas; a chance de cada um ser menina é 1/2."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "Pense em qual cromossomo Fábio transmite às filhas e qual transmite aos filhos homens."
+  },
+  {
+    "id": 210,
+    "code": "PROB-10",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Recessiva ligada ao X - mãe afetada",
+    "difficulty": "Intermediária",
+    "prompt": "O daltonismo tem herança recessiva ligada ao X. Mariana é daltônica, e seu marido, Rodrigo, tem visão normal. Qual a probabilidade de o primeiro filho do casal ser um menino daltônico e o segundo, uma menina de visão normal?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/16",
+        "rationale": "Incorreta. 1/16 aplica 1/4 a cada filho, como se Mariana fosse apenas portadora; sendo daltônica, ela transmite o Xᵈ a todos os filhos."
+      },
+      {
+        "letter": "B",
+        "text": "1/8",
+        "rationale": "Incorreta. 1/8 trata Mariana como portadora no cálculo do menino (1/4) e acerta o da menina (1/2); como ela é XᵈXᵈ, todo filho homem é daltônico."
+      },
+      {
+        "letter": "C",
+        "text": "1/4",
+        "rationale": "CORRETA. Mariana é XᵈXᵈ e Rodrigo, XᴰY. Todo menino recebe o Xᵈ da mãe e é daltônico; toda menina recebe o Xᴰ do pai e tem visão normal. Assim, a chance de cada evento é só a do sexo: 1/2 × 1/2 = 1/4."
+      },
+      {
+        "letter": "D",
+        "text": "1",
+        "rationale": "Incorreta. É certo que os meninos serão daltônicos e as meninas não, mas não é certo que o primeiro filho será menino e o segundo, menina."
+      }
+    ],
+    "correctLetter": "C",
+    "clinicalPointers": "Mariana tem dois X com o alelo recessivo. Pense no que cada sexo recebe de cada genitor."
+  },
+  {
+    "id": 211,
+    "code": "PROB-11",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Autossômica dominante de início tardio - duas gerações",
+    "difficulty": "Intermediária",
+    "prompt": "A doença de Huntington tem herança autossômica dominante e costuma se manifestar após os 35 anos; por ser rara, considere os afetados heterozigotos. Gustavo tem 25 anos e não tem sintomas; seu pai tem Huntington, e sua mãe não. Ele se casa com Paula, que não tem a doença nem casos na família. Considerando apenas a segregação mendeliana, qual a probabilidade de o primeiro filho do casal ser um menino que herdou o alelo da doença?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/4",
+        "rationale": "Incorreta. 1/4 é a chance de a criança herdar o alelo, sem considerar que ela precisa ser menino."
+      },
+      {
+        "letter": "B",
+        "text": "1/8",
+        "rationale": "CORRETA. Gustavo tem 1/2 de chance de ter herdado o alelo do pai (a idade ainda não permite excluí-lo). Se tiver, transmite-o com chance de 1/2. Ser menino: 1/2. Etapas que precisam ocorrer juntas: 1/2 × 1/2 × 1/2 = 1/8."
+      },
+      {
+        "letter": "C",
+        "text": "1/16",
+        "rationale": "Incorreta. 1/16 multiplica mais um 1/2, como se Paula também precisasse transmitir o alelo; na herança dominante, basta uma cópia vinda de Gustavo."
+      },
+      {
+        "letter": "D",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 é a chance de o próprio Gustavo ter herdado o alelo, e não a de seu filho ser um menino portador do alelo."
+      }
+    ],
+    "correctLetter": "B",
+    "clinicalPointers": "Gustavo ainda pode manifestar a doença. Encadeie as etapas: Gustavo herdar o alelo, transmiti-lo e a criança ser menino."
+  },
+  {
+    "id": 212,
+    "code": "PROB-12",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Autossômica recessiva - genitor afetado",
+    "difficulty": "Intermediária",
+    "prompt": "A fibrose cística tem herança autossômica recessiva. Laura tem fibrose cística. Seu marido, Mateus, não tem a doença, mas a mãe dele tem. Qual a probabilidade de o primeiro filho do casal ser uma menina com fibrose cística?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 é a chance de a criança ter fibrose cística, qualquer que seja o sexo; falta multiplicar pela chance de ser menina."
+      },
+      {
+        "letter": "B",
+        "text": "1/8",
+        "rationale": "Incorreta. 1/8 (1/4 × 1/2) usa a chance de um cruzamento Aa × Aa. Como Laura é aa, ela transmite o alelo recessivo sempre, e a chance de afetado é 1/2."
+      },
+      {
+        "letter": "C",
+        "text": "0",
+        "rationale": "Incorreta. Mateus não é afetado, mas é heterozigoto (sua mãe é afetada); por isso pode transmitir o alelo recessivo."
+      },
+      {
+        "letter": "D",
+        "text": "1/4",
+        "rationale": "CORRETA. Laura é aa e transmite sempre o alelo recessivo. Mateus é normal, mas recebeu um alelo recessivo da mãe afetada: é Aa. A criança será aa com chance de 1/2 (depende só do alelo de Mateus). Menina: 1/2. Juntas: 1/2 × 1/2 = 1/4."
+      }
+    ],
+    "correctLetter": "D",
+    "clinicalPointers": "Laura só pode transmitir um tipo de alelo. Descubra o genótipo de Mateus pela mãe dele."
+  },
+  {
+    "id": 213,
+    "code": "PROB-13",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Autossômica recessiva - menino portador",
+    "difficulty": "Intermediária",
+    "prompt": "O albinismo tem herança autossômica recessiva. Um casal de fenótipo normal tem um filho albino. Qual a probabilidade de o próximo filho do casal ser um menino portador (heterozigoto) do alelo do albinismo?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 é a chance de a criança ser heterozigota, qualquer que seja o sexo; falta multiplicar pela chance de ser menino."
+      },
+      {
+        "letter": "B",
+        "text": "1/3",
+        "rationale": "Incorreta. 1/3 (2/3 × 1/2) usa 2/3, que vale para um filho que já se sabe não ser albino. Antes do nascimento, a chance de ser Aa é 1/2."
+      },
+      {
+        "letter": "C",
+        "text": "1/4",
+        "rationale": "CORRETA. Pais normais com filho albino são Aa × Aa, e a chance de a criança ser Aa é 1/2. Ser menino (1/2) e ser heterozigoto (1/2) precisam ocorrer juntos: 1/2 × 1/2 = 1/4."
+      },
+      {
+        "letter": "D",
+        "text": "1/8",
+        "rationale": "Incorreta. 1/8 (1/4 × 1/2) usa 1/4, que é a chance de ser albino (aa), e não heterozigoto (Aa)."
+      }
+    ],
+    "correctLetter": "C",
+    "clinicalPointers": "Monte o cruzamento dos pais e veja qual fração dos filhos é heterozigota. Depois, inclua o sexo."
+  },
+  {
+    "id": 214,
+    "code": "PROB-14",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Recessiva ligada ao X - menino não afetado",
+    "difficulty": "Intermediária",
+    "prompt": "A hemofilia A tem herança recessiva ligada ao X. Carolina não tem hemofilia, mas seu pai tem. Ela se casa com Felipe, que não tem a doença. Qual a probabilidade de o primeiro filho do casal ser um menino sem hemofilia?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/4",
+        "rationale": "CORRETA. Carolina é portadora obrigatória (XᴴXʰ), pois recebeu o Xʰ do pai. Um menino sem hemofilia precisa receber o Y de Felipe (1/2) e o Xᴴ de Carolina (1/2): 1/2 × 1/2 = 1/4."
+      },
+      {
+        "letter": "B",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 é a chance de não ter hemofilia entre os meninos, ou seja, sabendo-se que é menino. A pergunta inclui a chance de a criança ser menino."
+      },
+      {
+        "letter": "C",
+        "text": "3/8",
+        "rationale": "Incorreta. 3/8 (3/4 × 1/2) trata a hemofilia como autossômica recessiva. Na herança ligada ao X, o menino depende apenas do X que recebe da mãe."
+      },
+      {
+        "letter": "D",
+        "text": "3/4",
+        "rationale": "Incorreta. 3/4 é a chance de uma criança não ter hemofilia, qualquer que seja o sexo (todas as meninas e metade dos meninos); falta restringir a meninos."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "Pense em qual X Carolina recebeu do pai e qual X um filho homem recebe da mãe."
+  },
+  {
+    "id": 215,
+    "code": "PROB-15",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Dominante ligada ao X - menino afetado de mãe afetada",
+    "difficulty": "Intermediária",
+    "prompt": "A hipoplasia do esmalte dentário, nesta família, tem herança dominante ligada ao X. Patrícia tem a doença, assim como seu pai; sua mãe não tem. Ela se casa com Vítor, que não é afetado. Qual a probabilidade de o primeiro filho do casal ser um menino com hipoplasia do esmalte?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 é a chance de ser afetado entre os meninos, ou seja, sabendo-se que é menino; falta multiplicar pela chance de ser menino."
+      },
+      {
+        "letter": "B",
+        "text": "0",
+        "rationale": "Incorreta. Quem não transmite a doença dominante ligada ao X aos filhos homens é o pai afetado. A mãe afetada transmite seu X aos filhos de ambos os sexos."
+      },
+      {
+        "letter": "C",
+        "text": "1/8",
+        "rationale": "Incorreta. 1/8 multiplica mais um 1/2 do que o necessário, como se Patrícia tivesse apenas 50% de chance de ter o alelo; ela é afetada e certamente o tem."
+      },
+      {
+        "letter": "D",
+        "text": "1/4",
+        "rationale": "CORRETA. Patrícia recebeu o X alterado do pai e um X normal da mãe: é heterozigota (XᴬXᵃ). Um menino afetado precisa receber o Y de Vítor (1/2) e o Xᴬ de Patrícia (1/2): 1/2 × 1/2 = 1/4."
+      }
+    ],
+    "correctLetter": "D",
+    "clinicalPointers": "Descubra quantos X alterados Patrícia tem, pensando no que ela recebeu de cada genitor. Um filho homem recebe o X da mãe."
+  },
+  {
+    "id": 216,
+    "code": "PROB-16",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Dois filhos em ordem definida",
+    "difficulty": "Avançada",
+    "prompt": "A fibrose cística tem herança autossômica recessiva. Carlos e Ana não têm a doença; a mãe de Carlos tem fibrose cística, assim como o pai de Ana. O casal planeja dois filhos. Qual a probabilidade de o primeiro ser um menino com fibrose cística e o segundo, uma menina sem a doença?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "3/32",
+        "rationale": "Incorreta. 3/32 multiplica o resultado por 2, o que só se faz quando a ordem de nascimento não importa. Aqui o enunciado define quem nasce primeiro."
+      },
+      {
+        "letter": "B",
+        "text": "3/64",
+        "rationale": "CORRETA. Carlos e Ana são Aa (normais, com um genitor afetado). Primeiro filho menino afetado: 1/4 × 1/2 = 1/8. Segundo filho menina normal: 3/4 × 1/2 = 3/8. A ordem está definida, então basta multiplicar: 1/8 × 3/8 = 3/64."
+      },
+      {
+        "letter": "C",
+        "text": "3/16",
+        "rationale": "Incorreta. 3/16 (1/4 × 3/4) considera apenas a doença, sem a chance de cada filho ter o sexo pedido (1/2 para cada um)."
+      },
+      {
+        "letter": "D",
+        "text": "1/64",
+        "rationale": "Incorreta. 1/64 (1/8 × 1/8) trata a menina também como afetada. Para ela, a chance de não ter a doença é 3/4, e não 1/4."
+      }
+    ],
+    "correctLetter": "B",
+    "clinicalPointers": "Calcule a chance de cada filho separadamente (doença e sexo) e observe que a pergunta fixa a ordem dos nascimentos."
+  },
+  {
+    "id": 217,
+    "code": "PROB-17",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Dois genes independentes - autossômico e ligado ao X",
+    "difficulty": "Avançada",
+    "prompt": "O albinismo tem herança autossômica recessiva, e a hemofilia A, recessiva ligada ao X; os genes estão em cromossomos diferentes. Lucas não é albino nem hemofílico, mas sua mãe é albina; não há hemofilia na família dele. Carla não é albina nem hemofílica, mas seu pai é albino e hemofílico. Qual a probabilidade de o primeiro filho do casal ser um menino albino e hemofílico?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/16",
+        "rationale": "CORRETA. Lucas é Aa (mãe albina) e XᴴY; Carla é Aa (pai albino) e XᴴXʰ (pai hemofílico). Albino: Aa × Aa = 1/4. Menino hemofílico: Y do pai (1/2) × Xʰ da mãe (1/2) = 1/4, já incluindo o sexo. Genes independentes: 1/4 × 1/4 = 1/16."
+      },
+      {
+        "letter": "B",
+        "text": "1/32",
+        "rationale": "Incorreta. 1/32 multiplica o sexo duas vezes (1/4 × 1/4 × 1/2). O 1/4 de 'menino hemofílico' já contém a chance de ser menino."
+      },
+      {
+        "letter": "C",
+        "text": "1/8",
+        "rationale": "Incorreta. 1/8 (1/4 × 1/2) usa a chance de hemofilia entre os meninos (1/2) sem multiplicar pela chance de a criança ser menino."
+      },
+      {
+        "letter": "D",
+        "text": "1/64",
+        "rationale": "Incorreta. 1/64 (1/4 × 1/4 × 1/4) aplica 1/4 também ao sexo; a chance de ser menino é 1/2, e ela já está embutida no 1/4 da hemofilia."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "Resolva cada característica separadamente e depois combine. Cuidado: na herança ligada ao X, o sexo já entra no próprio cálculo da hemofilia."
+  },
+  {
+    "id": 218,
+    "code": "PROB-18",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Portador com probabilidade de 2/3",
+    "difficulty": "Avançada",
+    "prompt": "A doença de Tay-Sachs tem herança autossômica recessiva. Paulo e Helena não têm a doença, e seus pais também não; porém, cada um deles tem um irmão que morreu na infância com Tay-Sachs. Qual a probabilidade de o primeiro filho do casal ser um menino com Tay-Sachs?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/9",
+        "rationale": "Incorreta. 1/9 é a chance de uma criança afetada de qualquer sexo; falta multiplicar pela chance de ser menino (1/2)."
+      },
+      {
+        "letter": "B",
+        "text": "1/32",
+        "rationale": "Incorreta. 1/32 usa 1/2 como chance de cada um ser portador. Como já se sabe que Paulo e Helena não são afetados, a chance correta é 2/3 (2 portadores entre 3 genótipos possíveis: AA, Aa, Aa)."
+      },
+      {
+        "letter": "C",
+        "text": "1/18",
+        "rationale": "CORRETA. Os pais de Paulo e os de Helena são Aa × Aa (tiveram filho afetado). Paulo e Helena não são aa, então cada um tem 2/3 de chance de ser Aa. Filho afetado exige os dois portadores e o encontro dos alelos: 2/3 × 2/3 × 1/4 = 1/9. Menino: 1/9 × 1/2 = 1/18."
+      },
+      {
+        "letter": "D",
+        "text": "1/8",
+        "rationale": "Incorreta. 1/8 trata Paulo e Helena como portadores certos. Eles são irmãos de afetados, não pais de afetados, e por isso a heterozigose é apenas provável (2/3)."
+      }
+    ],
+    "correctLetter": "C",
+    "clinicalPointers": "Paulo e Helena sabidamente não são afetados. Entre os filhos não afetados de dois portadores, qual a proporção de portadores?"
+  },
+  {
+    "id": 219,
+    "code": "PROB-19",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Dois genes - sistema ABO e fator Rh",
+    "difficulty": "Avançada",
+    "prompt": "Um homem de sangue tipo A e Rh positivo, cuja mãe é do tipo O e Rh negativo, casa-se com uma mulher de sangue tipo B e Rh positivo, cujo pai é do tipo O e Rh negativo. Considere o fator Rh determinado por um gene com o alelo Rh+ dominante. Qual a probabilidade de o primeiro filho do casal ser uma menina de sangue tipo AB e Rh negativo?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/16",
+        "rationale": "Incorreta. 1/16 (1/4 × 1/4) considera o tipo sanguíneo e o Rh, mas esquece a chance de a criança ser menina."
+      },
+      {
+        "letter": "B",
+        "text": "1/32",
+        "rationale": "CORRETA. O homem recebeu i e r da mãe: é Iᴬi Rr. A mulher recebeu i e r do pai: é Iᴮi Rr. Tipo AB (IᴬIᴮ) = 1/2 × 1/2 = 1/4; Rh negativo (rr) = 1/4; menina = 1/2. Eventos independentes: 1/4 × 1/4 × 1/2 = 1/32."
+      },
+      {
+        "letter": "C",
+        "text": "3/32",
+        "rationale": "Incorreta. 3/32 (1/4 × 3/4 × 1/2) é a chance de uma menina AB e Rh positivo; Rh negativo exige rr, com chance de 1/4."
+      },
+      {
+        "letter": "D",
+        "text": "1/8",
+        "rationale": "Incorreta. 1/8 (1/4 × 1/2) ignora o fator Rh, considerando apenas o tipo AB e o sexo."
+      }
+    ],
+    "correctLetter": "B",
+    "clinicalPointers": "Os genitores do tipo O e Rh negativo definem que alelos o homem e a mulher carregam. Resolva o ABO, o Rh e o sexo separadamente."
+  },
+  {
+    "id": 220,
+    "code": "PROB-20",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Recessiva ligada ao X - mãe possivelmente portadora",
+    "difficulty": "Avançada",
+    "prompt": "A hemofilia A tem herança recessiva ligada ao X. Fernanda não tem hemofilia, e seus pais também não; porém, seu irmão é hemofílico. Ela se casa com André, que não tem a doença. Desconsiderando mutações novas, qual a probabilidade de o primeiro filho do casal ser um menino hemofílico?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/4",
+        "rationale": "Incorreta. 1/4 trata Fernanda como portadora certa. Ela é irmã de um afetado, e não mãe ou filha de um, portanto tem apenas 1/2 de chance de ser portadora."
+      },
+      {
+        "letter": "B",
+        "text": "1/16",
+        "rationale": "Incorreta. 1/16 multiplica o sexo duas vezes (1/2 × 1/4 × 1/2); o 1/4 de 'menino hemofílico' já inclui a chance de ser menino."
+      },
+      {
+        "letter": "C",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 é apenas a chance de Fernanda ser portadora; falta a chance de ela transmitir o Xʰ a um filho homem."
+      },
+      {
+        "letter": "D",
+        "text": "1/8",
+        "rationale": "CORRETA. O irmão hemofílico recebeu o Xʰ da mãe, que é portadora (o pai de Fernanda não é afetado). Fernanda, então, tem 1/2 de chance de ser portadora. Se for, a chance de um menino hemofílico é 1/4 (Y do pai × Xʰ da mãe). Total: 1/2 × 1/4 = 1/8."
+      }
+    ],
+    "correctLetter": "D",
+    "clinicalPointers": "Comece pela mãe de Fernanda: de quem o irmão herdou o alelo? Depois, estime a chance de Fernanda ter recebido esse mesmo X."
   }
 ];
 </script>
