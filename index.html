@@ -266,7 +266,7 @@
         <button id="btn-mark-review" class="px-2 py-1 rounded-full border border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700" title="Marcar para revisão">🏳️ <span id="mark-label">Marcar</span></button>
       </div>
 
-      <p id="q-prompt" class="text-base sm:text-lg font-medium mb-1.5 leading-relaxed select-text"></p>
+      <p id="q-prompt" class="text-base sm:text-lg font-medium mb-1.5 leading-relaxed select-text" style="white-space: pre-line"></p>
       <p class="text-xs text-slate-400 dark:text-slate-500 mb-3">🖍️ Selecione um trecho do enunciado, de uma tabela ou de um gráfico para grifar. Clique num grifo para apagá-lo.</p>
 
       <div id="q-visual-container"></div>
@@ -444,7 +444,7 @@ const QUESTIONS_DATABASE = [
     "category": "Mendeliana",
     "subcategory": "Pleiotropia",
     "difficulty": "Intermediária",
-    "prompt": "A fenilcetonuria (PKU) é uma doença autossômica recessiva causada pela deficiência de uma única enzima (fenilalanina hidroxilase), mas que, se não tratada, pode causar deficiência intelectual, convulsões, alterações de pigmentação da pele e cabelo, entre outros efeitos, todos originados a partir da mutação em um único gene. Esse fenômeno, no qual um único gene afeta múltiplas características fenotípicas aparentemente não relacionadas, é chamado de:",
+    "prompt": "A fenilcetonúria (PKU) é uma doença autossômica recessiva causada pela deficiência de uma única enzima (fenilalanina hidroxilase), mas que, se não tratada, pode causar deficiência intelectual, convulsões, alterações de pigmentação da pele e cabelo, entre outros efeitos, todos originados a partir da mutação em um único gene. Esse fenômeno, no qual um único gene afeta múltiplas características fenotípicas aparentemente não relacionadas, é chamado de:",
     "options": [
       {
         "letter": "A",
@@ -454,7 +454,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "B",
         "text": "Pleiotropia.",
-        "rationale": "CORRETA. Pleiotropia é o fenômeno pelo qual um único gene (ou uma única mutação) influência múltiplos aspectos fenotípicos, aparentemente distintos entre si; a PKU é um exemplo clássico, no qual a deficiência de uma única enzima gera efeitos sobre o desenvolvimento neurológico, a pigmentação e outros sistemas, todos decorrentes da mesma alteração gênica original."
+        "rationale": "CORRETA. Pleiotropia é o fenômeno pelo qual um único gene (ou uma única mutação) influencia múltiplos aspectos fenotípicos, aparentemente distintos entre si; a PKU é um exemplo clássico, no qual a deficiência de uma única enzima gera efeitos sobre o desenvolvimento neurológico, a pigmentação e outros sistemas, todos decorrentes da mesma alteração gênica original."
       },
       {
         "letter": "C",
@@ -509,7 +509,7 @@ const QUESTIONS_DATABASE = [
     "category": "Herança",
     "subcategory": "Semidominância (dominância incompleta)",
     "difficulty": "Intermediária",
-    "prompt": "Em uma especie hipotetica de planta, o cruzamento entre uma flor de pétalas vermelhas (genótipo V1V1) e uma flor de pétalas brancas (genótipo V2V2) produz descendentes com pétalas rosas (genótipo V1V2), uma cor intermediária entre as dos pais. Esse padrão de herança, no qual o heterozigoto apresenta um fenótipo intermediário entre os dois homozigotos, é chamado de:",
+    "prompt": "Em uma espécie hipotética de planta, o cruzamento entre uma flor de pétalas vermelhas (genótipo V1V1) e uma flor de pétalas brancas (genótipo V2V2) produz descendentes com pétalas rosas (genótipo V1V2), uma cor intermediária entre as dos pais. Esse padrão de herança, no qual o heterozigoto apresenta um fenótipo intermediário entre os dois homozigotos, é chamado de:",
     "options": [
       {
         "letter": "A",
@@ -556,7 +556,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "Todos os descendentes serão amarelos, já que o alelo amarelo é dominante.",
-        "rationale": "Incorreta. Embora o alelo amarelo seja dominante para cor, parte da prole herdara dois alelos agouti (AA) e tera essa pelagem; nem todos os descendentes serão amarelos."
+        "rationale": "Incorreta. Embora o alelo amarelo seja dominante para cor, parte da prole herdará dois alelos agouti (AA) e terá essa pelagem; nem todos os descendentes serão amarelos."
       },
       {
         "letter": "D",
@@ -635,9 +635,9 @@ const QUESTIONS_DATABASE = [
     "id": 7,
     "code": "HERED-12",
     "category": "Herança",
-    "subcategory": "Sistema ABO - transfusao e anticorpos",
+    "subcategory": "Sistema ABO - transfusão e anticorpos",
     "difficulty": "Intermediária",
-    "prompt": "A transfusao de sangue tipo AB para uma pessoa com sangue tipo B:",
+    "prompt": "A transfusão de sangue tipo AB para uma pessoa com sangue tipo B:",
     "options": [
       {
         "letter": "A",
@@ -754,7 +754,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "D",
         "text": "Sequenciar o DNA, pois cruzamentos não fornecem informação sobre o genótipo de um indivíduo.",
-        "rationale": "Incorreta. Embora o sequenciamento direto seja uma opção moderna, o testcross é um método clássico e valido, amplamente utilizado antes mesmo da existência de técnicas moleculares, e ainda hoje didaticamente relevante."
+        "rationale": "Incorreta. Embora o sequenciamento direto seja uma opção moderna, o testcross é um método clássico e válido, amplamente utilizado antes mesmo da existência de técnicas moleculares, e ainda hoje didaticamente relevante."
       }
     ],
     "correctLetter": "B",
@@ -766,7 +766,7 @@ const QUESTIONS_DATABASE = [
     "category": "Herança",
     "subcategory": "Alelos múltiplos",
     "difficulty": "Intermediária",
-    "prompt": "O sistema sanguíneo ABO é classicamente citado como exemplo de herança por alelos múltiplos (serie alélica). O que caracteriza esse tipo de herança?",
+    "prompt": "O sistema sanguíneo ABO é classicamente citado como exemplo de herança por alelos múltiplos (série alélica). O que caracteriza esse tipo de herança?",
     "options": [
       {
         "letter": "A",
@@ -786,7 +786,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "D",
         "text": "Um fenômeno exclusivo do sistema sanguíneo ABO, sem qualquer outro exemplo conhecido de série alélica na espécie humana.",
-        "rationale": "Incorreta. Embora o sistema ABO seja o exemplo clássico mais citado, series alélicas com múltiplas variantes existem em outros locos gênicos humanos, não sendo um fenômeno exclusivo desse sistema sanguíneo."
+        "rationale": "Incorreta. Embora o sistema ABO seja o exemplo clássico mais citado, séries alélicas com múltiplas variantes existem em outros locos gênicos humanos, não sendo um fenômeno exclusivo desse sistema sanguíneo."
       }
     ],
     "correctLetter": "A",
@@ -808,7 +808,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "B",
         "text": "Indivíduos O teriam um sistema imune geneticamente mais tolerante, o que permitiria doar hemácias a qualquer pessoa sem reação.",
-        "rationale": "Incorreta. A explicação não tem relação com a forca do sistema imunológico do doador, e sim com a AUSÊNCIA de antígenos A e B nas hemácias do doador tipo O, que é o que evita a reação no receptor."
+        "rationale": "Incorreta. A explicação não tem relação com a força do sistema imunológico do doador, e sim com a AUSÊNCIA de antígenos A e B nas hemácias do doador tipo O, que é o que evita a reação no receptor."
       },
       {
         "letter": "C",
@@ -850,7 +850,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "D",
         "text": "Dominância incompleta é um fenômeno restrito ao reino vegetal, não ocorrendo em nenhuma hipótese em seres humanos ou outros animais.",
-        "rationale": "Incorreta. Embora exemplos clássicos de dominância incompleta em livros didáticos frequentemente envolvam plantas, o fenômeno biológico não é exclusivo de plantas, podendo ocorrer em outras especies conforme o loco gênico envolvido."
+        "rationale": "Incorreta. Embora exemplos clássicos de dominância incompleta em livros didáticos frequentemente envolvam plantas, o fenômeno biológico não é exclusivo de plantas, podendo ocorrer em outras espécies conforme o loco gênico envolvido."
       }
     ],
     "correctLetter": "A",
@@ -941,7 +941,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "1:1 (AA:Aa:aa) é 1:1 (dominante:recessivo).",
-        "rationale": "Incorreta. Essa proporção (1:1) e tipica de um cruzamento-teste (Aa x aa), não do cruzamento heterozigoto x heterozigoto (Aa x Aa) descrito."
+        "rationale": "Incorreta. Essa proporção (1:1) e típica de um cruzamento-teste (Aa x aa), não do cruzamento heterozigoto x heterozigoto (Aa x Aa) descrito."
       },
       {
         "letter": "D",
@@ -956,9 +956,9 @@ const QUESTIONS_DATABASE = [
     "id": 17,
     "code": "MEND-18",
     "category": "Mendeliana",
-    "subcategory": "Herança dominante de inicio tardio - Doença de Huntington",
+    "subcategory": "Herança dominante de início tardio - Doença de Huntington",
     "difficulty": "Intermediária",
-    "prompt": "A Doença de Huntington é uma condição neurodegenerativa autossômica dominante, cujos sintomas tipicamente só se manifestam na idade adulta (geralmente entre 30 e 50 anos), diferente de muitas doenças recessivas que costumam se manifestar já na infância. Do ponto de vista da genética de populações e da seleção natural, por que doenças dominantes de inicio tardio, como Huntington, tendem a persistir na população ao longo de gerações, apesar de serem causadas por um alelo dominante (que deveria, em teoria, se manifestar sempre que presente)?",
+    "prompt": "A Doença de Huntington é uma condição neurodegenerativa autossômica dominante, cujos sintomas tipicamente só se manifestam na idade adulta (geralmente entre 30 e 50 anos), diferente de muitas doenças recessivas que costumam se manifestar já na infância. Do ponto de vista da genética de populações e da seleção natural, por que doenças dominantes de início tardio, como Huntington, tendem a persistir na população ao longo de gerações, apesar de serem causadas por um alelo dominante (que deveria, em teoria, se manifestar sempre que presente)?",
     "options": [
       {
         "letter": "A",
@@ -978,11 +978,11 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "D",
         "text": "Todos os portadores seriam inférteis, o que impediria por completo a transmissão do alelo aos seus filhos.",
-        "rationale": "Incorreta. Pelo contrário, a maioria dos portadores do alelo da Doença de Huntington têm fertilidade normal é frequentemente já teve filhos antes do inicio dos sintomas, o que é justamente um dos motivos pelos quais o alelo persiste na população."
+        "rationale": "Incorreta. Pelo contrário, a maioria dos portadores do alelo da Doença de Huntington têm fertilidade normal é frequentemente já teve filhos antes do início dos sintomas, o que é justamente um dos motivos pelos quais o alelo persiste na população."
       }
     ],
     "correctLetter": "B",
-    "clinicalPointers": "Doença dominante de inicio tardio: manifesta DEPOIS da idade reprodutiva, então a seleção natural não 'filtra' o alelo com eficiência."
+    "clinicalPointers": "Doença dominante de início tardio: manifesta DEPOIS da idade reprodutiva, então a seleção natural não 'filtra' o alelo com eficiência."
   },
   {
     "id": 18,
@@ -1010,7 +1010,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "D",
         "text": "Todos os filhos terão lóbulo aderido, pois o alelo recessivo sempre se expressa quando presente em um dos pais.",
-        "rationale": "Incorreta. O alelo recessivo só se expressa em homozigose (dois alelos recessivos); como o alelo dominante está presente em ambos os pais (heterozigotos), a maioria dos filhos tera o fenótipo dominante."
+        "rationale": "Incorreta. O alelo recessivo só se expressa em homozigose (dois alelos recessivos); como o alelo dominante está presente em ambos os pais (heterozigotos), a maioria dos filhos terá o fenótipo dominante."
       }
     ],
     "correctLetter": "B",
@@ -1037,12 +1037,12 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "Um dos pais homozigoto recessivo (aa) e o outro homozigoto dominante (AA).",
-        "rationale": "Incorreta. Se um dos pais fosse homozigoto recessivo (aa), ele próprio seria albino (afetado), o que contrária a informação de que ambos os pais têm fenótipo normal."
+        "rationale": "Incorreta. Se um dos pais fosse homozigoto recessivo (aa), ele próprio seria albino (afetado), o que contraria a informação de que ambos os pais têm fenótipo normal."
       },
       {
         "letter": "D",
         "text": "Não é possível determinar o genótipo dos pais com as informações disponíveis.",
-        "rationale": "Incorreta. A logica mendeliana clássica permite inferir com segurança que ambos os pais são heterozigotos, dado que são normais mas geraram uma filha homozigota recessiva."
+        "rationale": "Incorreta. A lógica mendeliana clássica permite inferir com segurança que ambos os pais são heterozigotos, dado que são normais mas geraram uma filha homozigota recessiva."
       }
     ],
     "correctLetter": "B",
@@ -1069,7 +1069,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "Porque o alelo recessivo sofreria mutação reversa constante para a forma dominante dentro dos próprios indivíduos heterozigotos ao longo da vida.",
-        "rationale": "Incorreta. Não há essa conversão ativa e constante de um alelo para outro dentro dos heterozigotos; a diferença de frequência entre portadores e afetados se explica pela matemática da probabilidade de herança de um ou dois alelos raros, não por mutação reversa continua."
+        "rationale": "Incorreta. Não há essa conversão ativa e constante de um alelo para outro dentro dos heterozigotos; a diferença de frequência entre portadores e afetados se explica pela matemática da probabilidade de herança de um ou dois alelos raros, não por mutação reversa contínua."
       },
       {
         "letter": "D",
@@ -1086,7 +1086,7 @@ const QUESTIONS_DATABASE = [
     "category": "Herança",
     "subcategory": "Sistema ABO - probabilidade de genótipo do pai",
     "difficulty": "Intermediária",
-    "prompt": "Na especie humana, os alelos que determinam sangue do tipo A (I^A) e do tipo B (I^B) são codominantes entre si, e ambos são dominantes sobre o alelo responsável pelo sangue do tipo O (i). Se uma mulher com sangue tipo A tem um filho com sangue tipo B, o sangue do pai da criança pode ser do tipo:",
+    "prompt": "Na espécie humana, os alelos que determinam sangue do tipo A (I^A) e do tipo B (I^B) são codominantes entre si, e ambos são dominantes sobre o alelo responsável pelo sangue do tipo O (i). Se uma mulher com sangue tipo A tem um filho com sangue tipo B, o sangue do pai da criança pode ser do tipo:",
     "options": [
       {
         "letter": "A",
@@ -1124,12 +1124,12 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "A",
         "text": "Significa que o alelo dominante passaria a se comportar, na prática, como um alelo recessivo em todos os indivíduos afetados da família.",
-        "rationale": "Incorreta. Penetrância incompleta não transforma um alelo dominante em recessivo; o alelo continua dominante em sua natureza molecular, apenas nem todos os portadores expressam o fenótipo correspondente, por razoes multifatoriais (outros genes modificadores, fatores ambientais, entre outros)."
+        "rationale": "Incorreta. Penetrância incompleta não transforma um alelo dominante em recessivo; o alelo continua dominante em sua natureza molecular, apenas nem todos os portadores expressam o fenótipo correspondente, por razões multifatoriais (outros genes modificadores, fatores ambientais, entre outros)."
       },
       {
         "letter": "B",
         "text": "Um indivíduo pode portar o alelo dominante sem manifestar o fenótipo, fazendo a característica parecer 'pular' uma geração.",
-        "rationale": "CORRETA. Na penetrância incompleta, alguns indivíduos com o genótipo predisposto (por exemplo, heterozigotos para um alelo dominante) simplesmente não desenvolvem o fenótipo esperado, por razoes que podem envolver outros genes, fatores ambientais ou fatores ainda não completamente compreendidos; isso pode fazer com que uma característica dominante pareca 'pular' uma geração em um heredograma (quando, na verdade, o indivíduo aparentemente normal e portador do alelo, apenas não o expressou), complicando a interpretação do padrão de herança."
+        "rationale": "CORRETA. Na penetrância incompleta, alguns indivíduos com o genótipo predisposto (por exemplo, heterozigotos para um alelo dominante) simplesmente não desenvolvem o fenótipo esperado, por razões que podem envolver outros genes, fatores ambientais ou fatores ainda não completamente compreendidos; isso pode fazer com que uma característica dominante pareca 'pular' uma geração em um heredograma (quando, na verdade, o indivíduo aparentemente normal e portador do alelo, apenas não o expressou), complicando a interpretação do padrão de herança."
       },
       {
         "letter": "C",
@@ -1161,7 +1161,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "B",
         "text": "Vários genes diferentes atuam em conjunto, cada um com pequeno efeito aditivo, gerando variação contínua na população.",
-        "rationale": "CORRETA. Na herança poligênica, múltiplos genes (cada um com efeito individual pequeno) contribuem de forma cumulativa e aditiva para o fenótipo final; isso gera uma distribuição continua e gradual do caractere na população (como uma curva em sino para a estatura), em contraste com características mendelianas simples, que produzem categorias fenotípicas discretas e bem definidas (como os quatro tipos sanguíneos do sistema ABO)."
+        "rationale": "CORRETA. Na herança poligênica, múltiplos genes (cada um com efeito individual pequeno) contribuem de forma cumulativa e aditiva para o fenótipo final; isso gera uma distribuição contínua e gradual do caractere na população (como uma curva em sino para a estatura), em contraste com características mendelianas simples, que produzem categorias fenotípicas discretas e bem definidas (como os quatro tipos sanguíneos do sistema ABO)."
       },
       {
         "letter": "C",
@@ -1171,11 +1171,11 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "D",
         "text": "Características poligênicas não sofreriam qualquer influência de fatores ambientais, sendo determinadas de forma exclusiva pela carga genética.",
-        "rationale": "Incorreta. Pelo contrário, características poligênicas clássicas (como estatura) costumam sofrer influência combinada de fatores genéticos E ambientais (como nutrição), o que contribui ainda mais para a variação continua observada."
+        "rationale": "Incorreta. Pelo contrário, características poligênicas clássicas (como estatura) costumam sofrer influência combinada de fatores genéticos E ambientais (como nutrição), o que contribui ainda mais para a variação contínua observada."
       }
     ],
     "correctLetter": "B",
-    "clinicalPointers": "Poligênica: vários genes, efeito pequeno e somado cada um, gerando variação continua (não categorias)."
+    "clinicalPointers": "Poligênica: vários genes, efeito pequeno e somado cada um, gerando variação contínua (não categorias)."
   },
   {
     "id": 24,
@@ -1193,7 +1193,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "B",
         "text": "Ambos os pais são heterozigotos obrigatórios, e cada nova gestação tem, independentemente, 25% de chance de um filho afetado.",
-        "rationale": "CORRETA. Como o casal já teve um filho afetado por uma condição autossômica recessiva, ambos são, por logica mendeliana, heterozigotos obrigatórios (portadores assintomáticos); a informação central do aconselhamento genético e que, para cada gestação futura, de forma independente uma da outra, a chance de o filho também ser homozigoto recessivo (afetado) e de aproximadamente 25%, permitindo que o casal tome decisões reprodutivas informadas."
+        "rationale": "CORRETA. Como o casal já teve um filho afetado por uma condição autossômica recessiva, ambos são, por lógica mendeliana, heterozigotos obrigatórios (portadores assintomáticos); a informação central do aconselhamento genético e que, para cada gestação futura, de forma independente uma da outra, a chance de o filho também ser homozigoto recessivo (afetado) e de aproximadamente 25%, permitindo que o casal tome decisões reprodutivas informadas."
       },
       {
         "letter": "C",
@@ -1215,7 +1215,7 @@ const QUESTIONS_DATABASE = [
     "category": "Herança",
     "subcategory": "Cruzamento tri-hibrido - probabilidade combinada",
     "difficulty": "Intermediária",
-    "prompt": "Um casal, ambos heterozigotos para três características autossômicas recessivas e independentes entre si (polidactilia, fenilcetonuria e acromatopsia), planeja ter um filho. Considerando que cada característica segrega de forma independente, qual a probabilidade de esse filho não apresentar nenhuma das três condições (ou seja, ser fenotipicamente normal para as três)?",
+    "prompt": "Um casal, ambos heterozigotos para três características autossômicas recessivas e independentes entre si (polidactilia, fenilcetonúria e acromatopsia), planeja ter um filho. Considerando que cada característica segrega de forma independente, qual a probabilidade de esse filho não apresentar nenhuma das três condições (ou seja, ser fenotipicamente normal para as três)?",
     "options": [
       {
         "letter": "A",
@@ -1312,7 +1312,7 @@ const QUESTIONS_DATABASE = [
     "category": "Mendeliana",
     "subcategory": "Interação gênica - genes complementares (9:7)",
     "difficulty": "Intermediária",
-    "prompt": "Em uma especie hipotetica de planta, a cor da flor (roxa ou branca) depende de dois genes independentes, C e P, cada um com um alelo dominante é um recessivo. A cor roxa só aparece quando pelo menos um alelo dominante de CADA um dos dois genes está presente (C_P_); qualquer outra combinação genotípica resulta em flor branca. Do cruzamento CcPp x CcPp, qual a proporção fenotípica esperada entre flores roxas e brancas?",
+    "prompt": "Em uma espécie hipotética de planta, a cor da flor (roxa ou branca) depende de dois genes independentes, C e P, cada um com um alelo dominante é um recessivo. A cor roxa só aparece quando pelo menos um alelo dominante de CADA um dos dois genes está presente (C_P_); qualquer outra combinação genotípica resulta em flor branca. Do cruzamento CcPp x CcPp, qual a proporção fenotípica esperada entre flores roxas e brancas?",
     "options": [
       {
         "letter": "A",
@@ -1374,7 +1374,7 @@ const QUESTIONS_DATABASE = [
     "id": 30,
     "code": "MEND-15",
     "category": "Mendeliana",
-    "subcategory": "Probabilidade do sexo do bebe - eventos independentes",
+    "subcategory": "Probabilidade do sexo do bebê - eventos independentes",
     "difficulty": "Intermediária",
     "prompt": "Um casal já tem três filhas e está grávida novamente. Assumindo uma probabilidade teórica de 50% para cada sexo a cada gestação, qual a probabilidade de esse quarto filho ser do sexo masculino?",
     "options": [
@@ -1386,7 +1386,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "B",
         "text": "Exatamente 50%, pois cada gestação é independente, e o sexo dos filhos anteriores não altera a probabilidade atual.",
-        "rationale": "CORRETA. O sexo do bebe é determinado pelo espermatozoide (X ou Y) que fecunda o óvulo, um evento aleatório e independente a cada gestação; os resultados de gestações anteriores (ter tido três filhas) não alteram, de forma alguma, a probabilidade teórica de 50% para o próximo filho ser menino ou menina."
+        "rationale": "CORRETA. O sexo do bebê é determinado pelo espermatozoide (X ou Y) que fecunda o óvulo, um evento aleatório e independente a cada gestação; os resultados de gestações anteriores (ter tido três filhas) não alteram, de forma alguma, a probabilidade teórica de 50% para o próximo filho ser menino ou menina."
       },
       {
         "letter": "C",
@@ -1492,7 +1492,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "D",
         "text": "25%, seguindo a proporção clássica esperada para um cruzamento autossômico recessivo.",
-        "rationale": "Incorreta. Essa proporção (25%) e tipica de herança AUTOSSÔMICA recessiva (Aa x Aa); o caso descrito envolve herança ligada ao X, com dinâmica de transmissão diferente entre pai afetado e mãe normal, que resulta em 0% de filhas afetadas (todas portadoras)."
+        "rationale": "Incorreta. Essa proporção (25%) e típica de herança AUTOSSÔMICA recessiva (Aa x Aa); o caso descrito envolve herança ligada ao X, com dinâmica de transmissão diferente entre pai afetado e mãe normal, que resulta em 0% de filhas afetadas (todas portadoras)."
       }
     ],
     "correctLetter": "B",
@@ -1537,7 +1537,7 @@ const QUESTIONS_DATABASE = [
     "category": "Herança",
     "subcategory": "Restrita ao sexo x ligada ao sexo",
     "difficulty": "Básica",
-    "prompt": "Um estudante confunde os conceitos de herança 'ligada ao sexo' e herança 'restrita ao sexo'. Qual das afirmações abaixo diferência corretamente esses dois conceitos?",
+    "prompt": "Um estudante confunde os conceitos de herança 'ligada ao sexo' e herança 'restrita ao sexo'. Qual das afirmações abaixo diferencia corretamente esses dois conceitos?",
     "options": [
       {
         "letter": "A",
@@ -1606,7 +1606,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "A",
         "text": "25%, aplicando a proporção clássica esperada para um cruzamento entre dois heterozigotos (Aa × Aa).",
-        "rationale": "Incorreta. Essa proporção (25%) só se aplicaria se AMBOS os pais fossem heterozigotos (Aa x Aa); nesse caso, apenas a mãe e heterozigota confirmada, enquanto o pai e presumido homozigoto normal (AA), o que muda completamente o calculo."
+        "rationale": "Incorreta. Essa proporção (25%) só se aplicaria se AMBOS os pais fossem heterozigotos (Aa x Aa); nesse caso, apenas a mãe e heterozigota confirmada, enquanto o pai e presumido homozigoto normal (AA), o que muda completamente o cálculo."
       },
       {
         "letter": "B",
@@ -1621,7 +1621,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "D",
         "text": "100%, pois o avô materno (I-1) foi afetado, o que garante a manifestação na geração seguinte.",
-        "rationale": "Incorreta. O fato de o avo materno ter sido afetado já foi usado para confirmar que a mãe e heterozigota (portadora); isso não garante, de forma alguma, que os netos serão afetados, especialmente quando o outro progenitor (pai da criança) não carrega o alelo mutante."
+        "rationale": "Incorreta. O fato de o avô materno ter sido afetado já foi usado para confirmar que a mãe e heterozigota (portadora); isso não garante, de forma alguma, que os netos serão afetados, especialmente quando o outro progenitor (pai da criança) não carrega o alelo mutante."
       }
     ],
     "correctLetter": "B",
@@ -1707,7 +1707,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "B",
         "text": "Não: sem dado familiar que indique heterozigose obrigatória, como um filho afetado, só é possível estimar uma probabilidade.",
-        "rationale": "CORRETA. O fenótipo normal por si só não diferência homozigotos dominantes de heterozigotos, já que ambos os genótipos produzem o mesmo fenótipo em uma condição recessiva com dominância completa; para afirmar com certeza que alguém e heterozigoto (portador obrigatório), são necessárias evidências familiares adicionais específicas (como ter um filho ou um dos pais afetados); sem essas evidências, só é possível estimar uma probabilidade de heterozigose, baseada em dados familiares ou populacionais, não uma certeza absoluta."
+        "rationale": "CORRETA. O fenótipo normal por si só não diferencia homozigotos dominantes de heterozigotos, já que ambos os genótipos produzem o mesmo fenótipo em uma condição recessiva com dominância completa; para afirmar com certeza que alguém e heterozigoto (portador obrigatório), são necessárias evidências familiares adicionais específicas (como ter um filho ou um dos pais afetados); sem essas evidências, só é possível estimar uma probabilidade de heterozigose, baseada em dados familiares ou populacionais, não uma certeza absoluta."
       },
       {
         "letter": "C",
@@ -1734,7 +1734,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "A",
         "text": "Probando (caso-índice).",
-        "rationale": "CORRETA. O indivíduo que motivou a investigação familiar e a construção do heredograma (geralmente o paciente que procurou atendimento ou foi diagnosticado primeiro) é chamado de probando, caso-indice ou proposito, sendo destacado no heredograma por uma seta apontando para seu símbolo."
+        "rationale": "CORRETA. O indivíduo que motivou a investigação familiar e a construção do heredograma (geralmente o paciente que procurou atendimento ou foi diagnosticado primeiro) é chamado de probando, caso-indice ou propósito, sendo destacado no heredograma por uma seta apontando para seu símbolo."
       },
       {
         "letter": "B",
@@ -1761,12 +1761,12 @@ const QUESTIONS_DATABASE = [
     "category": "Mutações de Doenças Autossômicas e Ligadas ao Sexo",
     "subcategory": "Identificação de portadores obrigatórios",
     "difficulty": "Intermediária",
-    "prompt": "Em uma família com um caso de fibrose cística (doença autossômica recessiva), o casal Renata e Marcos, ambos fenotipicamente normais, têm uma filha afetada pela doença. Renata tem um irmão, Bruno, também fenotipicamente normal, cujos pais (avos maternos da criança afetada) também são normais. Com base apenas nessas informações, sobre quais indivíduos é possível afirmar com certeza que são heterozigotos obrigatórios?",
+    "prompt": "Em uma família com um caso de fibrose cística (doença autossômica recessiva), o casal Renata e Marcos, ambos fenotipicamente normais, têm uma filha afetada pela doença. Renata tem um irmão, Bruno, também fenotipicamente normal, cujos pais (avós maternos da criança afetada) também são normais. Com base apenas nessas informações, sobre quais indivíduos é possível afirmar com certeza que são heterozigotos obrigatórios?",
     "options": [
       {
         "letter": "A",
         "text": "Apenas Renata e Marcos, os pais diretos da criança afetada.",
-        "rationale": "CORRETA. Como a filha e homozigota recessiva (afetada) e ambos os pais são fenotipicamente normais, Renata e Marcos são, com certeza, heterozigotos obrigatórios; já Bruno e os avos maternos podem ou não carregar o alelo, mas isso não pode ser afirmado com certeza apenas com as informações fornecidas."
+        "rationale": "CORRETA. Como a filha e homozigota recessiva (afetada) e ambos os pais são fenotipicamente normais, Renata e Marcos são, com certeza, heterozigotos obrigatórios; já Bruno e os avós maternos podem ou não carregar o alelo, mas isso não pode ser afirmado com certeza apenas com as informações fornecidas."
       },
       {
         "letter": "B",
@@ -1775,13 +1775,13 @@ const QUESTIONS_DATABASE = [
       },
       {
         "letter": "C",
-        "text": "Todos os indivíduos citados (Renata, Marcos, Bruno e os avos maternos).",
+        "text": "Todos os indivíduos citados (Renata, Marcos, Bruno e os avós maternos).",
         "rationale": "Incorreta. Apenas os pais diretos da criança afetada podem ser classificados com certeza como heterozigotos obrigatórios a partir dessas informações; os demais parentes são apenas possíveis portadores, não certos."
       },
       {
         "letter": "D",
         "text": "Nenhum indivíduo pode ser classificado como heterozigoto obrigatório sem teste genético.",
-        "rationale": "Incorreta. A logica mendeliana clássica permite, sim, afirmar com certeza que os pais de um filho homozigoto recessivo são heterozigotos, mesmo sem teste genético direto."
+        "rationale": "Incorreta. A lógica mendeliana clássica permite, sim, afirmar com certeza que os pais de um filho homozigoto recessivo são heterozigotos, mesmo sem teste genético direto."
       }
     ],
     "correctLetter": "A",
@@ -1793,7 +1793,7 @@ const QUESTIONS_DATABASE = [
     "category": "Mutações de Doenças Autossômicas e Ligadas ao Sexo",
     "subcategory": "Heterozigose obrigatória em heredograma (sem imagem)",
     "difficulty": "Intermediária",
-    "prompt": "Em uma família, o albinismo (condição autossômica recessiva) está presente em um indivíduo da geração III (III-2), cujos pais (II-1 e II-2) são fenotipicamente normais. Os avos paternos (I-1 e I-2) também são normais, assim como os avos maternos (I-3 e I-4). Considerando apenas essas informações, quais indivíduos são obrigatoriamente heterozigotos para o alelo do albinismo?",
+    "prompt": "Em uma família, o albinismo (condição autossômica recessiva) está presente em um indivíduo da geração III (III-2), cujos pais (II-1 e II-2) são fenotipicamente normais. Os avós paternos (I-1 e I-2) também são normais, assim como os avós maternos (I-3 e I-4). Considerando apenas essas informações, quais indivíduos são obrigatoriamente heterozigotos para o alelo do albinismo?",
     "options": [
       {
         "letter": "A",
@@ -1808,7 +1808,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "Todos os avós (I-1 a I-4), pois o alelo deve estar presente nos dois lados da família ao mesmo tempo.",
-        "rationale": "Incorreta. Com as informações disponíveis, só é possível afirmar com certeza que os pais diretos (II-1 e II-2) são heterozigotos; não há como garantir que todos os quatro avos, especificamente, carreguem o alelo, sem mais dados sobre outros parentes."
+        "rationale": "Incorreta. Com as informações disponíveis, só é possível afirmar com certeza que os pais diretos (II-1 e II-2) são heterozigotos; não há como garantir que todos os quatro avós, especificamente, carreguem o alelo, sem mais dados sobre outros parentes."
       },
       {
         "letter": "D",
@@ -1817,7 +1817,7 @@ const QUESTIONS_DATABASE = [
       }
     ],
     "correctLetter": "B",
-    "clinicalPointers": "Pais normais de filho recessivo afetado = heterozigotos obrigatórios (não dá pra afirmar isso dos avos sem mais dados)."
+    "clinicalPointers": "Pais normais de filho recessivo afetado = heterozigotos obrigatórios (não dá pra afirmar isso dos avós sem mais dados)."
   },
   {
     "id": 44,
@@ -1830,7 +1830,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "A",
         "text": "Somar diretamente as probabilidades individuais das duas condições recessivas, pois ambas podem ocorrer no mesmo filho.",
-        "rationale": "Incorreta. A soma de probabilidades e usada para eventos mutuamente exclusivos (ou um ou outro), não para calcular a chance de dois eventos independentes ocorrerem simultaneamente."
+        "rationale": "Incorreta. A soma de probabilidades é usada para eventos mutuamente exclusivos (ou um ou outro), não para calcular a chance de dois eventos independentes ocorrerem simultaneamente."
       },
       {
         "letter": "B",
@@ -1845,7 +1845,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "D",
         "text": "Dividir a probabilidade de uma das condições pela probabilidade da outra, obtendo assim o risco combinado do casal.",
-        "rationale": "Incorreta. Essa operação não tem fundamento na logica de probabilidades combinadas de eventos genéticos independentes; o princípio correto é a multiplicação (regra do produto), não a divisão."
+        "rationale": "Incorreta. Essa operação não tem fundamento na lógica de probabilidades combinadas de eventos genéticos independentes; o princípio correto é a multiplicação (regra do produto), não a divisão."
       }
     ],
     "correctLetter": "B",
@@ -1970,12 +1970,12 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "A característica afeta aproximadamente metade dos filhos de um casal em que um dos pais e afetado.",
-        "rationale": "Incorreta. Essa proporção (cerca de 50%) é mais tipica de herança dominante, quando um dos pais e heterozigoto (Aa x aa), não um indicativo isolado de recessividade."
+        "rationale": "Incorreta. Essa proporção (cerca de 50%) é mais típica de herança dominante, quando um dos pais e heterozigoto (Aa x aa), não um indicativo isolado de recessividade."
       },
       {
         "letter": "D",
         "text": "A característica afeta igualmente homens e mulheres na família.",
-        "rationale": "Incorreta. Afetar igualmente os dois sexos apenas sugere herança autossômica (em oposição a ligada ao X), mas não diferência, por si só, entre dominante e recessivo."
+        "rationale": "Incorreta. Afetar igualmente os dois sexos apenas sugere herança autossômica (em oposição a ligada ao X), mas não diferencia, por si só, entre dominante e recessivo."
       }
     ],
     "correctLetter": "B",
@@ -1987,7 +1987,7 @@ const QUESTIONS_DATABASE = [
     "category": "Herança",
     "subcategory": "Gêmeos no heredograma",
     "difficulty": "Básica",
-    "prompt": "Ao representar em um heredograma uma família que inclui um par de gêmeos, a simbologia padrão diferência gêmeos monozigóticos (idênticos) de gêmeos dizigóticos (fraternos) através de uma notação específica que os conecta. Por que essa distinção é relevante para a análise genética do heredograma?",
+    "prompt": "Ao representar em um heredograma uma família que inclui um par de gêmeos, a simbologia padrão diferencia gêmeos monozigóticos (idênticos) de gêmeos dizigóticos (fraternos) através de uma notação específica que os conecta. Por que essa distinção é relevante para a análise genética do heredograma?",
     "options": [
       {
         "letter": "A",
@@ -2073,11 +2073,11 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "D",
         "text": "O gene recessivo está obrigatoriamente no avô materno das crianças.",
-        "rationale": "CORRETA a ser marcada (é a INCORRETA do enunciado). O alelo recessivo da mãe pode ter surgido por mutação nova, ou ter sido herdado da avo materna (que seria portadora) em vez do avo materno; não é obrigatório que o avo materno especificamente porte o gene, ele poderia vir por outras vias familiares."
+        "rationale": "CORRETA a ser marcada (é a INCORRETA do enunciado). O alelo recessivo da mãe pode ter surgido por mutação nova, ou ter sido herdado da avó materna (que seria portadora) em vez do avô materno; não é obrigatório que o avô materno especificamente porte o gene, ele poderia vir por outras vias familiares."
       }
     ],
     "correctLetter": "D",
-    "clinicalPointers": "Pais normais + filhos hemofílicos = mãe heterozigota obrigatória; o gene pode vir de qualquer lado da família materna, não só do avo.",
+    "clinicalPointers": "Pais normais + filhos hemofílicos = mãe heterozigota obrigatória; o gene pode vir de qualquer lado da família materna, não só do avô.",
     "sourceLabel": "Questão do professor"
   },
   {
@@ -2120,12 +2120,12 @@ const QUESTIONS_DATABASE = [
     "category": "Herança",
     "subcategory": "Importância da história familiar completa",
     "difficulty": "Básica",
-    "prompt": "Durante uma consulta de aconselhamento genético, o médico pergunta detalhadamente sobre a saúde de pais, avos, tios e primos do paciente, construindo um heredograma de pelo menos três gerações. Por que essa investigação detalhada de múltiplas gerações é considerada importante na prática do aconselhamento genético, mesmo quando o paciente busca atendimento por apenas uma única condição específica?",
+    "prompt": "Durante uma consulta de aconselhamento genético, o médico pergunta detalhadamente sobre a saúde de pais, avós, tios e primos do paciente, construindo um heredograma de pelo menos três gerações. Por que essa investigação detalhada de múltiplas gerações é considerada importante na prática do aconselhamento genético, mesmo quando o paciente busca atendimento por apenas uma única condição específica?",
     "options": [
       {
         "letter": "A",
         "text": "Permite inferir o padrão de herança, identificar parentes em risco que se beneficiem de rastreamento e embasar o risco de recorrência.",
-        "rationale": "CORRETA. Um heredograma abrangente, com várias gerações, fornece informações muito mais robustas para inferir o padrão de herança provável (dominante, recessivo, ligado ao sexo), identificar outros parentes que podem estar em risco e que se beneficiariam de orientação ou rastreamento, além de permitir um calculo de risco de recorrência mais preciso e confiável para o paciente e seu planejamento reprodutivo futuro."
+        "rationale": "CORRETA. Um heredograma abrangente, com várias gerações, fornece informações muito mais robustas para inferir o padrão de herança provável (dominante, recessivo, ligado ao sexo), identificar outros parentes que podem estar em risco e que se beneficiariam de orientação ou rastreamento, além de permitir um cálculo de risco de recorrência mais preciso e confiável para o paciente e seu planejamento reprodutivo futuro."
       },
       {
         "letter": "B",
@@ -2135,7 +2135,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "Serve apenas para registrar a história da família, sem impacto real sobre o risco estimado ou sobre as condutas do aconselhamento.",
-        "rationale": "Incorreta. Pelo contrário, a investigação de múltiplas gerações tem impacto prático direto no aconselhamento genético, influenciando o calculo de risco, a identificação de outros familiares em risco e as recomendações fornecidas ao paciente."
+        "rationale": "Incorreta. Pelo contrário, a investigação de múltiplas gerações tem impacto prático direto no aconselhamento genético, influenciando o cálculo de risco, a identificação de outros familiares em risco e as recomendações fornecidas ao paciente."
       },
       {
         "letter": "D",
@@ -2157,7 +2157,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "A",
         "text": "Autossômica dominante.",
-        "rationale": "Incorreta. Na herança dominante, a característica costuma aparecer em praticamente todas as gerações, sem pular, o que contrária o padrão descrito, em que a característica nunca aparece em gerações consecutivas."
+        "rationale": "Incorreta. Na herança dominante, a característica costuma aparecer em praticamente todas as gerações, sem pular, o que contraria o padrão descrito, em que a característica nunca aparece em gerações consecutivas."
       },
       {
         "letter": "B",
@@ -2300,7 +2300,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "D",
         "text": "A doença teria sido transmitida por contágio direto entre os dois primos, e não por herança genética na família.",
-        "rationale": "Incorreta. Doenças genéticas hereditárias, por definição, não são transmitidas por contagio entre indivíduos; a explicação adequada envolve a transmissão do alelo recessivo ao longo de gerações familiares, não um mecanismo infeccioso."
+        "rationale": "Incorreta. Doenças genéticas hereditárias, por definição, não são transmitidas por contágio entre indivíduos; a explicação adequada envolve a transmissão do alelo recessivo ao longo de gerações familiares, não um mecanismo infeccioso."
       }
     ],
     "correctLetter": "B",
@@ -2312,7 +2312,7 @@ const QUESTIONS_DATABASE = [
     "category": "Herança",
     "subcategory": "Simbologia do heredograma",
     "difficulty": "Básica",
-    "prompt": "Em um heredograma, dois indivíduos aparecem unidos por uma linha horizontal dupla (dois tracos paralelos), em vez da linha simples usada para representar a maioria dos casais. O que essa notação representa?",
+    "prompt": "Em um heredograma, dois indivíduos aparecem unidos por uma linha horizontal dupla (dois traços paralelos), em vez da linha simples usada para representar a maioria dos casais. O que essa notação representa?",
     "options": [
       {
         "letter": "A",
@@ -2322,7 +2322,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "B",
         "text": "Um casamento extraconjugal, sem união formal.",
-        "rationale": "Incorreta. União extraconjugal costuma ser representada por uma linha tracejada ou pontilhada entre os indivíduos, não por uma linha dupla continua."
+        "rationale": "Incorreta. União extraconjugal costuma ser representada por uma linha tracejada ou pontilhada entre os indivíduos, não por uma linha dupla contínua."
       },
       {
         "letter": "C",
@@ -2332,7 +2332,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "D",
         "text": "Um divórcio ou separação entre o casal representado.",
-        "rationale": "Incorreta. O divorcio costuma ser representado por um tracinho diagonal cruzando a linha do casal, não por uma linha dupla."
+        "rationale": "Incorreta. O divórcio costuma ser representado por um tracinho diagonal cruzando a linha do casal, não por uma linha dupla."
       }
     ],
     "correctLetter": "C",
@@ -2345,7 +2345,7 @@ const QUESTIONS_DATABASE = [
     "category": "Herança",
     "subcategory": "Probabilidade - heredograma descrito em texto",
     "difficulty": "Intermediária",
-    "prompt": "Em uma família, Joana e Pedro são ambos fenotipicamente normais para uma doença autossômica recessiva rara. Eles já tiveram um filho afetado pela doença. Joana está grávida novamente. Desconsiderando o sexo do bebe, qual a probabilidade de esse segundo filho também nascer afetado pela doença?",
+    "prompt": "Em uma família, Joana e Pedro são ambos fenotipicamente normais para uma doença autossômica recessiva rara. Eles já tiveram um filho afetado pela doença. Joana está grávida novamente. Desconsiderando o sexo do bebê, qual a probabilidade de esse segundo filho também nascer afetado pela doença?",
     "options": [
       {
         "letter": "A",
@@ -2377,17 +2377,17 @@ const QUESTIONS_DATABASE = [
     "category": "Alterações",
     "subcategory": "Cromossomo em anel",
     "difficulty": "Intermediária",
-    "prompt": "Uma alteração estrutural cromossômica rara envolve a perda dos segmentos terminais de ambos os bracos de um cromossomo (curto e longo), seguida pela fusão das duas extremidades remanescentes, formando uma estrutura circular fechada. Essa alteração é chamada de:",
+    "prompt": "Uma alteração estrutural cromossômica rara envolve a perda dos segmentos terminais de ambos os braços de um cromossomo (curto e longo), seguida pela fusão das duas extremidades remanescentes, formando uma estrutura circular fechada. Essa alteração é chamada de:",
     "options": [
       {
         "letter": "A",
         "text": "Cromossomo em anel.",
-        "rationale": "CORRETA. O cromossomo em anel se forma quando há perda dos segmentos terminais de ambos os bracos de um cromossomo, com fusão subsequente das duas pontas remanescentes, resultando em uma estrutura circular fechada; essa alteração costuma estar associada a perda de material genético (das regiões terminais perdidas) e pode causar diversas repercussões clínicas, dependendo do cromossomo envolvido e da quantidade de material perdido."
+        "rationale": "CORRETA. O cromossomo em anel se forma quando há perda dos segmentos terminais de ambos os braços de um cromossomo, com fusão subsequente das duas pontas remanescentes, resultando em uma estrutura circular fechada; essa alteração costuma estar associada a perda de material genético (das regiões terminais perdidas) e pode causar diversas repercussões clínicas, dependendo do cromossomo envolvido e da quantidade de material perdido."
       },
       {
         "letter": "B",
-        "text": "Translocação reciproca balanceada.",
-        "rationale": "Incorreta. A translocação reciproca envolve troca de segmentos entre DOIS cromossomos DIFERENTES, sem perda liquida de material (quando balanceada); o cromossomo em anel envolve um ÚNICO cromossomo, com perda de material das extremidades e formação de uma estrutura circular, um mecanismo distinto."
+        "text": "Translocação recíproca balanceada.",
+        "rationale": "Incorreta. A translocação recíproca envolve troca de segmentos entre DOIS cromossomos DIFERENTES, sem perda líquida de material (quando balanceada); o cromossomo em anel envolve um ÚNICO cromossomo, com perda de material das extremidades e formação de uma estrutura circular, um mecanismo distinto."
       },
       {
         "letter": "C",
@@ -2428,8 +2428,8 @@ const QUESTIONS_DATABASE = [
       },
       {
         "letter": "D",
-        "text": "Translocação reciproca.",
-        "rationale": "Incorreta. A translocação reciproca envolve troca de segmentos entre dois cromossomos diferentes (não homólogos); o caso descrito envolve apenas um cromossomo, com inversão interna de um segmento."
+        "text": "Translocação recíproca.",
+        "rationale": "Incorreta. A translocação recíproca envolve troca de segmentos entre dois cromossomos diferentes (não homólogos); o caso descrito envolve apenas um cromossomo, com inversão interna de um segmento."
       }
     ],
     "correctLetter": "C",
@@ -2455,8 +2455,8 @@ const QUESTIONS_DATABASE = [
       },
       {
         "letter": "C",
-        "text": "Criança com desenvolvimento neuropsicomotor tipico para a idade, sem malformações ou dismorfismos, em consulta de puericultura de rotina.",
-        "rationale": "Incorreta. Uma criança com desenvolvimento tipico, sem malformações ou dismorfismos, não apresenta indicação clínica para investigação cromossômica de rotina; o cariótipo costuma ser indicado diante de achados sugestivos de alteração cromossômica, não em avaliações de rotina sem suspeita clínica."
+        "text": "Criança com desenvolvimento neuropsicomotor típico para a idade, sem malformações ou dismorfismos, em consulta de puericultura de rotina.",
+        "rationale": "Incorreta. Uma criança com desenvolvimento típico, sem malformações ou dismorfismos, não apresenta indicação clínica para investigação cromossômica de rotina; o cariótipo costuma ser indicado diante de achados sugestivos de alteração cromossômica, não em avaliações de rotina sem suspeita clínica."
       },
       {
         "letter": "D",
@@ -2483,7 +2483,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "B",
         "text": "O risco é discretamente maior que o basal para a idade materna, mas continua baixo, pois a trissomia livre costuma ser esporádica.",
-        "rationale": "CORRETA. Diferente da forma por translocação (que pode ser herdada de um dos pais, portador de uma translocação balanceada, com risco de recorrência bem mais elevado), a trissomia livre do 21 geralmente resulta de um evento esporádico de não-disjunção meiótica, mais frequentemente durante a formação dos óvulos maternos; embora exista um discreto aumento do risco de recorrência em relação a população geral da mesma idade materna, esse risco permanece relativamente baixo, bem diferente do risco elevado associado a forma por translocação herdada."
+        "rationale": "CORRETA. Diferente da forma por translocação (que pode ser herdada de um dos pais, portador de uma translocação balanceada, com risco de recorrência bem mais elevado), a trissomia livre do 21 geralmente resulta de um evento esporádico de não-disjunção meiótica, mais frequentemente durante a formação dos óvulos maternos; embora exista um discreto aumento do risco de recorrência em relação à população geral da mesma idade materna, esse risco permanece relativamente baixo, bem diferente do risco elevado associado a forma por translocação herdada."
       },
       {
         "letter": "C",
@@ -2553,7 +2553,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "A colchicina seria utilizada para acelerar a divisão celular, aumentando o número de metáfases disponíveis para a análise.",
-        "rationale": "Incorreta. A colchicina não acelera a divisão; ela bloqueia o ciclo celular em metáfase ao impedir a formação do fuso mitótico, acumulando células nesse estagio para análise."
+        "rationale": "Incorreta. A colchicina não acelera a divisão; ela bloqueia o ciclo celular em metáfase ao impedir a formação do fuso mitótico, acumulando células nesse estágio para análise."
       },
       {
         "letter": "D",
@@ -2656,7 +2656,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "D",
         "text": "Isocromossomo.",
-        "rationale": "Incorreta. Um isocromossomo se forma quando o centrômero se divide de forma transversal (em vez de longitudinal), gerando um cromossomo com dois bracos idênticos e espelhados; isso é diferente de uma simples duplicação de segmento dentro do cromossomo original."
+        "rationale": "Incorreta. Um isocromossomo se forma quando o centrômero se divide de forma transversal (em vez de longitudinal), gerando um cromossomo com dois braços idênticos e espelhados; isso é diferente de uma simples duplicação de segmento dentro do cromossomo original."
       }
     ],
     "correctLetter": "B",
@@ -2766,7 +2766,7 @@ const QUESTIONS_DATABASE = [
     "category": "Alterações",
     "subcategory": "Monossomias - Turner",
     "difficulty": "Intermediária",
-    "prompt": "Recém-nascida apresenta pescoco alado, linfedema de extremidades e suspeita de coarctação da aorta; ao longo da infância, espera-se baixa estatura e disgenesia gonadal. O cariótipo está representado abaixo.",
+    "prompt": "Recém-nascida apresenta pescoço alado, linfedema de extremidades e suspeita de coarctação da aorta; ao longo da infância, espera-se baixa estatura e disgenesia gonadal. O cariótipo está representado abaixo.",
     "options": [
       {
         "letter": "A",
@@ -2790,7 +2790,7 @@ const QUESTIONS_DATABASE = [
       }
     ],
     "correctLetter": "B",
-    "clinicalPointers": "Apenas 1 X (45,X) = Síndrome de Turner (pescoco alado, baixa estatura).",
+    "clinicalPointers": "Apenas 1 X (45,X) = Síndrome de Turner (pescoço alado, baixa estatura).",
     "visualHtml": "<div class=\"flex justify-center bg-slate-50 border border-slate-200 rounded-xl p-3 overflow-x-auto\"><div class=\"img-wrap\"><svg style=\"max-width:100%;height:auto;display:block;margin:0 auto;\" height=\"768\" viewbox=\"0 0 486 768\" width=\"486\" xmlns=\"http://www.w3.org/2000/svg\">\n<text fill=\"#51606b\" font-family=\"Arial\" font-size=\"13\" font-weight=\"700\" x=\"14\" y=\"77.0\">A</text><g><rect fill=\"#8a97a3\" height=\"92\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"60\" y=\"26\"></rect><ellipse cx=\"67.5\" cy=\"72.0\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><g><rect fill=\"#8a97a3\" height=\"92\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"81\" y=\"26\"></rect><ellipse cx=\"88.5\" cy=\"72.0\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"78.0\" y=\"132\">1</text><g><rect fill=\"#8a97a3\" height=\"92\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"118\" y=\"26\"></rect><ellipse cx=\"125.5\" cy=\"60.96\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><g><rect fill=\"#8a97a3\" height=\"92\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"139\" y=\"26\"></rect><ellipse cx=\"146.5\" cy=\"60.96\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"136.0\" y=\"132\">2</text><g><rect fill=\"#8a97a3\" height=\"80\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"176\" y=\"38\"></rect><ellipse cx=\"183.5\" cy=\"78.0\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><g><rect fill=\"#8a97a3\" height=\"80\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"197\" y=\"38\"></rect><ellipse cx=\"204.5\" cy=\"78.0\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"194.0\" y=\"132\">3</text>\n<text fill=\"#51606b\" font-family=\"Arial\" font-size=\"13\" font-weight=\"700\" x=\"14\" y=\"197.0\">B</text><g><rect fill=\"#8a97a3\" height=\"80\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"60\" y=\"152\"></rect><ellipse cx=\"67.5\" cy=\"182.4\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><g><rect fill=\"#8a97a3\" height=\"80\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"81\" y=\"152\"></rect><ellipse cx=\"88.5\" cy=\"182.4\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"78.0\" y=\"246\">4</text><g><rect fill=\"#8a97a3\" height=\"80\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"118\" y=\"152\"></rect><ellipse cx=\"125.5\" cy=\"182.4\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><g><rect fill=\"#8a97a3\" height=\"80\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"139\" y=\"152\"></rect><ellipse cx=\"146.5\" cy=\"182.4\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"136.0\" y=\"246\">5</text>\n<text fill=\"#51606b\" font-family=\"Arial\" font-size=\"13\" font-weight=\"700\" x=\"14\" y=\"304.0\">C</text><g><rect fill=\"#8a97a3\" height=\"66\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"60\" y=\"266\"></rect><ellipse cx=\"67.5\" cy=\"291.08\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><g><rect fill=\"#8a97a3\" height=\"66\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"81\" y=\"266\"></rect><ellipse cx=\"88.5\" cy=\"291.08\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"78.0\" y=\"346\">6</text><g><rect fill=\"#8a97a3\" height=\"66\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"118\" y=\"266\"></rect><ellipse cx=\"125.5\" cy=\"291.08\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><g><rect fill=\"#8a97a3\" height=\"66\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"139\" y=\"266\"></rect><ellipse cx=\"146.5\" cy=\"291.08\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"136.0\" y=\"346\">7</text><g><rect fill=\"#8a97a3\" height=\"66\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"176\" y=\"266\"></rect><ellipse cx=\"183.5\" cy=\"291.08\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><g><rect fill=\"#8a97a3\" height=\"66\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"197\" y=\"266\"></rect><ellipse cx=\"204.5\" cy=\"291.08\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"194.0\" y=\"346\">8</text><g><rect fill=\"#8a97a3\" height=\"66\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"234\" y=\"266\"></rect><ellipse cx=\"241.5\" cy=\"291.08\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><g><rect fill=\"#8a97a3\" height=\"66\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"255\" y=\"266\"></rect><ellipse cx=\"262.5\" cy=\"291.08\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"252.0\" y=\"346\">9</text><g><rect fill=\"#8a97a3\" height=\"66\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"292\" y=\"266\"></rect><ellipse cx=\"299.5\" cy=\"291.08\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><g><rect fill=\"#8a97a3\" height=\"66\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"313\" y=\"266\"></rect><ellipse cx=\"320.5\" cy=\"291.08\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"310.0\" y=\"346\">10</text><g><rect fill=\"#8a97a3\" height=\"66\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"350\" y=\"266\"></rect><ellipse cx=\"357.5\" cy=\"291.08\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><g><rect fill=\"#8a97a3\" height=\"66\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"371\" y=\"266\"></rect><ellipse cx=\"378.5\" cy=\"291.08\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"368.0\" y=\"346\">11</text><g><rect fill=\"#8a97a3\" height=\"66\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"408\" y=\"266\"></rect><ellipse cx=\"415.5\" cy=\"291.08\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><g><rect fill=\"#8a97a3\" height=\"66\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"429\" y=\"266\"></rect><ellipse cx=\"436.5\" cy=\"291.08\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"426.0\" y=\"346\">12</text>\n<text fill=\"#51606b\" font-family=\"Arial\" font-size=\"13\" font-weight=\"700\" x=\"14\" y=\"401.0\">D</text><g><rect fill=\"#8a97a3\" height=\"60\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"60\" y=\"366\"></rect><ellipse cx=\"67.5\" cy=\"375.0\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse><circle cx=\"67.5\" cy=\"361\" fill=\"#8a97a3\" r=\"2.6\" stroke=\"#3d4a55\" stroke-width=\"1\"></circle></g><g><rect fill=\"#8a97a3\" height=\"60\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"81\" y=\"366\"></rect><ellipse cx=\"88.5\" cy=\"375.0\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse><circle cx=\"88.5\" cy=\"361\" fill=\"#8a97a3\" r=\"2.6\" stroke=\"#3d4a55\" stroke-width=\"1\"></circle></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"78.0\" y=\"440\">13</text><g><rect fill=\"#8a97a3\" height=\"60\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"118\" y=\"366\"></rect><ellipse cx=\"125.5\" cy=\"375.0\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse><circle cx=\"125.5\" cy=\"361\" fill=\"#8a97a3\" r=\"2.6\" stroke=\"#3d4a55\" stroke-width=\"1\"></circle></g><g><rect fill=\"#8a97a3\" height=\"60\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"139\" y=\"366\"></rect><ellipse cx=\"146.5\" cy=\"375.0\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse><circle cx=\"146.5\" cy=\"361\" fill=\"#8a97a3\" r=\"2.6\" stroke=\"#3d4a55\" stroke-width=\"1\"></circle></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"136.0\" y=\"440\">14</text><g><rect fill=\"#8a97a3\" height=\"60\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"176\" y=\"366\"></rect><ellipse cx=\"183.5\" cy=\"375.0\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse><circle cx=\"183.5\" cy=\"361\" fill=\"#8a97a3\" r=\"2.6\" stroke=\"#3d4a55\" stroke-width=\"1\"></circle></g><g><rect fill=\"#8a97a3\" height=\"60\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"197\" y=\"366\"></rect><ellipse cx=\"204.5\" cy=\"375.0\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse><circle cx=\"204.5\" cy=\"361\" fill=\"#8a97a3\" r=\"2.6\" stroke=\"#3d4a55\" stroke-width=\"1\"></circle></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"194.0\" y=\"440\">15</text>\n<text fill=\"#51606b\" font-family=\"Arial\" font-size=\"13\" font-weight=\"700\" x=\"14\" y=\"489.0\">E</text><g><rect fill=\"#8a97a3\" height=\"48\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"60\" y=\"460\"></rect><ellipse cx=\"67.5\" cy=\"484.0\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><g><rect fill=\"#8a97a3\" height=\"48\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"81\" y=\"460\"></rect><ellipse cx=\"88.5\" cy=\"484.0\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"78.0\" y=\"522\">16</text><g><rect fill=\"#8a97a3\" height=\"48\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"118\" y=\"460\"></rect><ellipse cx=\"125.5\" cy=\"478.24\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><g><rect fill=\"#8a97a3\" height=\"48\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"139\" y=\"460\"></rect><ellipse cx=\"146.5\" cy=\"478.24\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"136.0\" y=\"522\">17</text><g><rect fill=\"#8a97a3\" height=\"48\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"176\" y=\"460\"></rect><ellipse cx=\"183.5\" cy=\"478.24\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><g><rect fill=\"#8a97a3\" height=\"48\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"197\" y=\"460\"></rect><ellipse cx=\"204.5\" cy=\"478.24\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"194.0\" y=\"522\">18</text>\n<text fill=\"#51606b\" font-family=\"Arial\" font-size=\"13\" font-weight=\"700\" x=\"14\" y=\"567.0\">F</text><g><rect fill=\"#8a97a3\" height=\"40\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"60\" y=\"542\"></rect><ellipse cx=\"67.5\" cy=\"562.0\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><g><rect fill=\"#8a97a3\" height=\"40\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"81\" y=\"542\"></rect><ellipse cx=\"88.5\" cy=\"562.0\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"78.0\" y=\"596\">19</text><g><rect fill=\"#8a97a3\" height=\"40\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"118\" y=\"542\"></rect><ellipse cx=\"125.5\" cy=\"562.0\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><g><rect fill=\"#8a97a3\" height=\"40\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"139\" y=\"542\"></rect><ellipse cx=\"146.5\" cy=\"562.0\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"136.0\" y=\"596\">20</text>\n<text fill=\"#51606b\" font-family=\"Arial\" font-size=\"13\" font-weight=\"700\" x=\"14\" y=\"637.0\">G</text><g><rect fill=\"#8a97a3\" height=\"32\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"60\" y=\"616\"></rect><ellipse cx=\"67.5\" cy=\"620.8\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse><circle cx=\"67.5\" cy=\"611\" fill=\"#8a97a3\" r=\"2.6\" stroke=\"#3d4a55\" stroke-width=\"1\"></circle></g><g><rect fill=\"#8a97a3\" height=\"32\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"81\" y=\"616\"></rect><ellipse cx=\"88.5\" cy=\"620.8\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse><circle cx=\"88.5\" cy=\"611\" fill=\"#8a97a3\" r=\"2.6\" stroke=\"#3d4a55\" stroke-width=\"1\"></circle></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"78.0\" y=\"662\">21</text><g><rect fill=\"#8a97a3\" height=\"32\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"118\" y=\"616\"></rect><ellipse cx=\"125.5\" cy=\"620.8\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse><circle cx=\"125.5\" cy=\"611\" fill=\"#8a97a3\" r=\"2.6\" stroke=\"#3d4a55\" stroke-width=\"1\"></circle></g><g><rect fill=\"#8a97a3\" height=\"32\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"139\" y=\"616\"></rect><ellipse cx=\"146.5\" cy=\"620.8\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse><circle cx=\"146.5\" cy=\"611\" fill=\"#8a97a3\" r=\"2.6\" stroke=\"#3d4a55\" stroke-width=\"1\"></circle></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"136.0\" y=\"662\">22</text>\n<text fill=\"#51606b\" font-family=\"Arial\" font-size=\"13\" font-weight=\"700\" x=\"14\" y=\"720.0\">Sexuais</text><g><rect fill=\"#8a97a3\" height=\"66\" rx=\"7.5\" stroke=\"#3d4a55\" stroke-width=\"1.3\" width=\"15\" x=\"60\" y=\"682\"></rect><ellipse cx=\"67.5\" cy=\"707.08\" fill=\"#3d4a55\" opacity=\"0.55\" rx=\"9.0\" ry=\"3.2\"></ellipse></g><text fill=\"#51606b\" font-family=\"Arial\" font-size=\"11\" text-anchor=\"middle\" x=\"67.5\" y=\"762\">X</text>\n</svg></div></div>"
   },
   {
@@ -2869,8 +2869,8 @@ const QUESTIONS_DATABASE = [
     "options": [
       {
         "letter": "A",
-        "text": "Atraso anafasico (anaphase lag).",
-        "rationale": "CORRETA. No atraso anafasico, um cromossomo se movimenta mais lentamente durante a anáfase e deixa de ser incorporado a nenhum dos dois núcleos-filhos, sendo perdido; esse mecanismo gera uma célula monossômica, diferente da não-disjunção, que gera uma célula trissômica e outra monossômica simultaneamente."
+        "text": "Atraso anafásico (anaphase lag).",
+        "rationale": "CORRETA. No atraso anafásico, um cromossomo se movimenta mais lentamente durante a anáfase e deixa de ser incorporado a nenhum dos dois núcleos-filhos, sendo perdido; esse mecanismo gera uma célula monossômica, diferente da não-disjunção, que gera uma célula trissômica e outra monossômica simultaneamente."
       },
       {
         "letter": "B",
@@ -2880,7 +2880,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "Não-disjunção meiótica.",
-        "rationale": "Incorreta. A não-disjunção e a falha na separação de cromossomos ou cromátides, gerando simultaneamente uma célula com um cromossomo a mais e outra com um a menos; o mecanismo descrito no enunciado (perda isolada por lentidão no movimento) é distinto, chamado atraso anafasico."
+        "rationale": "Incorreta. A não-disjunção e a falha na separação de cromossomos ou cromátides, gerando simultaneamente uma célula com um cromossomo a mais e outra com um a menos; o mecanismo descrito no enunciado (perda isolada por lentidão no movimento) é distinto, chamado atraso anafásico."
       },
       {
         "letter": "D",
@@ -2889,7 +2889,7 @@ const QUESTIONS_DATABASE = [
       }
     ],
     "correctLetter": "A",
-    "clinicalPointers": "Atraso anafasico: cromossomo se perde na divisão (não incorporado a nenhuma célula-filha) = monossomia isolada."
+    "clinicalPointers": "Atraso anafásico: cromossomo se perde na divisão (não incorporado a nenhuma célula-filha) = monossomia isolada."
   },
   {
     "id": 77,
@@ -2998,7 +2998,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "A",
         "text": "O cariótipo convencional de alta resolução seria sempre suficiente isoladamente para detectar qualquer alteração estrutural pequena.",
-        "rationale": "Incorreta. O próprio enunciado descreve uma alteração pequena demais para o bandeamento convencional detectar; insistir nessa técnica isoladamente não resolveria a dúvida diagnostica."
+        "rationale": "Incorreta. O próprio enunciado descreve uma alteração pequena demais para o bandeamento convencional detectar; insistir nessa técnica isoladamente não resolveria a dúvida diagnóstica."
       },
       {
         "letter": "B",
@@ -3111,7 +3111,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "D",
         "text": "46,XY,5p-; Síndrome de Cri-du-chat.",
-        "rationale": "Incorreta. Cri-du-chat é uma alteração estrutural (deleção do braco curto do cromossomo 5), não uma trissomia numérica como a mostrada no cariótipo."
+        "rationale": "Incorreta. Cri-du-chat é uma alteração estrutural (deleção do braço curto do cromossomo 5), não uma trissomia numérica como a mostrada no cariótipo."
       }
     ],
     "correctLetter": "B",
@@ -3139,7 +3139,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "É uma alteração numérica, que reduz o total de cromossomos para 45 nas células da medula.",
-        "rationale": "Incorreta. A translocação reciproca troca segmentos entre cromossomos sem alterar o número total de cromossomos, que permanece 46."
+        "rationale": "Incorreta. A translocação recíproca troca segmentos entre cromossomos sem alterar o número total de cromossomos, que permanece 46."
       },
       {
         "letter": "D",
@@ -3172,7 +3172,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "Translocação recíproca balanceada do cromossomo 5.",
-        "rationale": "Incorreta. Na translocação reciproca balanceada, o material genético e trocado entre cromossomos, sem perda liquida; aqui há encurtamento visível, sugerindo perda de material (deleção), não troca balanceada."
+        "rationale": "Incorreta. Na translocação recíproca balanceada, o material genético e trocado entre cromossomos, sem perda líquida; aqui há encurtamento visível, sugerindo perda de material (deleção), não troca balanceada."
       },
       {
         "letter": "D",
@@ -3191,31 +3191,31 @@ const QUESTIONS_DATABASE = [
     "category": "Alterações",
     "subcategory": "Isocromossomo",
     "difficulty": "Avançada",
-    "prompt": "Em um exame citogenético, identifica-se um cromossomo anormal composto por dois bracos idênticos e espelhados (por exemplo, dois bracos longos do cromossomo X, sem nenhum braço curto), resultante da divisão transversal (em vez de longitudinal) do centrômero durante a divisão celular. Essa alteração estrutural é chamada de:",
+    "prompt": "Em um exame citogenético, identifica-se um cromossomo anormal composto por dois braços idênticos e espelhados (por exemplo, dois braços longos do cromossomo X, sem nenhum braço curto), resultante da divisão transversal (em vez de longitudinal) do centrômero durante a divisão celular. Essa alteração estrutural é chamada de:",
     "options": [
       {
         "letter": "A",
         "text": "Isocromossomo.",
-        "rationale": "CORRETA. O isocromossomo se forma quando o centrômero se divide de forma transversal (perpendicular ao eixo normal), em vez de longitudinal; o resultado é um cromossomo anormal com dois bracos geneticamente idênticos e espelhados (por exemplo, dois bracos longos, sem nenhum braço curto, ou vice-versa), uma alteração estrutural bem descrita, inclusive associada a certos casos de Síndrome de Turner (isocromossomo do braço longo do X)."
+        "rationale": "CORRETA. O isocromossomo se forma quando o centrômero se divide de forma transversal (perpendicular ao eixo normal), em vez de longitudinal; o resultado é um cromossomo anormal com dois braços geneticamente idênticos e espelhados (por exemplo, dois braços longos, sem nenhum braço curto, ou vice-versa), uma alteração estrutural bem descrita, inclusive associada a certos casos de Síndrome de Turner (isocromossomo do braço longo do X)."
       },
       {
         "letter": "B",
         "text": "Translocação Robertsoniana.",
-        "rationale": "Incorreta. A translocação Robertsoniana envolve a fusão de DOIS cromossomos acrocêntricos DIFERENTES pelo centrômero, não a divisão anormal do centrômero de um ÚNICO cromossomo gerando bracos espelhados, como descrito no isocromossomo."
+        "rationale": "Incorreta. A translocação Robertsoniana envolve a fusão de DOIS cromossomos acrocêntricos DIFERENTES pelo centrômero, não a divisão anormal do centrômero de um ÚNICO cromossomo gerando braços espelhados, como descrito no isocromossomo."
       },
       {
         "letter": "C",
         "text": "Inversão pericêntrica.",
-        "rationale": "Incorreta. A inversão pericêntrica envolve a quebra em dois pontos que incluem o centrômero, com o segmento se reincorporando de forma invertida, mas mantendo dois bracos DIFERENTES (não idênticos e espelhados como no isocromossomo)."
+        "rationale": "Incorreta. A inversão pericêntrica envolve a quebra em dois pontos que incluem o centrômero, com o segmento se reincorporando de forma invertida, mas mantendo dois braços DIFERENTES (não idênticos e espelhados como no isocromossomo)."
       },
       {
         "letter": "D",
         "text": "Duplicação em tandem.",
-        "rationale": "Incorreta. A duplicação em tandem envolve a repetição de um segmento específico dentro do mesmo cromossomo, lado a lado; não envolve a divisão anormal do centrômero nem a formação de dois bracos inteiros idênticos e espelhados."
+        "rationale": "Incorreta. A duplicação em tandem envolve a repetição de um segmento específico dentro do mesmo cromossomo, lado a lado; não envolve a divisão anormal do centrômero nem a formação de dois braços inteiros idênticos e espelhados."
       }
     ],
     "correctLetter": "A",
-    "clinicalPointers": "Isocromossomo: centrômero se divide 'errado' (transversal), gerando 2 bracos idênticos e espelhados."
+    "clinicalPointers": "Isocromossomo: centrômero se divide 'errado' (transversal), gerando 2 braços idênticos e espelhados."
   },
   {
     "id": 87,
@@ -3292,12 +3292,12 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "A",
         "text": "Fusão de dois acrocêntricos pelos centrômeros, com perda dos braços curtos, em geral sem efeito clínico no portador.",
-        "rationale": "CORRETA. Na translocação Robertsoniana, dois cromossomos acrocêntricos (como os dos grupos D e G) se fundem pelo centrômero, com perda dos bracos curtos (que contém material geneticamente pouco relevante); um portador balanceado costuma ser fenotipicamente normal, mas pode gerar descendentes com Síndrome de Down familial."
+        "rationale": "CORRETA. Na translocação Robertsoniana, dois cromossomos acrocêntricos (como os dos grupos D e G) se fundem pelo centrômero, com perda dos braços curtos (que contêm material geneticamente pouco relevante); um portador balanceado costuma ser fenotipicamente normal, mas pode gerar descendentes com Síndrome de Down familial."
       },
       {
         "letter": "B",
         "text": "Troca recíproca de segmentos entre dois cromossomos não homólogos, sem perda de material genético, com portador normal.",
-        "rationale": "Incorreta. Essa descrição corresponde a translocação reciproca, um tipo diferente de rearranjo, não a translocação Robertsoniana."
+        "rationale": "Incorreta. Essa descrição corresponde a translocação recíproca, um tipo diferente de rearranjo, não a translocação Robertsoniana."
       },
       {
         "letter": "C",
@@ -3311,7 +3311,7 @@ const QUESTIONS_DATABASE = [
       }
     ],
     "correctLetter": "A",
-    "clinicalPointers": "Robertsoniana: fusão de 2 acrocêntricos pelo centrômero, com perda dos bracos curtos.",
+    "clinicalPointers": "Robertsoniana: fusão de 2 acrocêntricos pelo centrômero, com perda dos braços curtos.",
     "sourceLabel": "Questão antiga"
   },
   {
@@ -3329,8 +3329,8 @@ const QUESTIONS_DATABASE = [
       },
       {
         "letter": "B",
-        "text": "Na não-disjunção mitotica em uma célula do embrião já em desenvolvimento, após a fertilização normal.",
-        "rationale": "CORRETA. O mosaicismo ocorre quando o embrião inicia o desenvolvimento com cariótipo normal (fertilização entre gametas normais dos pais) e, em algum momento das divisões mitoticas subsequentes, ocorre não-disjunção em uma célula, gerando duas linhagens celulares distintas no mesmo indivíduo."
+        "text": "Na não-disjunção mitótica em uma célula do embrião já em desenvolvimento, após a fertilização normal.",
+        "rationale": "CORRETA. O mosaicismo ocorre quando o embrião inicia o desenvolvimento com cariótipo normal (fertilização entre gametas normais dos pais) e, em algum momento das divisões mitóticas subsequentes, ocorre não-disjunção em uma célula, gerando duas linhagens celulares distintas no mesmo indivíduo."
       },
       {
         "letter": "C",
@@ -3351,51 +3351,51 @@ const QUESTIONS_DATABASE = [
     "id": 91,
     "code": "MUT-29",
     "category": "Mutações",
-    "subcategory": "Códon de inicio e mutações na região 5' não traduzida",
+    "subcategory": "Códon de início e mutações na região 5' não traduzida",
     "difficulty": "Intermediária",
-    "prompt": "O códon AUG, além de codificar o aminoácido metionina, também funciona como o códon de inicio da tradução na grande maioria dos genes. Se uma mutação pontual altera especificamente esse códon de inicio (por exemplo, transformando AUG em outro códon qualquer que não seja de inicio), qual o efeito mais provável sobre a produção da proteína correspondente?",
+    "prompt": "O códon AUG, além de codificar o aminoácido metionina, também funciona como o códon de início da tradução na grande maioria dos genes. Se uma mutação pontual altera especificamente esse códon de início (por exemplo, transformando AUG em outro códon qualquer que não seja de início), qual o efeito mais provável sobre a produção da proteína correspondente?",
     "options": [
       {
         "letter": "A",
         "text": "Nenhum efeito ocorreria, pois o ribossomo sempre encontraria um ponto alternativo para iniciar a tradução, ignorando a mutação no códon original.",
-        "rationale": "Incorreta. Embora, em alguns casos raros, possa haver reconhecimento de um códon de inicio alternativo mais adiante (com efeitos ainda assim alterados sobre a proteína), a afirmação de que 'nunca há efeito' é incorreta; a perda do códon de inicio original tipicamente compromete significativamente ou impede a tradução normal da proteína."
+        "rationale": "Incorreta. Embora, em alguns casos raros, possa haver reconhecimento de um códon de início alternativo mais adiante (com efeitos ainda assim alterados sobre a proteína), a afirmação de que 'nunca há efeito' é incorreta; a perda do códon de início original tipicamente compromete significativamente ou impede a tradução normal da proteína."
       },
       {
         "letter": "B",
         "text": "A tradução pode ser comprometida ou impedida, pois o ribossomo depende do AUG para posicionar corretamente o início da síntese.",
-        "rationale": "CORRETA. O códon AUG desempenha um papel duplo crucial: além de codificar metionina, ele sinaliza ao ribossomo onde exatamente iniciar a tradução; a perda desse códon de inicio específico por mutação tipicamente compromete seriamente ou impede a iniciação correta da tradução daquele gene, prejudicando significativamente (ou impedindo) a produção da proteína esperada a partir daquele ponto de partida."
+        "rationale": "CORRETA. O códon AUG desempenha um papel duplo crucial: além de codificar metionina, ele sinaliza ao ribossomo onde exatamente iniciar a tradução; a perda desse códon de início específico por mutação tipicamente compromete seriamente ou impede a iniciação correta da tradução daquele gene, prejudicando significativamente (ou impedindo) a produção da proteína esperada a partir daquele ponto de partida."
       },
       {
         "letter": "C",
         "text": "O efeito seria idêntico ao de qualquer mutação silenciosa, sem qualquer repercussão sobre a sequência final da proteína produzida.",
-        "rationale": "Incorreta. Ao contrário de uma mutação silenciosa (que não altera o aminoácido final), a perda do códon de inicio tem potencial de comprometer todo o processo de iniciação da tradução daquele gene, um efeito bem mais significativo do que uma simples mutação silenciosa."
+        "rationale": "Incorreta. Ao contrário de uma mutação silenciosa (que não altera o aminoácido final), a perda do códon de início tem potencial de comprometer todo o processo de iniciação da tradução daquele gene, um efeito bem mais significativo do que uma simples mutação silenciosa."
       },
       {
         "letter": "D",
         "text": "Esse tipo de mutação afetaria apenas genes localizados no cromossomo mitocondrial, nunca comprometendo genes nucleares do genoma.",
-        "rationale": "Incorreta. O códon AUG como sinal de inicio de tradução é um princípio geral valido tanto para genes nucleares quanto, com algumas variações no código genético mitocondrial, para genes mitocondriais; não é um fenômeno restrito exclusivamente ao genoma mitocondrial."
+        "rationale": "Incorreta. O códon AUG como sinal de início de tradução é um princípio geral válido tanto para genes nucleares quanto, com algumas variações no código genético mitocondrial, para genes mitocondriais; não é um fenômeno restrito exclusivamente ao genoma mitocondrial."
       }
     ],
     "correctLetter": "B",
-    "clinicalPointers": "AUG = códon de inicio da tradução. Mutar esse códon compromete o inicio da síntese da proteína."
+    "clinicalPointers": "AUG = códon de início da tradução. Mutar esse códon compromete o início da síntese da proteína."
   },
   {
     "id": 92,
     "code": "MUT-28",
     "category": "Mutações",
-    "subcategory": "Mutação missense com efeito mínimo x critico",
+    "subcategory": "Mutação missense com efeito mínimo x crítico",
     "difficulty": "Intermediária",
-    "prompt": "Duas mutações missense diferentes ocorrem em dois pontos distintos da mesma proteína enzimática: a Mutação 1 altera um aminoácido localizado em uma região periférica da proteína, distante do sítio ativo (local onde ocorre a reação química catalisada pela enzima); a Mutação 2 altera um aminoácido localizado exatamente dentro do sítio ativo da enzima. Considerando a localização estrutural de cada mutação, qual delas provavelmente tera maior impacto sobre a função (atividade catalítica) da proteína?",
+    "prompt": "Duas mutações missense diferentes ocorrem em dois pontos distintos da mesma proteína enzimática: a Mutação 1 altera um aminoácido localizado em uma região periférica da proteína, distante do sítio ativo (local onde ocorre a reação química catalisada pela enzima); a Mutação 2 altera um aminoácido localizado exatamente dentro do sítio ativo da enzima. Considerando a localização estrutural de cada mutação, qual delas provavelmente terá maior impacto sobre a função (atividade catalítica) da proteína?",
     "options": [
       {
         "letter": "A",
         "text": "A Mutação 1, na região periférica, pois qualquer alteração na superfície da proteína sempre comprometeria mais a função do que alterações internas.",
-        "rationale": "Incorreta. De forma geral, alterações distantes do sítio funcionalmente critico (como o sítio ativo de uma enzima) tendem a ter MENOR impacto sobre a função da proteína do que alterações diretamente no sítio ativo, não o contrário."
+        "rationale": "Incorreta. De forma geral, alterações distantes do sítio funcionalmente crítico (como o sítio ativo de uma enzima) tendem a ter MENOR impacto sobre a função da proteína do que alterações diretamente no sítio ativo, não o contrário."
       },
       {
         "letter": "B",
         "text": "A Mutação 2, no sítio ativo, pois alterar a região funcionalmente crítica tende a comprometer mais a atividade catalítica.",
-        "rationale": "CORRETA. Embora ambas sejam mutações missense (trocando um único aminoácido), o IMPACTO funcional de uma mutação depende fortemente de sua localização dentro da estrutura tridimensional da proteína; alterações no sítio ativo (a região diretamente responsável pela atividade catalítica da enzima) têm maior probabilidade de comprometer significativamente a função da proteína do que alterações em regiões periféricas, mais distantes do local funcionalmente critico, mesmo que ambas sejam, tecnicamente, apenas uma única substituição de aminoácido."
+        "rationale": "CORRETA. Embora ambas sejam mutações missense (trocando um único aminoácido), o IMPACTO funcional de uma mutação depende fortemente de sua localização dentro da estrutura tridimensional da proteína; alterações no sítio ativo (a região diretamente responsável pela atividade catalítica da enzima) têm maior probabilidade de comprometer significativamente a função da proteína do que alterações em regiões periféricas, mais distantes do local funcionalmente crítico, mesmo que ambas sejam, tecnicamente, apenas uma única substituição de aminoácido."
       },
       {
         "letter": "C",
@@ -3405,7 +3405,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "D",
         "text": "Nenhuma das duas mutações teria qualquer impacto sobre a função da proteína, pois mutações missense nunca afetam a atividade enzimática.",
-        "rationale": "Incorreta. Mutações missense podem sim afetar significativamente a atividade de uma proteína, especialmente quando localizadas em regiões funcionalmente criticas, como o sítio ativo de uma enzima, o que contrária essa afirmação."
+        "rationale": "Incorreta. Mutações missense podem sim afetar significativamente a atividade de uma proteína, especialmente quando localizadas em regiões funcionalmente críticas, como o sítio ativo de uma enzima, o que contraria essa afirmação."
       }
     ],
     "correctLetter": "B",
@@ -3449,7 +3449,7 @@ const QUESTIONS_DATABASE = [
     "category": "Mutações",
     "subcategory": "Mutação germinativa e câncer hereditário",
     "difficulty": "Intermediária",
-    "prompt": "Em relação ao câncer hereditário, uma mutação presente nas células germinativas (óvulos ou espermatozoides) de um indivíduo tem uma implicação importante que a diferência de uma mutação adquirida apenas em uma célula somática específica já no adulto. Qual e essa implicação?",
+    "prompt": "Em relação ao câncer hereditário, uma mutação presente nas células germinativas (óvulos ou espermatozoides) de um indivíduo tem uma implicação importante que a diferencia de uma mutação adquirida apenas em uma célula somática específica já no adulto. Qual é essa implicação?",
     "options": [
       {
         "letter": "A",
@@ -3579,7 +3579,7 @@ const QUESTIONS_DATABASE = [
     "category": "Mutações",
     "subcategory": "Efeito de mutações em regiões regulatórias",
     "difficulty": "Intermediária",
-    "prompt": "Nem todas as mutações relevantes para a expressão de um gene ocorrem dentro da própria sequência codificante (éxons). Uma mutação localizada na região promotora de um gene (uma região regulatória situada antes do inicio da sequência codificante, importante para o recrutamento da maquinaria de transcrição) pode ter qual tipo de efeito sobre esse gene, mesmo sem alterar diretamente a sequência de aminoácidos da proteína?",
+    "prompt": "Nem todas as mutações relevantes para a expressão de um gene ocorrem dentro da própria sequência codificante (éxons). Uma mutação localizada na região promotora de um gene (uma região regulatória situada antes do início da sequência codificante, importante para o recrutamento da maquinaria de transcrição) pode ter qual tipo de efeito sobre esse gene, mesmo sem alterar diretamente a sequência de aminoácidos da proteína?",
     "options": [
       {
         "letter": "A",
@@ -3652,7 +3652,7 @@ const QUESTIONS_DATABASE = [
       },
       {
         "letter": "B",
-        "text": "Missense conservativa e aquela que preserva completamente a função da proteína, sem exceção; a não conservativa sempre inativa totalmente a proteína.",
+        "text": "Missense conservativa é aquela que preserva completamente a função da proteína, sem exceção; a não conservativa sempre inativa totalmente a proteína.",
         "rationale": "Incorreta. Essa é uma simplificação excessiva; a classificação se baseia na semelhança físico-química entre os aminoácidos, não em uma garantia absoluta de preservação ou perda total da função proteica, que pode depender também da localização da mutação na proteína."
       },
       {
@@ -3749,7 +3749,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "B",
         "text": "O códon resultante não corresponde a nenhum aminoácido da tabela, gerando uma mutação sem sentido (nonsense) na proteína.",
-        "rationale": "Incorreta. O novo códon (GUA no mRNA) corresponde normalmente a Valina, um aminoácido valido; não se trata de um códon de parada (stop códon), portanto não é uma mutação sem sentido."
+        "rationale": "Incorreta. O novo códon (GUA no mRNA) corresponde normalmente a Valina, um aminoácido válido; não se trata de um códon de parada (stop códon), portanto não é uma mutação sem sentido."
       },
       {
         "letter": "C",
@@ -3777,7 +3777,7 @@ const QUESTIONS_DATABASE = [
     "options": [
       {
         "letter": "A",
-        "text": "A radiação UV quebra diretamente as ligações fosfodiéster da fita de DNA, fragmentando-a em pequenos pedacos de forma aleatória.",
+        "text": "A radiação UV quebra diretamente as ligações fosfodiéster da fita de DNA, fragmentando-a em pequenos pedaços de forma aleatória.",
         "rationale": "Incorreta. Embora danos ao DNA possam eventualmente levar a quebras, o mecanismo primário e característico da radiação UV não é a fragmentação aleatória da fita, e sim a formação de ligações covalentes anormais entre bases adjacentes."
       },
       {
@@ -3858,7 +3858,7 @@ const QUESTIONS_DATABASE = [
       },
       {
         "letter": "D",
-        "text": "Nenhuma técnica laboratorial atual e capaz de identificar mutações de ponto; só alterações cromossômicas grandes são detectáveis.",
+        "text": "Nenhuma técnica laboratorial atual é capaz de identificar mutações de ponto; só alterações cromossômicas grandes são detectáveis.",
         "rationale": "Incorreta. Técnicas moleculares como a PCR seguida de sequenciamento são rotineiramente utilizadas para identificar mutações de ponto específicas, sendo uma prática bem estabelecida em laboratórios de genética molecular."
       }
     ],
@@ -3935,7 +3935,7 @@ const QUESTIONS_DATABASE = [
     "category": "Mutações",
     "subcategory": "Mutações espontâneas e transmissão germinativa x somática",
     "difficulty": "Intermediária",
-    "prompt": "A respeito das mutações no DNA em seres humanos, analise as assertivas a seguir:\nI. As mutações espontâneas são erros nos processos celulares que ocorrem sem influência de agentes externos.\nII. As mutações gênicas em células da linhagem somática podem ser transmitidas aos descendentes, da mesma forma que inserções e deleções na linhagem germinativa.\nIII. As mutações gênicas podem ser prejudiciais as células, por terem a capacidade de alterar processos vitais como a replicação do DNA e a transcrição gênica.\n\nAssinale a alternativa que contém apenas as assertivas corretas.",
+    "prompt": "A respeito das mutações no DNA em seres humanos, analise as assertivas a seguir:\nI. As mutações espontâneas são erros nos processos celulares que ocorrem sem influência de agentes externos.\nII. As mutações gênicas em células da linhagem somática podem ser transmitidas aos descendentes, da mesma forma que inserções e deleções na linhagem germinativa.\nIII. As mutações gênicas podem ser prejudiciais às células, por terem a capacidade de alterar processos vitais como a replicação do DNA e a transcrição gênica.\n\nAssinale a alternativa que contém apenas as assertivas corretas.",
     "options": [
       {
         "letter": "A",
@@ -3945,12 +3945,12 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "B",
         "text": "I e III estão corretas, apenas.",
-        "rationale": "CORRETA. A assertiva I está correta: mutações espontâneas são erros que ocorrem nos processos celulares (como a replicação do DNA) sem qualquer influência de agentes mutagênicos externos. A assertiva II está incorreta: mutações em células da linhagem somática NÃO são transmitidas aos descendentes, pois não afetam as células da linhagem germinativa (óvulos/espermatozoides) - apenas mutações germinativas são hereditárias. A assertiva III está correta: mutações gênicas podem, sim, ser prejudiciais as células ao alterar processos vitais como a replicação do DNA e a transcrição gênica."
+        "rationale": "CORRETA. A assertiva I está correta: mutações espontâneas são erros que ocorrem nos processos celulares (como a replicação do DNA) sem qualquer influência de agentes mutagênicos externos. A assertiva II está incorreta: mutações em células da linhagem somática NÃO são transmitidas aos descendentes, pois não afetam as células da linhagem germinativa (óvulos/espermatozoides) - apenas mutações germinativas são hereditárias. A assertiva III está correta: mutações gênicas podem, sim, ser prejudiciais às células ao alterar processos vitais como a replicação do DNA e a transcrição gênica."
       },
       {
         "letter": "C",
         "text": "Apenas a assertiva I está correta.",
-        "rationale": "Incorreta. A assertiva I e, de fato, verdadeira, mas a assertiva III também está correta (mutações gênicas podem alterar processos vitais como replicação e transcrição); não é apenas a I que está certa."
+        "rationale": "Incorreta. A assertiva I é, de fato, verdadeira, mas a assertiva III também está correta (mutações gênicas podem alterar processos vitais como replicação e transcrição); não é apenas a I que está certa."
       },
       {
         "letter": "D",
@@ -3972,7 +3972,7 @@ const QUESTIONS_DATABASE = [
     "options": [
       {
         "letter": "A",
-        "text": "O numero de repetições tende a permanecer absolutamente fixo e estável ao longo de todas as gerações futuras da família.",
+        "text": "O número de repetições tende a permanecer absolutamente fixo e estável ao longo de todas as gerações futuras da família.",
         "rationale": "Incorreta. Uma característica marcante das mutações dinâmicas é justamente sua INSTABILIDADE ao longo das gerações; o número de repetições tende a poder aumentar ainda mais (não permanecer fixo) a cada nova transmissão, o que é o oposto do descrito nessa alternativa."
       },
       {
@@ -4000,12 +4000,12 @@ const QUESTIONS_DATABASE = [
     "category": "Mutações",
     "subcategory": "Matriz de leitura (reading frame)",
     "difficulty": "Básica",
-    "prompt": "Durante a tradução, o ribossomo lê o mRNA em trincas consecutivas e não sobrepostas, a partir de um ponto de inicio fixo (códon AUG). Esse conceito é chamado de matriz (ou fase) de leitura. Por que inserções ou deleções que NÃO sejam múltiplos de três são consideradas mais disruptivas para a proteína do que substituições simples de uma única base?",
+    "prompt": "Durante a tradução, o ribossomo lê o mRNA em trincas consecutivas e não sobrepostas, a partir de um ponto de início fixo (códon AUG). Esse conceito é chamado de matriz (ou fase) de leitura. Por que inserções ou deleções que NÃO sejam múltiplos de três são consideradas mais disruptivas para a proteína do que substituições simples de uma única base?",
     "options": [
       {
         "letter": "A",
-        "text": "Porque alteram o ponto de inicio da tradução, impedindo que o ribossomo reconheça corretamente o códon AUG inicial.",
-        "rationale": "Incorreta. Inserções ou deleções dentro da região codificante, após o inicio já estabelecido, não removem o códon de inicio em si; o problema está no deslocamento da leitura dos códons SEGUINTES ao ponto da alteração, não no reconhecimento do inicio."
+        "text": "Porque alteram o ponto de início da tradução, impedindo que o ribossomo reconheça corretamente o códon AUG inicial.",
+        "rationale": "Incorreta. Inserções ou deleções dentro da região codificante, após o início já estabelecido, não removem o códon de início em si; o problema está no deslocamento da leitura dos códons SEGUINTES ao ponto da alteração, não no reconhecimento do início."
       },
       {
         "letter": "B",
@@ -4032,12 +4032,12 @@ const QUESTIONS_DATABASE = [
     "category": "Mutações",
     "subcategory": "Reparo por excisão de nucleotídeos",
     "difficulty": "Avançada",
-    "prompt": "Um dos principais mecanismos celulares de reparo de danos ao DNA e o reparo por excisão de nucleotídeos (nucleotide excision repair, NER), particularmente importante para corrigir lesões como os dímeros de pirimidina causados pela radiação UV. De forma geral, qual a logica básica desse mecanismo de reparo?",
+    "prompt": "Um dos principais mecanismos celulares de reparo de danos ao DNA e o reparo por excisão de nucleotídeos (nucleotide excision repair, NER), particularmente importante para corrigir lesões como os dímeros de pirimidina causados pela radiação UV. De forma geral, qual a lógica básica desse mecanismo de reparo?",
     "options": [
       {
         "letter": "A",
         "text": "Enzimas reconhecem a distorção, excisam o segmento lesado, a polimerase preenche a lacuna usando a fita íntegra e a ligase sela.",
-        "rationale": "CORRETA. O reparo por excisão de nucleotídeos segue uma logica geral de: reconhecimento da distorção estrutural causada pela lesão no DNA; excisão (remoção) do segmento danificado, incluindo uma pequena região ao redor da lesão; síntese de uma nova fita naquele trecho, utilizando a fita complementar (não danificada) como molde pela DNA polimerase; e, por fim, selamento da nova fita a fita original pela enzima DNA ligase, restaurando a continuidade da dupla hélice."
+        "rationale": "CORRETA. O reparo por excisão de nucleotídeos segue uma lógica geral de: reconhecimento da distorção estrutural causada pela lesão no DNA; excisão (remoção) do segmento danificado, incluindo uma pequena região ao redor da lesão; síntese de uma nova fita naquele trecho, utilizando a fita complementar (não danificada) como molde pela DNA polimerase; e, por fim, selamento da nova fita a fita original pela enzima DNA ligase, restaurando a continuidade da dupla hélice."
       },
       {
         "letter": "B",
@@ -4068,7 +4068,7 @@ const QUESTIONS_DATABASE = [
     "options": [
       {
         "letter": "A",
-        "text": "Mutações silenciosas são sempre eliminadas rapidamente da população pela seleção natural, por serem consideradas prejudiciais ao individuo.",
+        "text": "Mutações silenciosas são sempre eliminadas rapidamente da população pela seleção natural, por serem consideradas prejudiciais ao indivíduo.",
         "rationale": "Incorreta. Justamente o oposto: por não alterarem a proteína final, mutações silenciosas tendem a não sofrer pressão seletiva direta, podendo persistir ou se espalhar na população de forma relativamente neutra."
       },
       {
@@ -4078,7 +4078,7 @@ const QUESTIONS_DATABASE = [
       },
       {
         "letter": "C",
-        "text": "Mutações silenciosas sempre aumentam a aptidão (fitness) do individuo, sendo por definição sempre vantajosas para sua sobrevivência.",
+        "text": "Mutações silenciosas sempre aumentam a aptidão (fitness) do indivíduo, sendo por definição sempre vantajosas para sua sobrevivência.",
         "rationale": "Incorreta. Por definição, mutações silenciosas não alteram a proteína final, o que significa que, na maioria dos casos, não conferem vantagem nem desvantagem adaptativa direta, não sendo caracterizadas como sempre vantajosas."
       },
       {
@@ -4147,7 +4147,7 @@ const QUESTIONS_DATABASE = [
       },
       {
         "letter": "D",
-        "text": "Missense sempre e mais grave que nonsense, pois altera um numero muito maior de aminoácidos ao longo de toda a proteína.",
+        "text": "Missense sempre e mais grave que nonsense, pois altera um número muito maior de aminoácidos ao longo de toda a proteína.",
         "rationale": "Incorreta. A missense altera apenas um único aminoácido na proteína; já a nonsense trunca a proteína, eliminando toda a porção após o códon de parada prematuro, o que costuma ter efeito mais drástico sobre a função proteica."
       }
     ],
@@ -4206,7 +4206,7 @@ const QUESTIONS_DATABASE = [
       },
       {
         "letter": "C",
-        "text": "Apenas o aminoácido correspondente ao ponto exato da inserção sera alterado; todos os demais permanecem inalterados na proteína.",
+        "text": "Apenas o aminoácido correspondente ao ponto exato da inserção será alterado; todos os demais permanecem inalterados na proteína.",
         "rationale": "Incorreta. Esse seria o efeito de uma substituição de base única (mutação de ponto), não de uma inserção; a inserção de um nucleotídeo desloca a leitura de TODOS os códons subsequentes, não apenas um."
       },
       {
@@ -4229,7 +4229,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "A",
         "text": "Deleções de um ou dois nucleotídeos sempre levam a morte celular imediata, enquanto deleções de três nunca têm qualquer efeito.",
-        "rationale": "Incorreta. Nenhuma das duas situações garante morte celular ou ausência total de efeito; o que de fato diferência as duas é o impacto sobre a matriz de leitura dos códons subsequentes, não um resultado binário de vida ou morte celular."
+        "rationale": "Incorreta. Nenhuma das duas situações garante morte celular ou ausência total de efeito; o que de fato diferencia as duas é o impacto sobre a matriz de leitura dos códons subsequentes, não um resultado binário de vida ou morte celular."
       },
       {
         "letter": "B",
@@ -4272,7 +4272,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "O código genético é diferente em cada espécie, sem qualquer universalidade.",
-        "rationale": "Incorreta. O código genético é classicamente descrito como quase universal entre os seres vivos (com raras exceções conhecidas), não como algo específico e distinto para cada especie; degenerescência e universalidade são propriedades distintas do código genético."
+        "rationale": "Incorreta. O código genético é classicamente descrito como quase universal entre os seres vivos (com raras exceções conhecidas), não como algo específico e distinto para cada espécie; degenerescência e universalidade são propriedades distintas do código genético."
       },
       {
         "letter": "D",
@@ -4289,12 +4289,12 @@ const QUESTIONS_DATABASE = [
     "category": "Mutações",
     "subcategory": "Frameshift e códon de parada prematuro",
     "difficulty": "Intermediária",
-    "prompt": "Uma deleção de dois nucleotídeos ocorre no inicio da região codificante de um gene. Além de alterar a identidade dos aminoácidos a partir do ponto da deleção, esse tipo de mutação frequentemente resulta em outro efeito grave sobre a proteína final. Qual e esse efeito adicional comum?",
+    "prompt": "Uma deleção de dois nucleotídeos ocorre no início da região codificante de um gene. Além de alterar a identidade dos aminoácidos a partir do ponto da deleção, esse tipo de mutação frequentemente resulta em outro efeito grave sobre a proteína final. Qual é esse efeito adicional comum?",
     "options": [
       {
         "letter": "A",
         "text": "A proteína resultante costuma ser mais longa que a original, com aminoácidos extras adicionados ao final da cadeia.",
-        "rationale": "Incorreta. O efeito mais tipico do frameshift não é o alongamento da proteína, e sim, na maioria dos casos, seu truncamento precoce, pela razão explicada na alternativa correta."
+        "rationale": "Incorreta. O efeito mais típico do frameshift não é o alongamento da proteína, e sim, na maioria dos casos, seu truncamento precoce, pela razão explicada na alternativa correta."
       },
       {
         "letter": "B",
@@ -4326,7 +4326,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "A",
         "text": "A sonda TaqMan é marcada com um fluoróforo numa extremidade e um quencher na outra; a Taq polimerase a degrada durante a extensão, separando os dois e gerando sinal fluorescente.",
-        "rationale": "CORRETA. A sonda TaqMan se liga especificamente a uma sequência interna ao segmento amplificado, entre os dois primers; ela contém um fluoróforo (emissor) é um quencher (supressor) próximos, o que mantém a fluorescência suprimida enquanto a sonda está intacta. Durante a etapa de extensao, a atividade de exonuclease 5'-3' da Taq DNA polimerase degrada a sonda a medida que avança, liberando o fluoróforo do quencher e permitindo a emissão de fluorescência detectável, proporcionalmente a quantidade de DNA amplificado a cada ciclo."
+        "rationale": "CORRETA. A sonda TaqMan se liga especificamente a uma sequência interna ao segmento amplificado, entre os dois primers; ela contém um fluoróforo (emissor) é um quencher (supressor) próximos, o que mantém a fluorescência suprimida enquanto a sonda está intacta. Durante a etapa de extensão, a atividade de exonuclease 5'-3' da Taq DNA polimerase degrada a sonda a medida que avança, liberando o fluoróforo do quencher e permitindo a emissão de fluorescência detectável, proporcionalmente a quantidade de DNA amplificado a cada ciclo."
       },
       {
         "letter": "B",
@@ -4336,7 +4336,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "A fluorescência emitida pela sonda TaqMan permanece constante durante toda a reação, sendo detectada da mesma forma, esteja a sonda intacta ou já degradada pela polimerase.",
-        "rationale": "Incorreta. O princípio central da tecnologia TaqMan é justamente a supressão da fluorescência enquanto a sonda está intacta (fluoróforo próximo ao quencher); a emissão de sinal só ocorre após a degradação da sonda pela atividade exonucleásica da polimerase durante a extensao."
+        "rationale": "Incorreta. O princípio central da tecnologia TaqMan é justamente a supressão da fluorescência enquanto a sonda está intacta (fluoróforo próximo ao quencher); a emissão de sinal só ocorre após a degradação da sonda pela atividade exonucleásica da polimerase durante a extensão."
       },
       {
         "letter": "D",
@@ -4345,7 +4345,7 @@ const QUESTIONS_DATABASE = [
       }
     ],
     "correctLetter": "A",
-    "clinicalPointers": "TaqMan: fluoróforo + quencher; a Taq degrada a sonda na extensao, liberando o sinal fluorescente."
+    "clinicalPointers": "TaqMan: fluoróforo + quencher; a Taq degrada a sonda na extensão, liberando o sinal fluorescente."
   },
   {
     "id": 122,
@@ -4390,7 +4390,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "A",
         "text": "Separar fisicamente a área de preparo da reação (pré-amplificação) da área onde os produtos amplificados são manipulados (pós-amplificação).",
-        "rationale": "CORRETA. Uma das principais estratégias para minimizar contaminação cruzada em laboratórios de PCR é a separação física das áreas de trabalho: uma área dedicada exclusivamente ao preparo da reação (onde o DNA molde ainda não foi amplificado, com concentrações baixas de material genético) e outra área, fisicamente separada, para a manipulação dos produtos JÁ amplificados (que contém concentrações muito mais altas de DNA, com maior risco de contaminar novas reações se houver contato acidental); evitar o transito de materiais, equipamentos e até mesmo do próprio pesquisador entre essas áreas, sem cuidados adequados, reduz significativamente o risco de contaminação."
+        "rationale": "CORRETA. Uma das principais estratégias para minimizar contaminação cruzada em laboratórios de PCR é a separação física das áreas de trabalho: uma área dedicada exclusivamente ao preparo da reação (onde o DNA molde ainda não foi amplificado, com concentrações baixas de material genético) e outra área, fisicamente separada, para a manipulação dos produtos JÁ amplificados (que contém concentrações muito mais altas de DNA, com maior risco de contaminar novas reações se houver contato acidental); evitar o trânsito de materiais, equipamentos e até mesmo do próprio pesquisador entre essas áreas, sem cuidados adequados, reduz significativamente o risco de contaminação."
       },
       {
         "letter": "B",
@@ -4437,7 +4437,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "D",
         "text": "A PCR elimina completamente a necessidade de qualquer outro exame laboratorial para diagnóstico de doenças infecciosas, dispensando quadro clínico.",
-        "rationale": "Incorreta. Apesar de sua utilidade, a PCR é uma ferramenta diagnostica entre outras, e a decisão clínica geralmente integra múltiplas informações (quadro clínico, outros exames laboratoriais, epidemiologia), não dispensando completamente outros métodos complementares."
+        "rationale": "Incorreta. Apesar de sua utilidade, a PCR é uma ferramenta diagnóstica entre outras, e a decisão clínica geralmente integra múltiplas informações (quadro clínico, outros exames laboratoriais, epidemiologia), não dispensando completamente outros métodos complementares."
       }
     ],
     "correctLetter": "A",
@@ -4459,7 +4459,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "B",
         "text": "A técnica dispensa completamente o uso de enzimas de restrição, identificando as variantes genéticas apenas pelo tamanho do produto gerado diretamente pela PCR.",
-        "rationale": "Incorreta. A etapa de digestão por enzima de restrição é justamente o componente central que diferência o PCR-RFLP de uma PCR convencional simples; sem essa digestão, não haveria como gerar os diferentes padrões de fragmentos que permitem identificar as variantes."
+        "rationale": "Incorreta. A etapa de digestão por enzima de restrição é justamente o componente central que diferencia o PCR-RFLP de uma PCR convencional simples; sem essa digestão, não haveria como gerar os diferentes padrões de fragmentos que permitem identificar as variantes."
       },
       {
         "letter": "C",
@@ -4496,7 +4496,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "A visualização do DNA no gel depende exclusivamente do peso molecular dos fragmentos, sem qualquer participação de agentes intercalantes fluorescentes.",
-        "rationale": "Incorreta. Sem um agente intercalante fluorescente (ou outro método de coloração), o DNA no gel permanece invisível, independentemente de seu peso molecular; o agente intercalante e essencial para tornar as bandas visíveis sob luz ultravioleta."
+        "rationale": "Incorreta. Sem um agente intercalante fluorescente (ou outro método de coloração), o DNA no gel permanece invisível, independentemente de seu peso molecular; o agente intercalante é essencial para tornar as bandas visíveis sob luz ultravioleta."
       },
       {
         "letter": "D",
@@ -4642,7 +4642,7 @@ const QUESTIONS_DATABASE = [
     "category": "PCR",
     "subcategory": "PCR em tempo real (qPCR) x PCR convencional",
     "difficulty": "Avançada",
-    "prompt": "A PCR convencional permite verificar, ao final da reação, se um determinado segmento de DNA foi ou não amplificado (geralmente por eletroforese em gel). Já a PCR em tempo real (qPCR) tem uma vantagem adicional importante sobre a PCR convencional. Qual e essa vantagem?",
+    "prompt": "A PCR convencional permite verificar, ao final da reação, se um determinado segmento de DNA foi ou não amplificado (geralmente por eletroforese em gel). Já a PCR em tempo real (qPCR) tem uma vantagem adicional importante sobre a PCR convencional. Qual é essa vantagem?",
     "options": [
       {
         "letter": "A",
@@ -4674,7 +4674,7 @@ const QUESTIONS_DATABASE = [
     "category": "PCR",
     "subcategory": "Confirmação molecular de triagem neonatal",
     "difficulty": "Intermediária",
-    "prompt": "O teste do pezinho (triagem neonatal) frequentemente utiliza métodos bioquímicos iniciais (como dosagem de determinadas substâncias no sangue) para rastrear diversas condições genéticas em recém-nascidos. Quando um resultado de triagem inicial e alterado (sugestivo de uma condição específica), qual o papel da PCR nesse contexto de investigação diagnostica?",
+    "prompt": "O teste do pezinho (triagem neonatal) frequentemente utiliza métodos bioquímicos iniciais (como dosagem de determinadas substâncias no sangue) para rastrear diversas condições genéticas em recém-nascidos. Quando um resultado de triagem inicial e alterado (sugestivo de uma condição específica), qual o papel da PCR nesse contexto de investigação diagnóstica?",
     "options": [
       {
         "letter": "A",
@@ -4914,7 +4914,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "A temperatura de anelamento não tem qualquer relação com a especificidade da amplificação, apenas com a velocidade total da reação de PCR.",
-        "rationale": "Incorreta. A temperatura de anelamento tem relação direta e bem estabelecida com a especificidade da ligação dos primers, não apenas com a velocidade da reação; é um dos parametros mais importantes a serem otimizados para garantir uma amplificação específica."
+        "rationale": "Incorreta. A temperatura de anelamento tem relação direta e bem estabelecida com a especificidade da ligação dos primers, não apenas com a velocidade da reação; é um dos parâmetros mais importantes a serem otimizados para garantir uma amplificação específica."
       },
       {
         "letter": "D",
@@ -4995,12 +4995,12 @@ const QUESTIONS_DATABASE = [
     "category": "PCR",
     "subcategory": "Etapas do PCR - assertivas (pegadinha da helicase)",
     "difficulty": "Intermediária",
-    "prompt": "Sobre a metodologia da Reação em Cadeia da Polimerase (PCR), analise as proposições a seguir.\nI. Para a aplicação da técnica, são necessários a dupla fita de DNA que serve de molde e dois oligonucleotídeos específicos (primers), desenhados para flanquear a sequência a ser amplificada.\nII. A primeira etapa do PCR é a desnaturação do DNA, realizada através da enzima helicase, ocorrendo o rompimento das pontes de hidrogênio que unem as duas fitas.\nIII. A terceira etapa do PCR ocorre pela ação de uma enzima termoestável, chamada Taq DNA polimerase, em uma temperatura próxima a 72 graus Celsius, onde há a extensao da sequência a ser amplificada.\n\nAssinale a alternativa correta.",
+    "prompt": "Sobre a metodologia da Reação em Cadeia da Polimerase (PCR), analise as proposições a seguir.\nI. Para a aplicação da técnica, são necessários a dupla fita de DNA que serve de molde e dois oligonucleotídeos específicos (primers), desenhados para flanquear a sequência a ser amplificada.\nII. A primeira etapa do PCR é a desnaturação do DNA, realizada através da enzima helicase, ocorrendo o rompimento das pontes de hidrogênio que unem as duas fitas.\nIII. A terceira etapa do PCR ocorre pela ação de uma enzima termoestável, chamada Taq DNA polimerase, em uma temperatura próxima a 72 graus Celsius, onde há a extensão da sequência a ser amplificada.\n\nAssinale a alternativa correta.",
     "options": [
       {
         "letter": "A",
         "text": "I e III estão corretas, apenas.",
-        "rationale": "CORRETA. A proposição I está correta: a PCR realmente exige uma fita de DNA molde e dois primers específicos que flanqueiam a região a ser amplificada. A proposição II está incorreta: a desnaturação do DNA na PCR e feita por CALOR (geralmente 94-96 graus Celsius), e não pela enzima helicase - a helicase atua na replicação celular natural (in vivo), mas não está presente na reação de PCR in vitro. A proposição III está correta: a etapa de extensao realmente ocorre pela ação da Taq DNA polimerase, uma enzima termoestável, em temperatura próxima a 72 graus Celsius."
+        "rationale": "CORRETA. A proposição I está correta: a PCR realmente exige uma fita de DNA molde e dois primers específicos que flanqueiam a região a ser amplificada. A proposição II está incorreta: a desnaturação do DNA na PCR e feita por CALOR (geralmente 94-96 graus Celsius), e não pela enzima helicase - a helicase atua na replicação celular natural (in vivo), mas não está presente na reação de PCR in vitro. A proposição III está correta: a etapa de extensão realmente ocorre pela ação da Taq DNA polimerase, uma enzima termoestável, em temperatura próxima a 72 graus Celsius."
       },
       {
         "letter": "B",
@@ -5010,7 +5010,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "Apenas a proposição I está correta.",
-        "rationale": "Incorreta. A proposição I está mesmo correta, mas a proposição III também está (a extensao pela Taq polimerase a cerca de 72 graus Celsius); a resposta não se limita apenas a proposição I."
+        "rationale": "Incorreta. A proposição I está mesmo correta, mas a proposição III também está (a extensão pela Taq polimerase a cerca de 72 graus Celsius); a resposta não se limita apenas a proposição I."
       },
       {
         "letter": "D",
@@ -5028,7 +5028,7 @@ const QUESTIONS_DATABASE = [
     "category": "PCR",
     "subcategory": "PCR em diagnóstico pré-natal",
     "difficulty": "Intermediária",
-    "prompt": "A PCR pode ser utilizada em diagnóstico pré-natal para identificar alterações genéticas específicas em amostras obtidas por procedimentos como amniocentese ou biopsia de vilo corial, a partir de células fetais presentes nessas amostras. Qual a principal vantagem da PCR nesse contexto, em comparação com técnicas que exigem cultivo celular prévio (como o cariótipo tradicional)?",
+    "prompt": "A PCR pode ser utilizada em diagnóstico pré-natal para identificar alterações genéticas específicas em amostras obtidas por procedimentos como amniocentese ou biópsia de vilo corial, a partir de células fetais presentes nessas amostras. Qual a principal vantagem da PCR nesse contexto, em comparação com técnicas que exigem cultivo celular prévio (como o cariótipo tradicional)?",
     "options": [
       {
         "letter": "A",
@@ -5042,8 +5042,8 @@ const QUESTIONS_DATABASE = [
       },
       {
         "letter": "C",
-        "text": "A PCR não pode ser utilizada em nenhuma amostra obtida por amniocentese ou biopsia de vilo corial, sendo restrita exclusivamente a amostras de sangue periférico.",
-        "rationale": "Incorreta. A PCR pode sim ser aplicada a DNA extraído de amostras fetais obtidas por amniocentese ou biopsia de vilo corial, sendo, inclusive, uma aplicação real e relevante em diagnóstico pré-natal, não restrita a amostras de sangue periférico."
+        "text": "A PCR não pode ser utilizada em nenhuma amostra obtida por amniocentese ou biópsia de vilo corial, sendo restrita exclusivamente a amostras de sangue periférico.",
+        "rationale": "Incorreta. A PCR pode sim ser aplicada a DNA extraído de amostras fetais obtidas por amniocentese ou biópsia de vilo corial, sendo, inclusive, uma aplicação real e relevante em diagnóstico pré-natal, não restrita a amostras de sangue periférico."
       },
       {
         "letter": "D",
@@ -5065,12 +5065,12 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "A",
         "text": "A temperatura de extensão da nova fita, que garante que apenas as sequências de interesse sejam copiadas na amplificação.",
-        "rationale": "Incorreta. A temperatura de extensao (geralmente 72 graus) e otimizada para a atividade da Taq polimerase durante a síntese da nova fita, mas não é o fator que determina QUAL sequência será amplificada; essa escolha e feita antes, na etapa de anelamento dos primers."
+        "rationale": "Incorreta. A temperatura de extensão (geralmente 72 graus) e otimizada para a atividade da Taq polimerase durante a síntese da nova fita, mas não é o fator que determina QUAL sequência será amplificada; essa escolha e feita antes, na etapa de anelamento dos primers."
       },
       {
         "letter": "B",
         "text": "A quantidade total de DNA molde adicionada à reação, que define quais regiões do genoma serão copiadas.",
-        "rationale": "Incorreta. A quantidade de DNA molde influência a eficiência e sensibilidade da reação (quanto material inicial está disponível), mas não determina QUAL sequência específica será amplificada dentro do DNA total presente."
+        "rationale": "Incorreta. A quantidade de DNA molde influencia a eficiência e sensibilidade da reação (quanto material inicial está disponível), mas não determina QUAL sequência específica será amplificada dentro do DNA total presente."
       },
       {
         "letter": "C",
@@ -5107,17 +5107,17 @@ const QUESTIONS_DATABASE = [
       },
       {
         "letter": "C",
-        "text": "Extensao: síntese da nova fita de DNA pela enzima DNA polimerase.",
-        "rationale": "Incorreta. A extensao ocorre em temperatura intermediária (classicamente 72 graus Celsius, a temperatura ótima de atuação da Taq DNA polimerase), mais alta que a fase de anelamento."
+        "text": "Extensão: síntese da nova fita de DNA pela enzima DNA polimerase.",
+        "rationale": "Incorreta. A extensão ocorre em temperatura intermediária (classicamente 72 graus Celsius, a temperatura ótima de atuação da Taq DNA polimerase), mais alta que a fase de anelamento."
       },
       {
         "letter": "D",
         "text": "Hibridização com sonda fluorescente marcada.",
-        "rationale": "Incorreta. Essa etapa não faz parte do ciclo básico da PCR convencional (desnaturação, anelamento, extensao); a hibridização com sondas fluorescentes é uma característica de técnicas derivadas, como a PCR em tempo real com sondas TaqMan, não do ciclo térmico básico em si."
+        "rationale": "Incorreta. Essa etapa não faz parte do ciclo básico da PCR convencional (desnaturação, anelamento, extensão); a hibridização com sondas fluorescentes é uma característica de técnicas derivadas, como a PCR em tempo real com sondas TaqMan, não do ciclo térmico básico em si."
       }
     ],
     "correctLetter": "B",
-    "clinicalPointers": "Ordem de temperatura: desnaturação (mais alta) > extensao (72C) > anelamento (mais baixa).",
+    "clinicalPointers": "Ordem de temperatura: desnaturação (mais alta) > extensão (72C) > anelamento (mais baixa).",
     "sourceLabel": "Questão antiga"
   },
   {
@@ -5141,7 +5141,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "As duas estratégias de detecção em tempo real são quimicamente idênticas entre si, o SYBR Green e a sonda TaqMan, diferindo apenas quanto ao nome comercial dado pelo fabricante do kit utilizado.",
-        "rationale": "Incorreta. São estrategias químicas distintas: o SYBR Green é um corante intercalante inespecífico; a sonda TaqMan é um oligonucleotídeo específico marcado com fluoróforo e quencher, com mecanismo de detecção baseado na degradação específica pela Taq polimerase."
+        "rationale": "Incorreta. São estratégias químicas distintas: o SYBR Green é um corante intercalante inespecífico; a sonda TaqMan é um oligonucleotídeo específico marcado com fluoróforo e quencher, com mecanismo de detecção baseado na degradação específica pela Taq polimerase."
       },
       {
         "letter": "D",
@@ -5163,7 +5163,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "A",
         "text": "DNA molde, primers específicos, DNA polimerase termoestável (Taq), os quatro dNTPs e tampão com cofatores como íons magnésio.",
-        "rationale": "CORRETA. Uma reação de PCR convencional requer, no mínimo: o DNA molde (a sequência a ser amplificada), um par de primers específicos (que flanqueiam a região de interesse), uma DNA polimerase termoestável (capaz de resistir as altas temperaturas de desnaturação repetidas), os quatro tipos de nucleotídeos livres (dATP, dTTP, dCTP, dGTP) para a síntese da nova fita, é uma solução tampão com cofatores como ions magnésio, essenciais para a atividade da polimerase."
+        "rationale": "CORRETA. Uma reação de PCR convencional requer, no mínimo: o DNA molde (a sequência a ser amplificada), um par de primers específicos (que flanqueiam a região de interesse), uma DNA polimerase termoestável (capaz de resistir as altas temperaturas de desnaturação repetidas), os quatro tipos de nucleotídeos livres (dATP, dTTP, dCTP, dGTP) para a síntese da nova fita, é uma solução tampão com cofatores como íons magnésio, essenciais para a atividade da polimerase."
       },
       {
         "letter": "B",
@@ -5254,7 +5254,7 @@ const QUESTIONS_DATABASE = [
     "category": "PCR",
     "subcategory": "Número de cópias após ciclos de PCR",
     "difficulty": "Intermediária",
-    "prompt": "Em uma reação de PCR ideal, a quantidade de cópias de uma sequência específica de DNA dobra a cada ciclo completo (desnaturação, anelamento e extensao), caracterizando uma amplificação exponencial. Partindo de uma única cópia inicial da sequência-alvo, aproximadamente quantas cópias serão geradas após 10 ciclos completos e eficientes?",
+    "prompt": "Em uma reação de PCR ideal, a quantidade de cópias de uma sequência específica de DNA dobra a cada ciclo completo (desnaturação, anelamento e extensão), caracterizando uma amplificação exponencial. Partindo de uma única cópia inicial da sequência-alvo, aproximadamente quantas cópias serão geradas após 10 ciclos completos e eficientes?",
     "options": [
       {
         "letter": "A",
@@ -5269,7 +5269,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "100 cópias, pois a amplificação segue uma progressão de base 10 (10 × 10).",
-        "rationale": "Incorreta. A base da progressão exponencial na PCR é 2 (dobra a cada ciclo), não 10; a amplificação não segue uma logica decimal."
+        "rationale": "Incorreta. A base da progressão exponencial na PCR é 2 (dobra a cada ciclo), não 10; a amplificação não segue uma lógica decimal."
       },
       {
         "letter": "D",
@@ -5284,9 +5284,9 @@ const QUESTIONS_DATABASE = [
     "id": 151,
     "code": "PRENAT-01",
     "category": "Diagnóstico Pré-Natal",
-    "subcategory": "NIPT - conduta apos resultado de alto risco",
+    "subcategory": "NIPT - conduta após resultado de alto risco",
     "difficulty": "Intermediária",
-    "prompt": "Gestante de 38 anos, com 12 semanas de gestação, realiza rastreamento pre-natal. A ultrassonografia demonstra aumento da translucência nucal. O obstetra solicita o teste pre-natal não invasivo (NIPT), que apresenta resultado de alto risco para trissomia do cromossomo 21. Considerando as características desse exame, a conduta mais adequada é:",
+    "prompt": "Gestante de 38 anos, com 12 semanas de gestação, realiza rastreamento pré-natal. A ultrassonografia demonstra aumento da translucência nucal. O obstetra solicita o teste pré-natal não invasivo (NIPT), que apresenta resultado de alto risco para trissomia do cromossomo 21. Considerando as características desse exame, a conduta mais adequada é:",
     "options": [
       {
         "letter": "A",
@@ -5301,12 +5301,12 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "Oferecer teste diagnóstico invasivo, como biópsia de vilo corial ou amniocentese.",
-        "rationale": "CORRETA. Como o NIPT é um teste de rastreamento (não diagnóstico), um resultado de alto risco deve ser seguido pela oferta de um método diagnóstico invasivo (biopsia de vilosidades coriônicas ou amniocentese), que permite a analise direta do material genético fetal para confirmação ou exclusão da trissomia."
+        "rationale": "CORRETA. Como o NIPT é um teste de rastreamento (não diagnóstico), um resultado de alto risco deve ser seguido pela oferta de um método diagnóstico invasivo (biópsia de vilosidades coriônicas ou amniocentese), que permite a análise direta do material genético fetal para confirmação ou exclusão da trissomia."
       },
       {
         "letter": "D",
         "text": "Descartar o resultado, porque o NIPT só pode ser realizado após 20 semanas.",
-        "rationale": "Incorreta. O NIPT pode ser realizado já a partir do primeiro trimestre (geralmente apos a 10a semana), não exigindo 20 semanas; essa afirmativa inverte a característica real do exame."
+        "rationale": "Incorreta. O NIPT pode ser realizado já a partir do primeiro trimestre (geralmente após a 10a semana), não exigindo 20 semanas; essa afirmativa inverte a característica real do exame."
       }
     ],
     "correctLetter": "C",
@@ -5318,12 +5318,12 @@ const QUESTIONS_DATABASE = [
     "category": "Diagnóstico Pré-Natal",
     "subcategory": "Biópsia de vilosidades coriônicas - características",
     "difficulty": "Intermediária",
-    "prompt": "Gestante de 11 semanas deseja investigação genética fetal por historia familiar de doença genética grave, com preocupação quanto a transmissão ao feto. Sobre a biopsia de vilosidades coriônicas (BVC), assinale a alternativa correta:",
+    "prompt": "Gestante de 11 semanas deseja investigação genética fetal por história familiar de doença genética grave, com preocupação quanto a transmissão ao feto. Sobre a biópsia de vilosidades coriônicas (BVC), assinale a alternativa correta:",
     "options": [
       {
         "letter": "A",
         "text": "É realizada exclusivamente após 20 semanas de gestação, quando o líquido amniótico é suficiente.",
-        "rationale": "Incorreta. A BVC é classicamente realizada mais precocemente que a amniocentese, geralmente entre o final do primeiro trimestre e o inicio do segundo (por volta de 10-13 semanas), não exclusivamente apos 20 semanas."
+        "rationale": "Incorreta. A BVC é classicamente realizada mais precocemente que a amniocentese, geralmente entre o final do primeiro trimestre e o início do segundo (por volta de 10-13 semanas), não exclusivamente após 20 semanas."
       },
       {
         "letter": "B",
@@ -5355,17 +5355,17 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "A",
         "text": "Analisa DNA livre derivado sobretudo da placenta, sendo um teste de rastreamento.",
-        "rationale": "CORRETA. O NIPT analisa fragmentos de DNA livre circulante no sangue materno, predominantemente de origem Placentária (trofoblástica); como a placenta pode, em raras situações, ter constituição cromossômica diferente do próprio feto (mosaicismo confinado a placenta), e como o teste é estatístico (não uma analise direta das células fetais), ele permanece um teste de rastreamento, não diagnóstico definitivo."
+        "rationale": "CORRETA. O NIPT analisa fragmentos de DNA livre circulante no sangue materno, predominantemente de origem Placentária (trofoblástica); como a placenta pode, em raras situações, ter constituição cromossômica diferente do próprio feto (mosaicismo confinado a placenta), e como o teste é estatístico (não uma análise direta das células fetais), ele permanece um teste de rastreamento, não diagnóstico definitivo."
       },
       {
         "letter": "B",
         "text": "Analisa diretamente células fetais obtidas do líquido amniótico, que podem se perder.",
-        "rationale": "Incorreta. Essa descrição corresponde a amniocentese, não ao NIPT, que analisa fragmentos de DNA livre no PLASMA MATERNO, sem necessidade de punção do liquido amniótico."
+        "rationale": "Incorreta. Essa descrição corresponde a amniocentese, não ao NIPT, que analisa fragmentos de DNA livre no PLASMA MATERNO, sem necessidade de punção do líquido amniótico."
       },
       {
         "letter": "C",
         "text": "Apresenta baixa sensibilidade para as principais alterações cromossômicas fetais.",
-        "rationale": "Incorreta. O NIPT é classicamente descrito como um teste de ALTA sensibilidade para as principais trissomias rastreadas; sua limitação não está na sensibilidade, e sim no fato de ser um rastreamento estatístico, não uma analise direta e definitiva do material genético fetal."
+        "rationale": "Incorreta. O NIPT é classicamente descrito como um teste de ALTA sensibilidade para as principais trissomias rastreadas; sua limitação não está na sensibilidade, e sim no fato de ser um rastreamento estatístico, não uma análise direta e definitiva do material genético fetal."
       },
       {
         "letter": "D",
@@ -5374,7 +5374,7 @@ const QUESTIONS_DATABASE = [
       }
     ],
     "correctLetter": "A",
-    "clinicalPointers": "NIPT: DNA fetal livre e predominantemente Placentário (não fetal direto); por isso e rastreamento, não diagnóstico."
+    "clinicalPointers": "NIPT: DNA fetal livre e predominantemente Placentário (não fetal direto); por isso é rastreamento, não diagnóstico."
   },
   {
     "id": 154,
@@ -5406,7 +5406,7 @@ const QUESTIONS_DATABASE = [
       }
     ],
     "correctLetter": "C",
-    "clinicalPointers": "Achado ultrassonografico relevante Não e descartado por NIPT de baixo risco; segue para diagnóstico invasivo (amniocentese, conforme idade gestacional)."
+    "clinicalPointers": "Achado ultrassonográfico relevante Não e descartado por NIPT de baixo risco; segue para diagnóstico invasivo (amniocentese, conforme idade gestacional)."
   },
   {
     "id": 155,
@@ -5428,8 +5428,8 @@ const QUESTIONS_DATABASE = [
       },
       {
         "letter": "C",
-        "text": "Liquido amniótico contendo células fetais.",
-        "rationale": "CORRETA. A amniocentese coleta uma amostra de liquido amniótico, que contem células fetais descamadas (do trato urinário, pele e outras superfícies fetais), permitindo analise cromossômica e genética direta dessas células."
+        "text": "Líquido amniótico contendo células fetais.",
+        "rationale": "CORRETA. A amniocentese coleta uma amostra de líquido amniótico, que contém células fetais descamadas (do trato urinário, pele e outras superfícies fetais), permitindo análise cromossômica e genética direta dessas células."
       },
       {
         "letter": "D",
@@ -5438,7 +5438,7 @@ const QUESTIONS_DATABASE = [
       }
     ],
     "correctLetter": "C",
-    "clinicalPointers": "Amniocentese: liquido amniótico com células fetais. BVC: tecido placentário. Cordocentese: sangue fetal do cordão."
+    "clinicalPointers": "Amniocentese: líquido amniótico com células fetais. BVC: tecido placentário. Cordocentese: sangue fetal do cordão."
   },
   {
     "id": 156,
@@ -5446,7 +5446,7 @@ const QUESTIONS_DATABASE = [
     "category": "Diagnóstico Pré-Natal",
     "subcategory": "BVC no primeiro trimestre - vantagem",
     "difficulty": "Intermediária",
-    "prompt": "Gestante de 13 semanas apresenta NIPT com alto risco para trissomia 21. Apos aconselhamento genético, deseja realizar um exame diagnóstico ainda no primeiro trimestre. Nesse contexto, o procedimento mais apropriado é:",
+    "prompt": "Gestante de 13 semanas apresenta NIPT com alto risco para trissomia 21. Após aconselhamento genético, deseja realizar um exame diagnóstico ainda no primeiro trimestre. Nesse contexto, o procedimento mais apropriado é:",
     "options": [
       {
         "letter": "A",
@@ -5461,7 +5461,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "Cordocentese, por ser o método diagnóstico de escolha no primeiro trimestre.",
-        "rationale": "Incorreta. A cordocentese (coleta de sangue fetal do cordão umbilical) é classicamente realizada mais tardiamente na gestação (geralmente apos 18 semanas), não sendo o método de escolha no primeiro trimestre."
+        "rationale": "Incorreta. A cordocentese (coleta de sangue fetal do cordão umbilical) é classicamente realizada mais tardiamente na gestação (geralmente após 18 semanas), não sendo o método de escolha no primeiro trimestre."
       },
       {
         "letter": "D",
@@ -5493,12 +5493,12 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "O resultado reduz muito a chance das aneuploidias avaliadas, mas não é diagnóstico.",
-        "rationale": "CORRETA. Um resultado de baixo risco no NIPT reduz de forma significativa a probabilidade das trissomias especificamente avaliadas, mas, por ser um teste de rastreamento estatístico (não uma analise direta e definitiva do material genético fetal), não equivale a um diagnóstico confirmado."
+        "rationale": "CORRETA. Um resultado de baixo risco no NIPT reduz de forma significativa a probabilidade das trissomias especificamente avaliadas, mas, por ser um teste de rastreamento estatístico (não uma análise direta e definitiva do material genético fetal), não equivale a um diagnóstico confirmado."
       },
       {
         "letter": "D",
         "text": "O resultado indica que não há necessidade de ultrassonografia durante o pré-natal.",
-        "rationale": "Incorreta. A ultrassonografia obstétrica continua indicada de forma independente do resultado do NIPT, fazendo parte do acompanhamento pre-natal de rotina, não sendo dispensada por um rastreamento de baixo risco."
+        "rationale": "Incorreta. A ultrassonografia obstétrica continua indicada de forma independente do resultado do NIPT, fazendo parte do acompanhamento pré-natal de rotina, não sendo dispensada por um rastreamento de baixo risco."
       }
     ],
     "correctLetter": "C",
@@ -5542,7 +5542,7 @@ const QUESTIONS_DATABASE = [
     "category": "Diagnóstico Pré-Natal",
     "subcategory": "Falso-positivo no NIPT - explicação",
     "difficulty": "Avançada",
-    "prompt": "Uma gestante apresenta resultado de NIPT de alto risco para uma aneuploidia. O medico explica que existe a possibilidade de resultado falso-positivo. Uma das principais razões para essa possibilidade é:",
+    "prompt": "Uma gestante apresenta resultado de NIPT de alto risco para uma aneuploidia. O médico explica que existe a possibilidade de resultado falso-positivo. Uma das principais razões para essa possibilidade é:",
     "options": [
       {
         "letter": "A",
@@ -5557,7 +5557,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "O DNA materno circulante não interfere na análise do teste.",
-        "rationale": "Incorreta. Pelo contrario, o DNA materno está sempre presente e em maior quantidade na amostra; a analise do NIPT depende de conseguir distinguir a fração fetal (placentária) dentro dessa mistura, e essa complexidade também contribui para possíveis erros."
+        "rationale": "Incorreta. Pelo contrário, o DNA materno está sempre presente e em maior quantidade na amostra; a análise do NIPT depende de conseguir distinguir a fração fetal (placentária) dentro dessa mistura, e essa complexidade também contribui para possíveis erros."
       },
       {
         "letter": "D",
@@ -5606,7 +5606,7 @@ const QUESTIONS_DATABASE = [
     "category": "Mutações",
     "subcategory": "Mutação somática x germinativa - não herdabilidade",
     "difficulty": "Intermediária",
-    "prompt": "Um surfista de 45 anos, apos décadas de exposição solar intensa sem proteção, desenvolve pequenos tumores de pele causados por mutações no DNA das células da epiderme induzidas pela radiação ultravioleta. Ele planeja ter um filho. Correndo o risco de sermos redundantes com o principio já estudado, qual a chance de essa criança herdar os tumores de pele do pai?",
+    "prompt": "Um surfista de 45 anos, após décadas de exposição solar intensa sem proteção, desenvolve pequenos tumores de pele causados por mutações no DNA das células da epiderme induzidas pela radiação ultravioleta. Ele planeja ter um filho. Correndo o risco de sermos redundantes com o princípio já estudado, qual a chance de essa criança herdar os tumores de pele do pai?",
     "options": [
       {
         "letter": "A",
@@ -5630,7 +5630,7 @@ const QUESTIONS_DATABASE = [
       }
     ],
     "correctLetter": "B",
-    "clinicalPointers": "Mutação em célula Somática (pele, por UV) não e herdada. Só mutação GERMINATIVA (ovulo/espermatozoide) passa para os filhos."
+    "clinicalPointers": "Mutação em célula Somática (pele, por UV) não é herdada. Só mutação GERMINATIVA (óvulo/espermatozoide) passa para os filhos."
   },
   {
     "id": 162,
@@ -5638,7 +5638,7 @@ const QUESTIONS_DATABASE = [
     "category": "Mutações",
     "subcategory": "Quantificação de bases alteradas a partir da mudança de aminoácidos",
     "difficulty": "Avançada",
-    "prompt": "Um pesquisador expõe uma planta a radiação mutagênica e obtém uma variedade com flores de cor diferente da selvagem. Ao investigar, descobre que a enzima responsável pela sintese do novo pigmento apresenta exatamente 3 aminoácidos terminais diferentes daqueles da enzima original (selvagem). Considerando que o código genético é lido em trincas (códons), qual o numero Mínimo de nucleotídeos do DNA que precisam ter sido alterados para explicar essa diferença?",
+    "prompt": "Um pesquisador expõe uma planta a radiação mutagênica e obtém uma variedade com flores de cor diferente da selvagem. Ao investigar, descobre que a enzima responsável pela síntese do novo pigmento apresenta exatamente 3 aminoácidos terminais diferentes daqueles da enzima original (selvagem). Considerando que o código genético é lido em trincas (códons), qual o número Mínimo de nucleotídeos do DNA que precisam ter sido alterados para explicar essa diferença?",
     "options": [
       {
         "letter": "A",
@@ -5657,8 +5657,8 @@ const QUESTIONS_DATABASE = [
       },
       {
         "letter": "D",
-        "text": "27 nucleotídeos, considerando que cada aminoácido pode ser codificado por ate 6 códons diferentes.",
-        "rationale": "Incorreta. A degenerescência do código genético (alguns aminoácidos tendo ate 6 códons possíveis) não multiplica o numero de nucleotídeos fisicamente alterados na sequencia real do DNA; o calculo mínimo continua sendo baseado em 3 nucleotídeos por códon alterado, totalizando 9, não 27."
+        "text": "27 nucleotídeos, considerando que cada aminoácido pode ser codificado por até 6 códons diferentes.",
+        "rationale": "Incorreta. A degenerescência do código genético (alguns aminoácidos tendo até 6 códons possíveis) não multiplica o número de nucleotídeos fisicamente alterados na sequência real do DNA; o cálculo mínimo continua sendo baseado em 3 nucleotídeos por códon alterado, totalizando 9, não 27."
       }
     ],
     "correctLetter": "B",
@@ -5675,7 +5675,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "A",
         "text": "O código genético ser universal entre as espécies.",
-        "rationale": "Incorreta. A universalidade do código genético se refere ao fato de o mesmo códon codificar o mesmo aminoácido em praticamente todos os seres vivos; isso não explica por que uma mutação específica não alterou o aminoácido resultante NAQUELE individuo."
+        "rationale": "Incorreta. A universalidade do código genético se refere ao fato de o mesmo códon codificar o mesmo aminoácido em praticamente todos os seres vivos; isso não explica por que uma mutação específica não alterou o aminoácido resultante NAQUELE indivíduo."
       },
       {
         "letter": "B",
@@ -5685,16 +5685,16 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "A replicação do DNA ser semiconservativa.",
-        "rationale": "Incorreta. O modo semiconservativo de duplicação do DNA descreve o MECANISMO de copia do material genético (uma fita antiga + uma fita nova em cada molecula-filha), sem relação direta com o motivo de uma mutação específica não alterar o aminoácido final."
+        "rationale": "Incorreta. O modo semiconservativo de duplicação do DNA descreve o MECANISMO de cópia do material genético (uma fita antiga + uma fita nova em cada molécula-filha), sem relação direta com o motivo de uma mutação específica não alterar o aminoácido final."
       },
       {
         "letter": "D",
         "text": "O código genético ser degenerado (redundante).",
-        "rationale": "CORRETA. A degenerescência (redundância) do código genético significa que mais de um códon pode especificar o mesmo aminoácido, principalmente por variações na terceira posição do códon; assim, uma mutação pontual pode alterar a sequencia de DNA sem mudar o aminoácido final codificado, resultando em uma mutação silenciosa."
+        "rationale": "CORRETA. A degenerescência (redundância) do código genético significa que mais de um códon pode especificar o mesmo aminoácido, principalmente por variações na terceira posição do códon; assim, uma mutação pontual pode alterar a sequência de DNA sem mudar o aminoácido final codificado, resultando em uma mutação silenciosa."
       }
     ],
     "correctLetter": "D",
-    "clinicalPointers": "Mutação silenciosa: DNA muda mas o aminoácido Não muda, gracas a degenerescência (redundância) do código genético."
+    "clinicalPointers": "Mutação silenciosa: DNA muda mas o aminoácido Não muda, graças a degenerescência (redundância) do código genético."
   },
   {
     "id": 164,
@@ -5739,7 +5739,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "A",
         "text": "Realizar cariótipo dos pais, pois essa translocação robertsoniana pode ter sido herdada de um deles, elevando o risco de recorrência.",
-        "rationale": "CORRETA. Diferente da trissomia livre do 21 (geralmente um evento esporádico, com baixo risco de recorrência), a Síndrome de Down por translocação robertsoniana (como a t(14;21) descrita) pode ser herdada de um dos pais, portador de uma translocação balanceada e fenotipicamente normal; por isso, o cariótipo dos pais é essencial para identificar se ha portador familiar e estimar corretamente o risco de recorrência em futuras gestações."
+        "rationale": "CORRETA. Diferente da trissomia livre do 21 (geralmente um evento esporádico, com baixo risco de recorrência), a Síndrome de Down por translocação robertsoniana (como a t(14;21) descrita) pode ser herdada de um dos pais, portador de uma translocação balanceada e fenotipicamente normal; por isso, o cariótipo dos pais é essencial para identificar se há portador familiar e estimar corretamente o risco de recorrência em futuras gestações."
       },
       {
         "letter": "B",
@@ -5749,7 +5749,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "Esclarecer aos pais que não se trata da trissomia livre do 21, mas sim de mosaicismo, com expressão mais leve da síndrome.",
-        "rationale": "Incorreta. O cariótipo descrito (translocação robertsoniana) é uma forma distinta de trissomia do 21 relacionada a estrutura cromossômica, não mosaicismo; além disso, a translocação robertsoniana não implica, por si só, expressão clinica mais leve da síndrome."
+        "rationale": "Incorreta. O cariótipo descrito (translocação robertsoniana) é uma forma distinta de trissomia do 21 relacionada a estrutura cromossômica, não mosaicismo; além disso, a translocação robertsoniana não implica, por si só, expressão clínica mais leve da síndrome."
       },
       {
         "letter": "D",
@@ -5766,31 +5766,31 @@ const QUESTIONS_DATABASE = [
     "category": "Alterações",
     "subcategory": "Translocação recíproca x Robertsoniana",
     "difficulty": "Intermediária",
-    "prompt": "Ao estudar as translocações cromossômicas, um estudante de medicina tenta diferenciar a translocação reciproca da translocação robertsoniana. Qual afirmativa diferencia corretamente esses dois tipos?",
+    "prompt": "Ao estudar as translocações cromossômicas, um estudante de medicina tenta diferenciar a translocação recíproca da translocação robertsoniana. Qual afirmativa diferencia corretamente esses dois tipos?",
     "options": [
       {
         "letter": "A",
-        "text": "A translocação reciproca ocorre quando um cromossomo transfere um fragmento a outro cromossomo unilateralmente, sem troca de volta.",
-        "rationale": "Incorreta. Essa descrição de transferência UNILATERAL corresponde a uma translocação Não reciproca (simples), não a reciproca; a translocação reciproca envolve troca BIDIRECIONAL de fragmentos entre dois cromossomos."
+        "text": "A translocação recíproca ocorre quando um cromossomo transfere um fragmento a outro cromossomo unilateralmente, sem troca de volta.",
+        "rationale": "Incorreta. Essa descrição de transferência UNILATERAL corresponde a uma translocação Não recíproca (simples), não a recíproca; a translocação recíproca envolve troca BIDIRECIONAL de fragmentos entre dois cromossomos."
       },
       {
         "letter": "B",
         "text": "A robertsoniana ocorre entre cromossomos acrocêntricos, com fusão pelo centrômero e perda dos braços curtos.",
-        "rationale": "CORRETA. A translocação robertsoniana é um tipo específico de translocação que ocorre entre dois cromossomos ACROCÊNTRICOS (como os dos grupos 13, 14, 15, 21 e 22), com fusão pelo centrômero e perda dos bracos curtos (que contem material geneticamente pouco relevante), sendo essa a característica que a diferencia da translocação reciproca (troca de fragmentos entre quaisquer dois cromossomos, não necessariamente acrocêntricos)."
+        "rationale": "CORRETA. A translocação robertsoniana é um tipo específico de translocação que ocorre entre dois cromossomos ACROCÊNTRICOS (como os dos grupos 13, 14, 15, 21 e 22), com fusão pelo centrômero e perda dos braços curtos (que contêm material geneticamente pouco relevante), sendo essa a característica que a diferencia da translocação recíproca (troca de fragmentos entre quaisquer dois cromossomos, não necessariamente acrocêntricos)."
       },
       {
         "letter": "C",
         "text": "Na translocação simples (não recíproca) não ocorre perda nem ganho de material genético relevante.",
-        "rationale": "Incorreta. Mesmo na translocação simples/não reciproca, pode haver perda de material genético dependendo de como o fragmento é transferido e processado; não é correto afirmar de forma absoluta que nunca ha perda nesse tipo de translocação."
+        "rationale": "Incorreta. Mesmo na translocação simples/não recíproca, pode haver perda de material genético dependendo de como o fragmento é transferido e processado; não é correto afirmar de forma absoluta que nunca há perda nesse tipo de translocação."
       },
       {
         "letter": "D",
         "text": "Ambas ocorrem exclusivamente em cromossomos sexuais, e nunca entre dois autossomos.",
-        "rationale": "Incorreta. Tanto a translocação reciproca quanto a robertsoniana ocorrem classicamente entre AUTOSSOMOS (a robertsoniana especificamente entre acrocêntricos autossômicos); não são fenômenos restritos a cromossomos sexuais."
+        "rationale": "Incorreta. Tanto a translocação recíproca quanto a robertsoniana ocorrem classicamente entre AUTOSSOMOS (a robertsoniana especificamente entre acrocêntricos autossômicos); não são fenômenos restritos a cromossomos sexuais."
       }
     ],
     "correctLetter": "B",
-    "clinicalPointers": "Robertsoniana: especificamente entre acrocêntricos, fusão pelo centrômero, perde bracos curtos. Reciproca: troca BIDIRECIONAL entre 2 cromossomos quaisquer."
+    "clinicalPointers": "Robertsoniana: especificamente entre acrocêntricos, fusão pelo centrômero, perde braços curtos. Recíproca: troca BIDIRECIONAL entre 2 cromossomos quaisquer."
   },
   {
     "id": 167,
@@ -5798,31 +5798,31 @@ const QUESTIONS_DATABASE = [
     "category": "Alterações",
     "subcategory": "Inversão paracêntrica x pericêntrica",
     "difficulty": "Intermediária",
-    "prompt": "Durante a analise de um cariótipo, identifica-se uma inversão cromossômica. Para classifica-la corretamente como paracêntrica ou pericêntrica, qual estrutura do cromossomo deve ser observada?",
+    "prompt": "Durante a análise de um cariótipo, identifica-se uma inversão cromossômica. Para classifica-la corretamente como paracêntrica ou pericêntrica, qual estrutura do cromossomo deve ser observada?",
     "options": [
       {
         "letter": "A",
-        "text": "A presença ou ausência de satélites no braco curto do cromossomo.",
+        "text": "A presença ou ausência de satélites no braço curto do cromossomo.",
         "rationale": "Incorreta. A presença de satélites é uma característica de certos cromossomos acrocêntricos (grupos D e G), sem relação com a classificação de uma inversão como paracêntrica ou pericêntrica."
       },
       {
         "letter": "B",
         "text": "Se o segmento invertido inclui ou não o centrômero.",
-        "rationale": "CORRETA. A distinção entre inversão paracêntrica e pericêntrica depende de o segmento invertido incluir ou não o Centrômero: na inversão Paracêntrica, o segmento invertido está contido em um único braco, sem envolver o centrômero; na inversão Pericêntrica, o segmento invertido inclui o centrômero, abrangendo parte de ambos os bracos."
+        "rationale": "CORRETA. A distinção entre inversão paracêntrica e pericêntrica depende de o segmento invertido incluir ou não o Centrômero: na inversão Paracêntrica, o segmento invertido está contido em um único braço, sem envolver o centrômero; na inversão Pericêntrica, o segmento invertido inclui o centrômero, abrangendo parte de ambos os braços."
       },
       {
         "letter": "C",
-        "text": "O numero total de cromossomos presentes na célula apos a inversão.",
+        "text": "O número total de cromossomos presentes na célula após a inversão.",
         "rationale": "Incorreta. Uma inversão é uma alteração ESTRUTURAL que não muda o número total de cromossomos da célula; essa contagem não é o critério que diferencia inversão paracêntrica de pericêntrica."
       },
       {
         "letter": "D",
         "text": "A quantidade de material genético perdido durante o processo de inversão.",
-        "rationale": "Incorreta. Uma inversão tipica preserva a quantidade de material genético (o segmento apenas se reincorpora invertido, sem perda liquida); a quantidade de material perdido não é o critério classificatório entre paracêntrica e pericêntrica."
+        "rationale": "Incorreta. Uma inversão típica preserva a quantidade de material genético (o segmento apenas se reincorpora invertido, sem perda líquida); a quantidade de material perdido não é o critério classificatório entre paracêntrica e pericêntrica."
       }
     ],
     "correctLetter": "B",
-    "clinicalPointers": "Pericêntrica: inversão INCLUI o centrômero. Paracêntrica: inversão Não inclui o centrômero (fica em um só braco)."
+    "clinicalPointers": "Pericêntrica: inversão INCLUI o centrômero. Paracêntrica: inversão Não inclui o centrômero (fica em um só braço)."
   },
   {
     "id": 168,
@@ -5830,27 +5830,27 @@ const QUESTIONS_DATABASE = [
     "category": "Alterações",
     "subcategory": "Duplicação e deleção alteram a quantidade de material genético",
     "difficulty": "Intermediária",
-    "prompt": "Comparando os quatro tipos clássicos de alteração cromossômica estrutural (deleção, duplicação, inversão e translocação), qual par dessas alterações tem em comum o fato de alterar a QUANTIDADE total de material genético presente no cromossomo (ganho ou perda liquida)?",
+    "prompt": "Comparando os quatro tipos clássicos de alteração cromossômica estrutural (deleção, duplicação, inversão e translocação), qual par dessas alterações tem em comum o fato de alterar a QUANTIDADE total de material genético presente no cromossomo (ganho ou perda líquida)?",
     "options": [
       {
         "letter": "A",
         "text": "Deleção e duplicação.",
-        "rationale": "CORRETA. A deleção (perda de um segmento) e a duplicação (repetição de um segmento) são as duas alterações estruturais que classicamente alteram a QUANTIDADE de material genético presente, respectivamente reduzindo ou aumentando a dose gênica daquele segmento; já a inversão (reordenação) e, na maioria dos casos, a translocação reciproca balanceada preservam a quantidade total de material genético, apenas reorganizando sua posição."
+        "rationale": "CORRETA. A deleção (perda de um segmento) e a duplicação (repetição de um segmento) são as duas alterações estruturais que classicamente alteram a QUANTIDADE de material genético presente, respectivamente reduzindo ou aumentando a dose gênica daquele segmento; já a inversão (reordenação) e, na maioria dos casos, a translocação recíproca balanceada preservam a quantidade total de material genético, apenas reorganizando sua posição."
       },
       {
         "letter": "B",
         "text": "Inversão e translocação.",
-        "rationale": "Incorreta. A inversão (reordenação de um segmento) e a translocação reciproca balanceada, na maioria dos casos, preservam a quantidade de material genético, apenas reorganizando sua posição no genoma, não alterando a dose gênica total como ocorre na deleção e na duplicação."
+        "rationale": "Incorreta. A inversão (reordenação de um segmento) e a translocação recíproca balanceada, na maioria dos casos, preservam a quantidade de material genético, apenas reorganizando sua posição no genoma, não alterando a dose gênica total como ocorre na deleção e na duplicação."
       },
       {
         "letter": "C",
         "text": "Deleção e inversão.",
-        "rationale": "Incorreta. Apenas a deleção altera a quantidade de material genético (por perda); a inversão tipicamente preserva a quantidade total, apenas reorganizando a ordem de um segmento, sem perda ou ganho liquido."
+        "rationale": "Incorreta. Apenas a deleção altera a quantidade de material genético (por perda); a inversão tipicamente preserva a quantidade total, apenas reorganizando a ordem de um segmento, sem perda ou ganho líquido."
       },
       {
         "letter": "D",
         "text": "Duplicação e translocação.",
-        "rationale": "Incorreta. Apenas a duplicação altera a quantidade de material genético (por ganho); a translocação reciproca balanceada tipicamente preserva a quantidade total, apenas trocando a localização de segmentos entre cromossomos, sem perda ou ganho liquido de material."
+        "rationale": "Incorreta. Apenas a duplicação altera a quantidade de material genético (por ganho); a translocação recíproca balanceada tipicamente preserva a quantidade total, apenas trocando a localização de segmentos entre cromossomos, sem perda ou ganho líquido de material."
       }
     ],
     "correctLetter": "A",
@@ -5862,7 +5862,7 @@ const QUESTIONS_DATABASE = [
     "category": "Mendeliana",
     "subcategory": "Eritroblastose fetal - condições necessárias",
     "difficulty": "Básica",
-    "prompt": "Para que ocorra eritroblastose fetal (doença hemolítica do recem-nascido por incompatibilidade Rh), quais condições básicas precisam estar presentes na gestação?",
+    "prompt": "Para que ocorra eritroblastose fetal (doença hemolítica do recém-nascido por incompatibilidade Rh), quais condições básicas precisam estar presentes na gestação?",
     "options": [
       {
         "letter": "A",
@@ -5899,12 +5899,12 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "A",
         "text": "Imunoglobulina anti-D para a mãe, em geral por volta da 28ª semana e após o parto, se o recém-nascido for Rh positivo.",
-        "rationale": "CORRETA. A administração de imunoglobulina anti-D (anti-Rh) a gestante Rh negativo, classicamente ao redor da 28a semana e novamente apos o parto (confirmando o Rh positivo do recém-nascido), é a medida preventiva padrão; ela age neutralizando eventuais hemácias fetais Rh positivas que tenham passado para a circulação materna, impedindo que a mãe monte uma resposta imune própria (sensibilização) contra o antígeno Rh."
+        "rationale": "CORRETA. A administração de imunoglobulina anti-D (anti-Rh) a gestante Rh negativo, classicamente ao redor da 28a semana e novamente após o parto (confirmando o Rh positivo do recém-nascido), é a medida preventiva padrão; ela age neutralizando eventuais hemácias fetais Rh positivas que tenham passado para a circulação materna, impedindo que a mãe monte uma resposta imune própria (sensibilização) contra o antígeno Rh."
       },
       {
         "letter": "B",
         "text": "Transfusão de sangue Rh negativo para a mãe durante o pré-natal, independentemente de sintomas ou exames.",
-        "rationale": "Incorreta. Não ha indicação de transfusão sanguínea profilática de rotina para prevenir sensibilização Rh; a medida preventiva padrão é a administração de imunoglobulina anti-D, não uma transfusão."
+        "rationale": "Incorreta. Não há indicação de transfusão sanguínea profilática de rotina para prevenir sensibilização Rh; a medida preventiva padrão é a administração de imunoglobulina anti-D, não uma transfusão."
       },
       {
         "letter": "C",
@@ -5914,11 +5914,11 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "D",
         "text": "Suspender a gestação caso o pai seja Rh positivo homozigoto, para evitar qualquer risco de sensibilização.",
-        "rationale": "Incorreta. Não ha indicação de interrupção da gestação baseada isoladamente no Rh paterno; a sensibilização materna é prevenível com a imunoglobulina anti-D, tornando essa medida extrema desnecessária."
+        "rationale": "Incorreta. Não há indicação de interrupção da gestação baseada isoladamente no Rh paterno; a sensibilização materna é prevenível com a imunoglobulina anti-D, tornando essa medida extrema desnecessária."
       }
     ],
     "correctLetter": "A",
-    "clinicalPointers": "Prevenção da sensibilização Rh: imunoglobulina anti-D na gestante Rh- (~28a semana e apos o parto se RN for Rh+)."
+    "clinicalPointers": "Prevenção da sensibilização Rh: imunoglobulina anti-D na gestante Rh- (~28a semana e após o parto se RN for Rh+)."
   },
   {
     "id": 171,
@@ -5931,7 +5931,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "A",
         "text": "Homozigoto dominante (RR), pois assim os filhos poderiam ser Rh positivo ou Rh negativo.",
-        "rationale": "Incorreta. Se o pai fosse homozigoto dominante (RR), TODOS os filhos do casal seriam Rh positivo (recebendo obrigatoriamente o alelo R do pai); porem, a primeira e a terceira criança nasceram Rh negativo, o que exclui essa possibilidade."
+        "rationale": "Incorreta. Se o pai fosse homozigoto dominante (RR), TODOS os filhos do casal seriam Rh positivo (recebendo obrigatoriamente o alelo R do pai); porém, a primeira e a terceira criança nasceram Rh negativo, o que exclui essa possibilidade."
       },
       {
         "letter": "B",
@@ -5946,7 +5946,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "D",
         "text": "Não é possível determinar o genótipo do pai apenas com as informações disponíveis sobre os filhos.",
-        "rationale": "Incorreta. A informação de que ha filhos de AMBOS os fenótipos (Rh negativo e Rh positivo) do mesmo casal, com mãe confirmada rr, permite inferir com segurança que o pai é heterozigoto (Rr), único genótipo capaz de gerar essa variedade fenotípica na prole."
+        "rationale": "Incorreta. A informação de que há filhos de AMBOS os fenótipos (Rh negativo e Rh positivo) do mesmo casal, com mãe confirmada rr, permite inferir com segurança que o pai é heterozigoto (Rr), único genótipo capaz de gerar essa variedade fenotípica na prole."
       }
     ],
     "correctLetter": "B",
@@ -10324,7 +10324,7 @@ function renderReview() {
           ${q.marked ? `<span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300">🏳️ Marcada</span>` : ""}
           ${badge}
         </div>
-        <p class="font-medium mb-3">${qi + 1}. ${renderHighlightedText(q.prompt, q.highlights)}</p>
+        <p class="font-medium mb-3" style="white-space: pre-line">${qi + 1}. ${renderHighlightedText(q.prompt, q.highlights)}</p>
         <div data-review-visual="${qi}">${renderVisual(q)}</div>
         <div class="space-y-2 mb-3">${optionsHtml}</div>
         <div class="rounded-lg bg-amber-50 dark:bg-amber-900/20 border border-amber-100 dark:border-amber-800 p-2.5 text-xs text-amber-700 dark:text-amber-300">
