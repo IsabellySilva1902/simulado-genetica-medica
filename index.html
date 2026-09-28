@@ -3617,7 +3617,7 @@ const QUESTIONS_DATABASE = [
       {
         "letter": "C",
         "text": "Homens mais velhos seriam os principais responsáveis pelo aumento do risco de trissomia do 21, e não as mulheres nesse processo.",
-        "rationale": "Incorreta. A associação clássica e mais robusta e especificamente com a idade materna, relacionada a fisiologia peculiar da formação dos ovócitos, não a idade paterna."
+        "rationale": "Incorreta. A associação clássica é mais robusta e especificamente com a idade materna, relacionada a fisiologia peculiar da formação dos ovócitos, não a idade paterna."
       },
       {
         "letter": "D",
@@ -13989,11 +13989,40 @@ function sampleBalanced(pool, subjects, n, rng, seenIds, respectAntiRepeat) {
   return selected.slice(0, n);
 }
 
+// Atualiza uma tentativa salva com o texto atual do banco (correcoes feitas depois
+// que o simulado comecou). Alternativas sao localizadas pela letra original ou,
+// em tentativas antigas, pelo texto sem acentos. Grifos do enunciado so sao
+// descartados se o enunciado mudou (as posicoes deixariam de bater).
+function refreshAttemptFromBank(attempt) {
+  if (!attempt || !Array.isArray(attempt.questions)) return;
+  const fold = (t) => String(t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s+/g, " ").trim();
+  attempt.questions.forEach((q) => {
+    const src = QUESTIONS_DATABASE.find((x) => x.code === q.code);
+    if (!src) return;
+    if (src.prompt !== q.prompt) {
+      q.prompt = src.prompt;
+      q.highlights = [];
+    }
+    q.clinicalPointers = src.clinicalPointers;
+    q.category = src.category;
+    q.subcategory = src.subcategory;
+    (q.options || []).forEach((o) => {
+      let so = o.letter ? src.options.find((x) => x.letter === o.letter) : null;
+      if (!so) so = src.options.find((x) => fold(x.text) === fold(o.text));
+      if (!so) return;
+      o.letter = so.letter;
+      o.text = so.text;
+      o.rationale = so.rationale;
+    });
+  });
+}
+
 function buildSessionQuestions(questions, rng) {
   return questions.map((q) => {
     const opts = q.options.map((o) => ({
       text: o.text,
       rationale: o.rationale,
+      letter: o.letter,
       isCorrect: o.letter === q.correctLetter,
     }));
     shuffleInPlace(opts, rng);
@@ -15133,6 +15162,7 @@ function init() {
     const saved = lsGet(LS_KEYS.current, null);
     if (!saved) return;
     App.attempt = saved;
+    refreshAttemptFromBank(App.attempt);
     normalizeAttemptQuestions(App.attempt);
     App.timerQuestionIndex = null;
     App.questionStartTs = null;
