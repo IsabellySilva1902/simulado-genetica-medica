@@ -438,7 +438,21 @@
       </div>
       <div>
         <p class="font-medium text-slate-800 dark:text-slate-100">🎯 Depois do simulado</p>
-        <p>As questões que você errar voltam sozinhas nos próximos simulados, em intervalos cada vez maiores (revisão espaçada, como no Anki; aparecem com o selo 🔁 revisão). Questões que você acerta, mas levando bem mais tempo que o seu ritmo normal para aquele tipo de questão, também entram na revisão. A seção "Pontos fracos", na página inicial, guarda as questões que você errou — use-a para revisar só o que precisa. Veja também a dica de "caderno de erros" logo no topo da página.</p>
+        <p>A seção "Pontos fracos", na página inicial, guarda as questões que você errou e ainda não acertou de novo — use o botão de lá para refazer só essas. Veja também a dica de "caderno de erros" logo no topo da página.</p>
+      </div>
+      <div>
+        <p class="font-medium text-slate-800 dark:text-slate-100">🔁 Revisão espaçada (como no Anki)</p>
+        <p>O simulado agenda sozinho as questões que você precisa rever e as coloca nos próximos simulados, em intervalos cada vez maiores. O intervalo é contado em <strong>simulados feitos</strong>, não em dias.</p>
+        <table class="w-full mt-2 text-xs">
+          <tr class="border-t border-slate-200 dark:border-slate-700"><td class="py-1.5 pr-2 font-medium align-top whitespace-nowrap">❌ Errou</td><td class="py-1.5 align-top">Volta no próximo simulado.</td></tr>
+          <tr class="border-t border-slate-200 dark:border-slate-700"><td class="py-1.5 pr-2 font-medium align-top whitespace-nowrap">✅ Acertou na revisão</td><td class="py-1.5 align-top">O intervalo aumenta: volta depois de 2, depois de 4 e depois de 8 simulados.</td></tr>
+          <tr class="border-t border-slate-200 dark:border-slate-700"><td class="py-1.5 pr-2 font-medium align-top whitespace-nowrap">🏁 4 acertos seguidos</td><td class="py-1.5 align-top">Sai da fila: considera-se que você aprendeu.</td></tr>
+          <tr class="border-t border-slate-200 dark:border-slate-700"><td class="py-1.5 pr-2 font-medium align-top whitespace-nowrap">🔄 Errou de novo</td><td class="py-1.5 align-top">Recomeça do início, em qualquer etapa.</td></tr>
+          <tr class="border-t border-slate-200 dark:border-slate-700"><td class="py-1.5 pr-2 font-medium align-top whitespace-nowrap">⏱️ Acertou, mas demorou muito</td><td class="py-1.5 align-top">Entra na fila e volta depois de 2 simulados (ou, se já era revisão, não avança de etapa).</td></tr>
+        </table>
+        <p class="mt-2"><strong>O que é "demorar muito":</strong> cada questão tem um tempo esperado, calculado pelo tamanho do texto, com tempo extra se tem figura (heredograma, tabela) ou cálculo. Esse tempo é ajustado ao <strong>seu ritmo</strong> (a mediana das suas respostas anteriores). Entra na revisão o acerto que levar mais de <strong>3× o seu normal</strong> para aquele tipo de questão e pelo menos 1min30. Só conta o tempo até você marcar a alternativa — no modo Tutor, ler a explicação não conta.</p>
+        <p class="mt-2"><strong>Na prática:</strong> as revisões ocupam no máximo ~30% de cada simulado, só dos assuntos que você escolheu, e aparecem com o selo <strong>🔁 revisão</strong> ao lado do código. Na página inicial, "Ver questões da fila" mostra cada questão e quando ela volta.</p>
+        <p class="mt-2"><strong>Não avançam a agenda:</strong> "Refazer erradas" e "Revisar pontos fracos" (são treino extra — mas um erro neles reinicia a questão). Simulados com código de sessão não recebem revisões, para todos terem as mesmas questões. A fila fica salva neste navegador; use Exportar/Importar para levá-la a outro aparelho.</p>
       </div>
       <div>
         <p class="font-medium text-slate-800 dark:text-slate-100">👥 Código de sessão (opcional)</p>
