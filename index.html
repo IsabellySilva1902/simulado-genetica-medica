@@ -519,7 +519,46 @@ const QUESTIONS_DATABASE = [
     ],
     "correctLetter": "A",
     "clinicalPointers": "Indivíduo AB (IAIB) nunca transmite o alelo i; nunca pode ser pai de filho tipo O.",
-    "sourceLabel": "Questão do professor"
+    "sourceLabel": "Questão do professor",
+    "solutionSteps": [
+      {
+        "text": "A criança é O: genótipo ii. Ela recebeu um i da mãe E um i do pai biológico."
+      },
+      {
+        "text": "A mãe (B) pode ser Iᴮi, então pode ter passado o i. O marido (A) pode ser Iᴬi, então também pode ter passado o i."
+      },
+      {
+        "table": {
+          "head": [
+            "Suposto pai",
+            "Genótipos possíveis",
+            "Pode passar i?"
+          ],
+          "rows": [
+            [
+              "Marido (A)",
+              "IᴬIᴬ ou Iᴬi",
+              "sim, se for Iᴬi"
+            ],
+            [
+              "Acusado (AB)",
+              "só IᴬIᴮ",
+              "NÃO"
+            ]
+          ],
+          "hit": [
+            "NÃO"
+          ],
+          "rowHeads": true
+        }
+      },
+      {
+        "text": "O homem AB só forma gametas Iᴬ ou Iᴮ. Nunca poderia ter um filho ii: a paternidade dele está excluída."
+      },
+      {
+        "result": "Resposta: a criança certamente não pode ser filha do indivíduo do grupo AB"
+      }
+    ]
   },
   {
     "id": 3,
@@ -1006,7 +1045,79 @@ const QUESTIONS_DATABASE = [
       }
     ],
     "correctLetter": "B",
-    "clinicalPointers": "Pai AB x mãe O: filhos sempre A ou B (nunca AB, nunca O)."
+    "clinicalPointers": "Pai AB x mãe O: filhos sempre A ou B (nunca AB, nunca O).",
+    "solutionSteps": [
+      {
+        "text": "Separe os dois genes.",
+        "calc": "Pai IᴬIᴮ RR × Mãe ii rr"
+      },
+      {
+        "text": "Sistema ABO:"
+      },
+      {
+        "table": {
+          "head": [
+            "♀ \\ ♂",
+            "Iᴬ",
+            "Iᴮ"
+          ],
+          "rows": [
+            [
+              "i",
+              "Iᴬi",
+              "Iᴮi"
+            ],
+            [
+              "i",
+              "Iᴬi",
+              "Iᴮi"
+            ]
+          ],
+          "hit": [
+            "Iᴬi",
+            "Iᴮi"
+          ],
+          "caption": "Gametas da mãe nas linhas, do pai nas colunas."
+        }
+      },
+      {
+        "text": "Metade é Iᴬi (tipo A) e metade é Iᴮi (tipo B). Nenhuma casela é IᴬIᴮ nem ii."
+      },
+      {
+        "text": "Fator Rh:"
+      },
+      {
+        "table": {
+          "head": [
+            "♀ \\ ♂",
+            "R",
+            "R"
+          ],
+          "rows": [
+            [
+              "r",
+              "Rr",
+              "Rr"
+            ],
+            [
+              "r",
+              "Rr",
+              "Rr"
+            ]
+          ],
+          "hit": [
+            "Rr"
+          ],
+          "caption": "Gametas da mãe nas linhas, do pai nas colunas."
+        }
+      },
+      {
+        "text": "Todas as caselas são Rr: todos os filhos são Rh positivo."
+      },
+      {
+        "result": "Resposta: tipo A ou tipo B (nunca AB nem O), todos Rh positivo"
+      }
+    ]
   },
   {
     "id": 15,
@@ -1305,7 +1416,53 @@ const QUESTIONS_DATABASE = [
     ],
     "correctLetter": "B",
     "clinicalPointers": "Mãe tipo A não tem IB; o IB do filho tipo B só pode ter vindo do pai (pai B ou AB).",
-    "sourceLabel": "Questão do professor"
+    "sourceLabel": "Questão do professor",
+    "solutionSteps": [
+      {
+        "text": "O filho é B: tem pelo menos um Iᴮ (IᴮIᴮ ou Iᴮi)."
+      },
+      {
+        "text": "A mãe é A (IᴬIᴬ ou Iᴬi): não tem Iᴮ. Então o Iᴮ do filho veio obrigatoriamente do pai."
+      },
+      {
+        "table": {
+          "head": [
+            "Tipo do pai",
+            "Genótipos",
+            "Tem Iᴮ?"
+          ],
+          "rows": [
+            [
+              "A",
+              "IᴬIᴬ, Iᴬi",
+              "não"
+            ],
+            [
+              "B",
+              "IᴮIᴮ, Iᴮi",
+              "sim"
+            ],
+            [
+              "AB",
+              "IᴬIᴮ",
+              "sim"
+            ],
+            [
+              "O",
+              "ii",
+              "não"
+            ]
+          ],
+          "hit": [
+            "sim"
+          ],
+          "rowHeads": true
+        }
+      },
+      {
+        "result": "Resposta: tipo B ou tipo AB"
+      }
+    ]
   },
   {
     "id": 22,
@@ -6794,7 +6951,7 @@ const QUESTIONS_DATABASE = [
     "category": "Mendeliana",
     "subcategory": "Reconstrução de genótipos Rh em uma família",
     "difficulty": "Avançada",
-    "prompt": "Em uma primeira gestação, uma mulher Rh negativo deu a luz uma criança Rh negativo, saudável. O segundo filho do casal teve eritroblastose fetal grave por incompatibilidade Rh (nasceu Rh positivo). A terceira criança nasceu Rh negativo, sem qualquer sinal de incompatibilidade. Considerando que a mãe é homozigota recessiva (rr) para o fator Rh, qual o genótipo mais provável do pai?",
+    "prompt": "Em uma primeira gestação, uma mulher Rh negativo deu à luz uma criança Rh negativo, saudável. O segundo filho do casal teve eritroblastose fetal grave por incompatibilidade Rh (nasceu Rh positivo). A terceira criança nasceu Rh negativo, sem qualquer sinal de incompatibilidade. Considerando que a mãe é homozigota recessiva (rr) para o fator Rh, qual o genótipo mais provável do pai?",
     "options": [
       {
         "letter": "A",
@@ -6818,7 +6975,79 @@ const QUESTIONS_DATABASE = [
       }
     ],
     "correctLetter": "B",
-    "clinicalPointers": "Mãe rr x pai Rr = filhos na proporção 1:1 entre Rh+ (Rr) e Rh- (rr) - exatamente o padrão familiar descrito."
+    "clinicalPointers": "Mãe rr x pai Rr = filhos na proporção 1:1 entre Rh+ (Rr) e Rh- (rr) - exatamente o padrão familiar descrito.",
+    "solutionSteps": [
+      {
+        "text": "A mãe é rr e sempre passa r. O fenótipo de cada filho depende só do alelo que veio do pai."
+      },
+      {
+        "table": {
+          "head": [
+            "Filho",
+            "Fenótipo",
+            "Alelo recebido do pai"
+          ],
+          "rows": [
+            [
+              "1º",
+              "Rh−",
+              "r"
+            ],
+            [
+              "2º",
+              "Rh+ (eritroblastose)",
+              "R"
+            ],
+            [
+              "3º",
+              "Rh−",
+              "r"
+            ]
+          ],
+          "hit": [
+            "R",
+            "r"
+          ],
+          "rowHeads": true
+        }
+      },
+      {
+        "text": "O pai passou R para um filho e r para outros dois: ele tem os dois alelos, logo é Rr."
+      },
+      {
+        "table": {
+          "head": [
+            "♀ \\ ♂",
+            "R",
+            "r"
+          ],
+          "rows": [
+            [
+              "r",
+              "Rr",
+              "rr"
+            ],
+            [
+              "r",
+              "Rr",
+              "rr"
+            ]
+          ],
+          "hit": [
+            "Rr",
+            "rr"
+          ],
+          "caption": "Gametas da mãe nas linhas, do pai nas colunas."
+        }
+      },
+      {
+        "text": "Rr × rr dá metade Rh+ (Rr) e metade Rh− (rr) a cada gestação.",
+        "calc": "P(Rh+) = 1/2 · P(Rh−) = 1/2"
+      },
+      {
+        "result": "Resposta: heterozigoto (Rr)"
+      }
+    ]
   },
   {
     "id": 172,
@@ -10031,6 +10260,1013 @@ const QUESTIONS_DATABASE = [
       {
         "text": "Fernanda portadora E menino hemofílico:",
         "calc": "1/2 × 1/4 = 1/8"
+      },
+      {
+        "result": "Resposta: 1/8"
+      }
+    ]
+  },
+  {
+    "id": 271,
+    "code": "PROB-21",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Sistema ABO - chance de filho tipo O",
+    "difficulty": "Básica",
+    "prompt": "Uma mulher do tipo sanguíneo B e um homem do tipo A tiveram o primeiro filho, que é do tipo O. Qual a probabilidade de o próximo filho do casal também ser do tipo O?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "0",
+        "rationale": "Incorreta. Seria 0 se algum genitor não tivesse o alelo i, mas o primeiro filho O prova que os dois têm."
+      },
+      {
+        "letter": "B",
+        "text": "1/4",
+        "rationale": "CORRETA. O filho O é ii e recebeu um i de cada genitor: a mãe é Iᴮi e o pai é Iᴬi. No cruzamento Iᴮi × Iᴬi, só a combinação ii gera o tipo O: 1/2 × 1/2 = 1/4."
+      },
+      {
+        "letter": "C",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 é a chance de receber o i de um só genitor; o tipo O exige o i do pai e o i da mãe."
+      },
+      {
+        "letter": "D",
+        "text": "3/4",
+        "rationale": "Incorreta. 3/4 é a chance de o filho NÃO ser do tipo O (tipos A, B ou AB)."
+      }
+    ],
+    "correctLetter": "B",
+    "clinicalPointers": "O tipo sanguíneo do primeiro filho revela um alelo que o pai e a mãe carregam.",
+    "solutionSteps": [
+      {
+        "text": "O primeiro filho é O: genótipo ii. Ele recebeu um i da mãe e um i do pai. Então a mãe (tipo B) é Iᴮi e o pai (tipo A) é Iᴬi.",
+        "calc": "Mãe Iᴮi × Pai Iᴬi"
+      },
+      {
+        "table": {
+          "head": [
+            "♀ \\ ♂",
+            "Iᴬ",
+            "i"
+          ],
+          "rows": [
+            [
+              "Iᴮ",
+              "IᴬIᴮ",
+              "Iᴮi"
+            ],
+            [
+              "i",
+              "Iᴬi",
+              "ii"
+            ]
+          ],
+          "hit": [
+            "ii"
+          ],
+          "caption": "Gametas da mãe nas linhas, do pai nas colunas."
+        }
+      },
+      {
+        "text": "Cada casela é um tipo diferente: IᴬIᴮ (AB), Iᴮi (B), Iᴬi (A) e ii (O). Só 1 casela em 4 é O.",
+        "calc": "P(O) = 1/4"
+      },
+      {
+        "text": "Pela regra do E: receber o i da mãe (1/2) E o i do pai (1/2).",
+        "calc": "1/2 × 1/2 = 1/4"
+      },
+      {
+        "result": "Resposta: 1/4"
+      }
+    ]
+  },
+  {
+    "id": 272,
+    "code": "PROB-22",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Sistema ABO - cruzamento AB × AB",
+    "difficulty": "Básica",
+    "prompt": "Um casal em que os dois são do tipo sanguíneo AB planeja ter filhos. Qual alternativa apresenta os tipos sanguíneos esperados na prole e suas proporções?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Todos do tipo AB, iguais aos dois pais",
+        "rationale": "Incorreta. Cada genitor passa só um dos dois alelos; os filhos podem receber Iᴬ dos dois ou Iᴮ dos dois."
+      },
+      {
+        "letter": "B",
+        "text": "1/4 de cada tipo: A, B, AB e O",
+        "rationale": "Incorreta. O tipo O exige ii, e nenhum dos pais tem o alelo i."
+      },
+      {
+        "letter": "C",
+        "text": "1/2 tipo AB, 1/4 tipo A e 1/4 tipo O",
+        "rationale": "Incorreta. Não há alelo i no casal, então não nasce filho O; a casela que falta é IᴮIᴮ, do tipo B."
+      },
+      {
+        "letter": "D",
+        "text": "1/4 tipo A, 1/2 tipo AB e 1/4 tipo B",
+        "rationale": "CORRETA. IᴬIᴮ × IᴬIᴮ gera 1/4 IᴬIᴬ (tipo A), 1/2 IᴬIᴮ (tipo AB) e 1/4 IᴮIᴮ (tipo B). Não há alelo i no casal, então nenhum filho é O."
+      }
+    ],
+    "correctLetter": "D",
+    "clinicalPointers": "Liste os dois gametas que cada genitor pode formar antes de montar o cruzamento.",
+    "solutionSteps": [
+      {
+        "text": "Tipo AB só tem um genótipo possível: IᴬIᴮ. Cada genitor forma gametas Iᴬ ou Iᴮ, metade de cada.",
+        "calc": "IᴬIᴮ × IᴬIᴮ"
+      },
+      {
+        "table": {
+          "head": [
+            "♀ \\ ♂",
+            "Iᴬ",
+            "Iᴮ"
+          ],
+          "rows": [
+            [
+              "Iᴬ",
+              "IᴬIᴬ",
+              "IᴬIᴮ"
+            ],
+            [
+              "Iᴮ",
+              "IᴬIᴮ",
+              "IᴮIᴮ"
+            ]
+          ],
+          "hit": [
+            "IᴬIᴮ"
+          ],
+          "caption": "Gametas da mãe nas linhas, do pai nas colunas."
+        }
+      },
+      {
+        "text": "Conte as caselas: 1 IᴬIᴬ (A), 2 IᴬIᴮ (AB) e 1 IᴮIᴮ (B). Nenhuma é ii.",
+        "calc": "A = 1/4 · AB = 2/4 = 1/2 · B = 1/4 · O = 0"
+      },
+      {
+        "result": "Resposta: 1/4 tipo A, 1/2 tipo AB e 1/4 tipo B"
+      }
+    ]
+  },
+  {
+    "id": 273,
+    "code": "PROB-23",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Sistema ABO - genitor com genótipo revelado pela família",
+    "difficulty": "Intermediária",
+    "prompt": "Carlos é do tipo sanguíneo A, e o pai dele é do tipo O. Carlos se casa com Luana, que é do tipo O. Qual a probabilidade de o primeiro filho do casal ser uma menina do tipo O?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/4",
+        "rationale": "CORRETA. Carlos recebeu i do pai O: é Iᴬi. Luana é ii. Filho O (ii) = 1/2; menina = 1/2. Menina E tipo O: 1/2 × 1/2 = 1/4."
+      },
+      {
+        "letter": "B",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 é a chance de a criança ser do tipo O, sem considerar que também precisa ser menina."
+      },
+      {
+        "letter": "C",
+        "text": "1/8",
+        "rationale": "Incorreta. 1/8 usa 1/4 como chance de tipo O, como se Luana também fosse heterozigota; ela é ii e sempre passa i."
+      },
+      {
+        "letter": "D",
+        "text": "0",
+        "rationale": "Incorreta. Carlos tem o alelo i, herdado do pai, e pode transmiti-lo."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "Descubra primeiro qual alelo Carlos recebeu do pai.",
+    "solutionSteps": [
+      {
+        "text": "Carlos é A, mas o pai dele é O (ii) e lhe passou um i: Carlos é Iᴬi. Luana é O: ii.",
+        "calc": "Carlos Iᴬi × Luana ii"
+      },
+      {
+        "table": {
+          "head": [
+            "♀ \\ ♂",
+            "Iᴬ",
+            "i"
+          ],
+          "rows": [
+            [
+              "i",
+              "Iᴬi",
+              "ii"
+            ],
+            [
+              "i",
+              "Iᴬi",
+              "ii"
+            ]
+          ],
+          "hit": [
+            "ii"
+          ],
+          "caption": "Gametas de Luana nas linhas, de Carlos nas colunas."
+        }
+      },
+      {
+        "text": "Metade das caselas é ii (tipo O).",
+        "calc": "P(O) = 2/4 = 1/2"
+      },
+      {
+        "text": "Menina E tipo O:",
+        "calc": "1/2 × 1/2 = 1/4"
+      },
+      {
+        "result": "Resposta: 1/4"
+      }
+    ]
+  },
+  {
+    "id": 274,
+    "code": "PROB-24",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Sistema ABO - genótipo incerto (2/3)",
+    "difficulty": "Avançada",
+    "prompt": "Rafael é do tipo sanguíneo A. Os pais dele também são do tipo A, e a irmã dele é do tipo O. Rafael se casa com Bianca, que é do tipo O. Qual a probabilidade de o primeiro filho do casal ser do tipo O?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 supõe que Rafael é Iᴬi com certeza; ele pode ser IᴬIᴬ."
+      },
+      {
+        "letter": "B",
+        "text": "1/4",
+        "rationale": "Incorreta. 1/4 usa o cruzamento dos pais de Rafael (Iᴬi × Iᴬi), e não o de Rafael com Bianca."
+      },
+      {
+        "letter": "C",
+        "text": "1/3",
+        "rationale": "CORRETA. A irmã O mostra que os pais de Rafael são Iᴬi × Iᴬi. Rafael é A: não é ii, então é Iᴬi com chance 2/3. Com Bianca (ii), o filho é O se Rafael for Iᴬi E passar o i: 2/3 × 1/2 = 1/3."
+      },
+      {
+        "letter": "D",
+        "text": "1/6",
+        "rationale": "Incorreta. 1/6 multiplica 2/3 × 1/4, tratando Bianca como heterozigota; ela é ii e sempre passa i."
+      }
+    ],
+    "correctLetter": "C",
+    "clinicalPointers": "O tipo da irmã revela o genótipo dos pais de Rafael. Rafael, porém, não é do tipo O: isso muda as possibilidades para ele.",
+    "solutionSteps": [
+      {
+        "text": "A irmã de Rafael é O (ii): recebeu um i de cada genitor. Os pais, que são A, são Iᴬi × Iᴬi."
+      },
+      {
+        "table": {
+          "head": [
+            "♀ \\ ♂",
+            "Iᴬ",
+            "i"
+          ],
+          "rows": [
+            [
+              "Iᴬ",
+              "IᴬIᴬ",
+              "Iᴬi"
+            ],
+            [
+              "i",
+              "Iᴬi",
+              "ii"
+            ]
+          ],
+          "hit": [
+            "IᴬIᴬ",
+            "Iᴬi"
+          ],
+          "caption": "Cruzamento dos pais de Rafael."
+        }
+      },
+      {
+        "text": "Rafael é A, então a casela ii está descartada. Sobram IᴬIᴬ, Iᴬi e Iᴬi.",
+        "calc": "P(Rafael Iᴬi) = 2/3"
+      },
+      {
+        "text": "Bianca é O (ii) e sempre passa i. Se Rafael for Iᴬi, ele passa o i com chance 1/2.",
+        "calc": "Se Rafael for Iᴬi: P(filho O) = 1/2"
+      },
+      {
+        "text": "Rafael ser Iᴬi E passar o i:",
+        "calc": "2/3 × 1/2 = 2/6 = 1/3"
+      },
+      {
+        "result": "Resposta: 1/3"
+      }
+    ]
+  },
+  {
+    "id": 275,
+    "code": "PROB-25",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Sistema ABO - dois filhos em sequência",
+    "difficulty": "Intermediária",
+    "prompt": "Um casal tem genótipos Iᴬi (mãe, tipo A) e Iᴮi (pai, tipo B). Qual a probabilidade de os dois primeiros filhos serem do tipo O?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/4",
+        "rationale": "Incorreta. 1/4 é a chance para um único filho; a pergunta pede o primeiro E o segundo."
+      },
+      {
+        "letter": "B",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 soma as chances dos dois filhos (1/4 + 1/4); eventos que precisam ocorrer juntos se multiplicam."
+      },
+      {
+        "letter": "C",
+        "text": "1/16",
+        "rationale": "CORRETA. Para cada filho, P(O) = 1/4 (ii). As gestações são independentes, e os dois precisam ser O: 1/4 × 1/4 = 1/16."
+      },
+      {
+        "letter": "D",
+        "text": "1/32",
+        "rationale": "Incorreta. 1/32 multiplica ainda por 1/2, como se o sexo dos filhos entrasse na conta; a pergunta não fala em sexo."
+      }
+    ],
+    "correctLetter": "C",
+    "clinicalPointers": "Calcule a chance para um filho e depois pense no que a pergunta exige para os dois.",
+    "solutionSteps": [
+      {
+        "text": "Monte o cruzamento.",
+        "calc": "Mãe Iᴬi × Pai Iᴮi"
+      },
+      {
+        "table": {
+          "head": [
+            "♀ \\ ♂",
+            "Iᴮ",
+            "i"
+          ],
+          "rows": [
+            [
+              "Iᴬ",
+              "IᴬIᴮ",
+              "Iᴬi"
+            ],
+            [
+              "i",
+              "Iᴮi",
+              "ii"
+            ]
+          ],
+          "hit": [
+            "ii"
+          ],
+          "caption": "Gametas da mãe nas linhas, do pai nas colunas."
+        }
+      },
+      {
+        "text": "Para um filho: tipo O = ii, 1 casela em 4.",
+        "calc": "P(O) = 1/4"
+      },
+      {
+        "text": "O 1º filho ser O E o 2º filho ser O (gestações independentes):",
+        "calc": "1/4 × 1/4 = 1/16"
+      },
+      {
+        "result": "Resposta: 1/16"
+      }
+    ]
+  },
+  {
+    "id": 276,
+    "code": "PROB-26",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Fator Rh - filho Rh negativo de pais Rh positivo",
+    "difficulty": "Básica",
+    "prompt": "Considere o fator Rh determinado por um gene com o alelo Rh+ (R) dominante sobre o Rh− (r). Um casal em que os dois são Rh positivo tem um filho Rh negativo. Qual a probabilidade de o próximo filho do casal ser um menino Rh negativo?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/8",
+        "rationale": "CORRETA. O filho rr mostra que os dois pais são Rr. Rr × Rr dá rr em 1/4; menino = 1/2. Menino E Rh negativo: 1/4 × 1/2 = 1/8."
+      },
+      {
+        "letter": "B",
+        "text": "1/4",
+        "rationale": "Incorreta. 1/4 é a chance de ser Rh negativo, sem considerar que também precisa ser menino."
+      },
+      {
+        "letter": "C",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 seria o esperado se um dos pais fosse rr; os dois são Rh positivo."
+      },
+      {
+        "letter": "D",
+        "text": "3/8",
+        "rationale": "Incorreta. 3/8 é a chance de um menino Rh POSITIVO (3/4 × 1/2)."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "O filho já nascido revela o genótipo dos pais. Depois, considere o sexo.",
+    "solutionSteps": [
+      {
+        "text": "O filho é Rh negativo (rr): recebeu um r de cada genitor. Os pais, Rh positivo, são Rr.",
+        "calc": "Rr × Rr"
+      },
+      {
+        "table": {
+          "head": [
+            "♀ \\ ♂",
+            "R",
+            "r"
+          ],
+          "rows": [
+            [
+              "R",
+              "RR",
+              "Rr"
+            ],
+            [
+              "r",
+              "Rr",
+              "rr"
+            ]
+          ],
+          "hit": [
+            "rr"
+          ],
+          "caption": "Gametas da mãe nas linhas, do pai nas colunas."
+        }
+      },
+      {
+        "text": "Rh negativo = rr: 1 casela em 4.",
+        "calc": "P(rr) = 1/4"
+      },
+      {
+        "text": "Menino E Rh negativo:",
+        "calc": "1/2 × 1/4 = 1/8"
+      },
+      {
+        "result": "Resposta: 1/8"
+      }
+    ]
+  },
+  {
+    "id": 277,
+    "code": "PROB-27",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Fator Rh - risco de feto Rh positivo em gestante Rh negativo",
+    "difficulty": "Intermediária",
+    "prompt": "Juliana é Rh negativo. O marido, Fábio, é Rh positivo, e a mãe dele é Rh negativo. Na avaliação pré-natal, a equipe quer estimar o risco de incompatibilidade Rh. Qual a probabilidade de os dois primeiros filhos do casal serem Rh positivo?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 é a chance para um único filho; a pergunta pede os dois primeiros."
+      },
+      {
+        "letter": "B",
+        "text": "1",
+        "rationale": "Incorreta. Seria 1 se Fábio fosse RR; a mãe Rh negativo lhe passou um r."
+      },
+      {
+        "letter": "C",
+        "text": "9/16",
+        "rationale": "Incorreta. 9/16 (3/4 × 3/4) trata o casal como Rr × Rr; Juliana é rr."
+      },
+      {
+        "letter": "D",
+        "text": "1/4",
+        "rationale": "CORRETA. Fábio recebeu r da mãe Rh negativo: é Rr. Juliana é rr. Cada filho é Rh positivo (Rr) com chance 1/2. Os dois filhos: 1/2 × 1/2 = 1/4."
+      }
+    ],
+    "correctLetter": "D",
+    "clinicalPointers": "Use a mãe de Fábio para descobrir quantos alelos R ele tem.",
+    "solutionSteps": [
+      {
+        "text": "Fábio é Rh positivo, mas a mãe dele é rr e lhe passou um r: Fábio é Rr. Juliana é Rh negativo: rr.",
+        "calc": "Juliana rr × Fábio Rr"
+      },
+      {
+        "table": {
+          "head": [
+            "♀ \\ ♂",
+            "R",
+            "r"
+          ],
+          "rows": [
+            [
+              "r",
+              "Rr",
+              "rr"
+            ],
+            [
+              "r",
+              "Rr",
+              "rr"
+            ]
+          ],
+          "hit": [
+            "Rr"
+          ],
+          "caption": "Gametas de Juliana nas linhas, de Fábio nas colunas."
+        }
+      },
+      {
+        "text": "Metade das caselas é Rr (Rh positivo).",
+        "calc": "P(Rh+) = 1/2"
+      },
+      {
+        "text": "O 1º filho ser Rh+ E o 2º filho ser Rh+:",
+        "calc": "1/2 × 1/2 = 1/4"
+      },
+      {
+        "text": "Por que isso importa: feto Rh+ em mãe Rh− pode sensibilizá-la; a partir da gestação seguinte há risco de doença hemolítica, prevenida com imunoglobulina anti-D."
+      },
+      {
+        "result": "Resposta: 1/4"
+      }
+    ]
+  },
+  {
+    "id": 278,
+    "code": "PROB-28",
+    "category": "Probabilidade em Genética",
+    "subcategory": "ABO e Rh combinados - genótipos pela família",
+    "difficulty": "Avançada",
+    "prompt": "Um casal tem os dois filhos do tipo O e Rh negativo. O pai é do tipo A e Rh positivo; a mãe é do tipo B e Rh positivo. Qual a probabilidade de o terceiro filho do casal ser do tipo AB e Rh positivo?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/16",
+        "rationale": "Incorreta. 1/16 usa 1/4 para o Rh positivo; no cruzamento Rr × Rr, Rh positivo (RR ou Rr) tem chance 3/4."
+      },
+      {
+        "letter": "B",
+        "text": "3/16",
+        "rationale": "CORRETA. Os filhos O Rh− (ii rr) mostram que os pais são Iᴬi Rr e Iᴮi Rr. Tipo AB = 1/4; Rh positivo = 3/4. Genes independentes: 1/4 × 3/4 = 3/16."
+      },
+      {
+        "letter": "C",
+        "text": "3/32",
+        "rationale": "Incorreta. 3/32 multiplica também pela chance de ser menina, que a pergunta não pede."
+      },
+      {
+        "letter": "D",
+        "text": "1/4",
+        "rationale": "Incorreta. 1/4 é só a chance de ser AB; falta combinar com a chance de ser Rh positivo."
+      }
+    ],
+    "correctLetter": "B",
+    "clinicalPointers": "Os filhos já nascidos mostram quais alelos recessivos os pais carregam. Resolva o ABO e o Rh separadamente.",
+    "solutionSteps": [
+      {
+        "text": "Os filhos são O Rh− (ii rr). Cada um recebeu i e r de cada genitor. Então os pais são heterozigotos nos dois genes.",
+        "calc": "Pai Iᴬi Rr × Mãe Iᴮi Rr"
+      },
+      {
+        "text": "Sistema ABO:"
+      },
+      {
+        "table": {
+          "head": [
+            "♀ \\ ♂",
+            "Iᴬ",
+            "i"
+          ],
+          "rows": [
+            [
+              "Iᴮ",
+              "IᴬIᴮ",
+              "Iᴮi"
+            ],
+            [
+              "i",
+              "Iᴬi",
+              "ii"
+            ]
+          ],
+          "hit": [
+            "IᴬIᴮ"
+          ],
+          "caption": "Gametas da mãe nas linhas, do pai nas colunas."
+        }
+      },
+      {
+        "text": "Tipo AB = IᴬIᴮ: 1 casela em 4.",
+        "calc": "P(AB) = 1/4"
+      },
+      {
+        "text": "Fator Rh:"
+      },
+      {
+        "table": {
+          "head": [
+            "♀ \\ ♂",
+            "R",
+            "r"
+          ],
+          "rows": [
+            [
+              "R",
+              "RR",
+              "Rr"
+            ],
+            [
+              "r",
+              "Rr",
+              "rr"
+            ]
+          ],
+          "hit": [
+            "RR",
+            "Rr"
+          ],
+          "caption": "Gametas da mãe nas linhas, do pai nas colunas."
+        }
+      },
+      {
+        "text": "Rh positivo = RR ou Rr: 3 caselas em 4.",
+        "calc": "P(Rh+) = 3/4"
+      },
+      {
+        "text": "Tipo AB E Rh positivo (genes independentes):",
+        "calc": "1/4 × 3/4 = 3/16"
+      },
+      {
+        "result": "Resposta: 3/16"
+      }
+    ]
+  },
+  {
+    "id": 279,
+    "code": "PROB-29",
+    "category": "Probabilidade em Genética",
+    "subcategory": "ABO e Rh combinados - menina de tipo definido",
+    "difficulty": "Intermediária",
+    "prompt": "Um homem do tipo AB e Rh negativo tem filhos com uma mulher do tipo O e Rh positivo, cujo pai é Rh negativo. Qual a probabilidade de o primeiro filho do casal ser uma menina do tipo B e Rh positivo?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/8",
+        "rationale": "CORRETA. Ele é IᴬIᴮ rr; ela é ii Rr (pai Rh negativo). Tipo B (Iᴮi) = 1/2; Rh positivo (Rr) = 1/2; menina = 1/2: 1/2 × 1/2 × 1/2 = 1/8."
+      },
+      {
+        "letter": "B",
+        "text": "1/4",
+        "rationale": "Incorreta. 1/4 combina tipo B e Rh positivo, mas esquece a chance de ser menina."
+      },
+      {
+        "letter": "C",
+        "text": "1/16",
+        "rationale": "Incorreta. 1/16 usa 1/4 para o tipo B; com pai IᴬIᴮ e mãe ii, metade dos filhos é B."
+      },
+      {
+        "letter": "D",
+        "text": "3/16",
+        "rationale": "Incorreta. 3/16 usa 3/4 para o Rh positivo, como num cruzamento Rr × Rr; o pai é rr."
+      }
+    ],
+    "correctLetter": "A",
+    "clinicalPointers": "Descubra o genótipo Rh da mulher pelo pai dela. Depois resolva ABO, Rh e sexo separadamente.",
+    "solutionSteps": [
+      {
+        "text": "O homem é AB Rh−: IᴬIᴮ rr. A mulher é O (ii) e Rh+, mas o pai dela é rr e lhe passou um r: ela é Rr.",
+        "calc": "Homem IᴬIᴮ rr × Mulher ii Rr"
+      },
+      {
+        "text": "Sistema ABO:"
+      },
+      {
+        "table": {
+          "head": [
+            "♀ \\ ♂",
+            "Iᴬ",
+            "Iᴮ"
+          ],
+          "rows": [
+            [
+              "i",
+              "Iᴬi",
+              "Iᴮi"
+            ],
+            [
+              "i",
+              "Iᴬi",
+              "Iᴮi"
+            ]
+          ],
+          "hit": [
+            "Iᴮi"
+          ],
+          "caption": "Gametas da mulher nas linhas, do homem nas colunas."
+        }
+      },
+      {
+        "text": "Metade é Iᴬi (A) e metade é Iᴮi (B).",
+        "calc": "P(B) = 1/2"
+      },
+      {
+        "text": "Fator Rh:"
+      },
+      {
+        "table": {
+          "head": [
+            "♀ \\ ♂",
+            "r",
+            "r"
+          ],
+          "rows": [
+            [
+              "R",
+              "Rr",
+              "Rr"
+            ],
+            [
+              "r",
+              "rr",
+              "rr"
+            ]
+          ],
+          "hit": [
+            "Rr"
+          ],
+          "caption": "Gametas da mulher nas linhas, do homem nas colunas."
+        }
+      },
+      {
+        "text": "Metade é Rr (Rh+).",
+        "calc": "P(Rh+) = 1/2"
+      },
+      {
+        "text": "Menina E tipo B E Rh positivo:",
+        "calc": "1/2 × 1/2 × 1/2 = 1/8"
+      },
+      {
+        "result": "Resposta: 1/8"
+      }
+    ]
+  },
+  {
+    "id": 280,
+    "code": "PROB-30",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Exclusão de paternidade - ABO e Rh",
+    "difficulty": "Intermediária",
+    "prompt": "Uma criança é do tipo O e Rh negativo; a mãe é do tipo A e Rh positivo. Quatro homens são investigados como possível pai biológico. Considerando o sistema ABO e o fator Rh (alelo Rh+ dominante), qual deles pode ser excluído com certeza?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Um homem do tipo A e Rh positivo",
+        "rationale": "Incorreta. Um homem A pode ser Iᴬi e Rh positivo pode ser Rr: ele pode passar i e r."
+      },
+      {
+        "letter": "B",
+        "text": "Um homem do tipo B e Rh negativo",
+        "rationale": "Incorreta. Um homem B pode ser Iᴮi, e sendo Rh negativo (rr) sempre passa r."
+      },
+      {
+        "letter": "C",
+        "text": "Um homem do tipo AB e Rh positivo",
+        "rationale": "CORRETA. A criança é ii rr: recebeu i e r do pai. Um homem AB (IᴬIᴮ) não tem o alelo i e não pode ter um filho do tipo O, qualquer que seja o seu Rh."
+      },
+      {
+        "letter": "D",
+        "text": "Um homem do tipo O e Rh positivo",
+        "rationale": "Incorreta. Um homem O sempre passa i, e sendo Rh positivo pode ser Rr."
+      }
+    ],
+    "correctLetter": "C",
+    "clinicalPointers": "Escreva o genótipo da criança e pergunte, para cada homem, se ele consegue fornecer os alelos que ela recebeu do pai.",
+    "solutionSteps": [
+      {
+        "text": "A criança é O Rh−: genótipo ii rr. Ela recebeu um i e um r do pai biológico."
+      },
+      {
+        "text": "Pergunta para cada candidato: ele pode ter o alelo i E o alelo r?"
+      },
+      {
+        "table": {
+          "head": [
+            "Candidato",
+            "Pode ter i?",
+            "Pode ter r?",
+            "Pode ser o pai?"
+          ],
+          "rows": [
+            [
+              "A, Rh+",
+              "sim (Iᴬi)",
+              "sim (Rr)",
+              "sim"
+            ],
+            [
+              "B, Rh−",
+              "sim (Iᴮi)",
+              "sim (rr)",
+              "sim"
+            ],
+            [
+              "O, Rh+",
+              "sim (ii)",
+              "sim (Rr)",
+              "sim"
+            ],
+            [
+              "AB, Rh+",
+              "não (IᴬIᴮ)",
+              "sim (Rr)",
+              "NÃO"
+            ]
+          ],
+          "hit": [
+            "NÃO"
+          ],
+          "rowHeads": true,
+          "caption": "Basta faltar um dos alelos para excluir a paternidade."
+        }
+      },
+      {
+        "text": "O homem AB só forma gametas Iᴬ ou Iᴮ: nunca passa i. Ele está excluído."
+      },
+      {
+        "result": "Resposta: um homem do tipo AB e Rh positivo"
+      }
+    ]
+  },
+  {
+    "id": 281,
+    "code": "PROB-31",
+    "category": "Probabilidade em Genética",
+    "subcategory": "Sistema ABO - chance de o filho ter tipo diferente dos pais",
+    "difficulty": "Intermediária",
+    "prompt": "Um homem do tipo A, cuja mãe é do tipo O, casa-se com uma mulher do tipo A, cujo pai é do tipo O. Qual a probabilidade de o primeiro filho do casal ser do tipo A?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/4",
+        "rationale": "Incorreta. 1/4 é a chance de o filho ser do tipo O (ii)."
+      },
+      {
+        "letter": "B",
+        "text": "3/4",
+        "rationale": "CORRETA. Os dois receberam i de um genitor O: são Iᴬi × Iᴬi. Tipo A = IᴬIᴬ ou Iᴬi: 3 caselas em 4, ou seja, 3/4."
+      },
+      {
+        "letter": "C",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 conta só a casela Iᴬi e esquece que IᴬIᴬ também é tipo A."
+      },
+      {
+        "letter": "D",
+        "text": "1",
+        "rationale": "Incorreta. Seria 1 se ao menos um genitor fosse IᴬIᴬ; os dois carregam o alelo i."
+      }
+    ],
+    "correctLetter": "B",
+    "clinicalPointers": "Os genitores do tipo O de cada um revelam um alelo em comum no casal.",
+    "solutionSteps": [
+      {
+        "text": "O homem é A e a mãe dele é O: recebeu um i. A mulher é A e o pai dela é O: também recebeu um i.",
+        "calc": "Iᴬi × Iᴬi"
+      },
+      {
+        "table": {
+          "head": [
+            "♀ \\ ♂",
+            "Iᴬ",
+            "i"
+          ],
+          "rows": [
+            [
+              "Iᴬ",
+              "IᴬIᴬ",
+              "Iᴬi"
+            ],
+            [
+              "i",
+              "Iᴬi",
+              "ii"
+            ]
+          ],
+          "hit": [
+            "IᴬIᴬ",
+            "Iᴬi"
+          ],
+          "caption": "Gametas da mãe nas linhas, do pai nas colunas."
+        }
+      },
+      {
+        "text": "Tipo A = IᴬIᴬ ou Iᴬi: 3 caselas em 4 (só ii é O).",
+        "calc": "P(A) = 3/4"
+      },
+      {
+        "result": "Resposta: 3/4"
+      }
+    ]
+  },
+  {
+    "id": 282,
+    "code": "PROB-32",
+    "category": "Probabilidade em Genética",
+    "subcategory": "ABO e Rh - receptor e doador na mesma família",
+    "difficulty": "Avançada",
+    "prompt": "Um casal é formado por um homem Iᴬi Rr e uma mulher Iᴮi rr. Considerando apenas o sistema ABO e o fator Rh, qual a probabilidade de o primeiro filho ter sangue do tipo O e Rh negativo, perfil classicamente associado ao doador universal de hemácias?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1/16",
+        "rationale": "Incorreta. 1/16 usa 1/4 para o Rh negativo, como num cruzamento Rr × Rr; a mulher é rr."
+      },
+      {
+        "letter": "B",
+        "text": "1/4",
+        "rationale": "Incorreta. 1/4 é só a chance de ser tipo O; falta combinar com o Rh negativo."
+      },
+      {
+        "letter": "C",
+        "text": "1/2",
+        "rationale": "Incorreta. 1/2 é só a chance de ser Rh negativo; falta combinar com o tipo O."
+      },
+      {
+        "letter": "D",
+        "text": "1/8",
+        "rationale": "CORRETA. Tipo O (ii) = 1/2 × 1/2 = 1/4. Rh negativo: Rr × rr dá rr em 1/2. Genes independentes: 1/4 × 1/2 = 1/8."
+      }
+    ],
+    "correctLetter": "D",
+    "clinicalPointers": "Resolva o ABO e o Rh em quadros separados e depois combine.",
+    "solutionSteps": [
+      {
+        "text": "Os genótipos já foram dados.",
+        "calc": "Homem Iᴬi Rr × Mulher Iᴮi rr"
+      },
+      {
+        "text": "Sistema ABO:"
+      },
+      {
+        "table": {
+          "head": [
+            "♀ \\ ♂",
+            "Iᴬ",
+            "i"
+          ],
+          "rows": [
+            [
+              "Iᴮ",
+              "IᴬIᴮ",
+              "Iᴮi"
+            ],
+            [
+              "i",
+              "Iᴬi",
+              "ii"
+            ]
+          ],
+          "hit": [
+            "ii"
+          ],
+          "caption": "Gametas da mulher nas linhas, do homem nas colunas."
+        }
+      },
+      {
+        "text": "Tipo O = ii: 1 casela em 4.",
+        "calc": "P(O) = 1/4"
+      },
+      {
+        "text": "Fator Rh:"
+      },
+      {
+        "table": {
+          "head": [
+            "♀ \\ ♂",
+            "R",
+            "r"
+          ],
+          "rows": [
+            [
+              "r",
+              "Rr",
+              "rr"
+            ],
+            [
+              "r",
+              "Rr",
+              "rr"
+            ]
+          ],
+          "hit": [
+            "rr"
+          ],
+          "caption": "Gametas da mulher nas linhas, do homem nas colunas."
+        }
+      },
+      {
+        "text": "Rh negativo = rr: 2 caselas em 4.",
+        "calc": "P(rr) = 1/2"
+      },
+      {
+        "text": "Tipo O E Rh negativo (genes independentes):",
+        "calc": "1/4 × 1/2 = 1/8"
       },
       {
         "result": "Resposta: 1/8"
