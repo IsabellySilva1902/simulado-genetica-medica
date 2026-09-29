@@ -15533,12 +15533,41 @@ function renderSrsSummary() {
   const el = document.getElementById("srs-summary");
   if (!el) return;
   const s = srsLoad();
-  const total = Object.keys(s.items).filter((c) => QUESTIONS_DATABASE.some((q) => q.code === c)).length;
+  const rows = Object.entries(s.items)
+    .map(([code, it]) => ({ code, it, q: QUESTIONS_DATABASE.find((x) => x.code === code) }))
+    .filter((x) => x.q)
+    .sort((a, b) => a.it.due - b.it.due || a.code.localeCompare(b.code));
+  if (!rows.length) {
+    el.textContent = "🔁 Revisão espaçada: as questões que você errar voltam sozinhas nos próximos simulados, em intervalos cada vez maiores.";
+    return;
+  }
+  const wrong = rows.filter((x) => x.it.box === 0 && !x.it.slow).length;
+  const slow = rows.filter((x) => x.it.slow).length;
+  const confirming = rows.length - wrong - slow;
   const due = srsDueList(null).length;
-  const nSlow = Object.entries(s.items).filter(([c, it]) => it.slow && QUESTIONS_DATABASE.some((q) => q.code === c)).length;
-  el.textContent = total
-    ? `🔁 Revisão espaçada: ${total} questão(ões) na fila${nSlow ? ` (${nSlow} por demora)` : ""}; ${due} entra(m) no próximo simulado (as revisões ocupam até ~30% dele).`
-    : "🔁 Revisão espaçada: as questões que você errar voltam sozinhas nos próximos simulados, em intervalos cada vez maiores.";
+  const parts = [];
+  if (wrong) parts.push(`${wrong} errada(s), ainda sem acerto`);
+  if (confirming) parts.push(`${confirming} já acertada(s) na revisão, aguardando confirmação`);
+  if (slow) parts.push(`${slow} por demora`);
+  const when = (it) => {
+    const n = it.due - s.counter;
+    return n <= 1 ? "volta no próximo simulado" : `volta daqui a ${n} simulados`;
+  };
+  const status = (it) => {
+    if (it.slow) return `⏱️ acertou, mas com demora · ${when(it)}`;
+    if (it.box === 0) return `❌ errou · ${when(it)}`;
+    return `✅ acertou na revisão (etapa ${it.box} de ${SRS_INTERVALS.length}) · ${when(it)}`;
+  };
+  el.innerHTML = `
+    🔁 <strong>Revisão espaçada:</strong> ${rows.length} questão(ões) na fila: ${parts.join("; ")}.
+    ${due} entra(m) no próximo simulado (as revisões ocupam até ~30% dele).
+    <details class="mt-1">
+      <summary class="cursor-pointer text-xs underline">Ver questões da fila</summary>
+      <ul class="mt-2 space-y-1 text-xs text-slate-600 dark:text-slate-300">
+        ${rows.map((x) => `<li><span class="font-mono">${escapeHtml(x.code)}</span> · ${escapeHtml(x.q.subcategory || x.q.category)}<br><span class="text-slate-500 dark:text-slate-400">${status(x.it)}</span></li>`).join("")}
+      </ul>
+      <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">Uma questão sai da fila depois de acertada em ${SRS_INTERVALS.length} revisões seguidas; se errar, recomeça. "Pontos fracos", abaixo, mostra só as que você errou e ainda não acertou de novo.</p>
+    </details>`;
 }
 
 function renderWeakPointsSummary() {
@@ -15548,7 +15577,7 @@ function renderWeakPointsSummary() {
   const btnEl = document.getElementById("btn-review-weak");
   const validWeak = weakIds.filter((id) => QUESTIONS_DATABASE.some((q) => q.id === id));
   if (validWeak.length) {
-    summaryEl.textContent = `Você tem ${validWeak.length} questão(ões) que já errou e ainda não acertou de novo.`;
+    summaryEl.textContent = `Pontos fracos: ${validWeak.length} questão(ões) que você errou e ainda não acertou de novo.`;
     btnEl.classList.remove("hidden");
   } else {
     summaryEl.textContent = "Você ainda não errou nenhuma questão que continue pendente. 🎉";
