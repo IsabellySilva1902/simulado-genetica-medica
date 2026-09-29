@@ -438,7 +438,7 @@
       </div>
       <div>
         <p class="font-medium text-slate-800 dark:text-slate-100">🎯 Depois do simulado</p>
-        <p>As questões que você errar voltam sozinhas nos próximos simulados, em intervalos cada vez maiores (revisão espaçada, como no Anki; aparecem com o selo 🔁 revisão). A seção "Pontos fracos", na página inicial, guarda as questões que você errou — use-a para revisar só o que precisa. Veja também a dica de "caderno de erros" logo no topo da página.</p>
+        <p>As questões que você errar voltam sozinhas nos próximos simulados, em intervalos cada vez maiores (revisão espaçada, como no Anki; aparecem com o selo 🔁 revisão). Questões que você acerta, mas levando bem mais tempo que o seu ritmo normal para aquele tipo de questão, também entram na revisão. A seção "Pontos fracos", na página inicial, guarda as questões que você errou — use-a para revisar só o que precisa. Veja também a dica de "caderno de erros" logo no topo da página.</p>
       </div>
       <div>
         <p class="font-medium text-slate-800 dark:text-slate-100">👥 Código de sessão (opcional)</p>
@@ -15462,9 +15462,44 @@ function srsDueList(subjects) {
     .sort((a, b) => a.it.due - b.it.due || a.it.box - b.it.box);
 }
 
+// Tempo "esperado" de uma questao, em segundos: leitura do texto (~200 palavras/min)
+// + extra para figura (heredograma, tabela, codigo genetico) ou calculo.
+function srsExpectedSec(q) {
+  const src = QUESTIONS_DATABASE.find((x) => x.code === q.code) || q;
+  const text = String(src.prompt || "") + " " + (src.options || []).map((o) => o.text).join(" ");
+  const words = text.split(/\s+/).filter(Boolean).length;
+  let sec = 15 + words * 0.3;
+  if (src.visual || src.visualHtml) sec += 45;
+  if (/probabilidade|calcul|quantos|quantas|propor[cç][aã]o|fita|c[oó]don/i.test(String(src.prompt || ""))) sec += 30;
+  return sec;
+}
+
+const SRS_SLOW_FACTOR = 3; // "demorou demais" = mais de 3x o seu ritmo normal para aquela questao
+const SRS_SLOW_MIN_SEC = 90; // ...e pelo menos 1min30
+
 function srsRecord(questions, regular) {
   const s = srsLoad();
+  if (!Array.isArray(s.ratios)) s.ratios = [];
   if (regular) s.counter++;
+  // ritmo pessoal: razao entre o tempo gasto ate responder e o tempo esperado
+  const timed = questions
+    .filter((q) => q.answerIndex !== null && q.answerIndex !== undefined)
+    .map((q) => ({ q, sec: (q.answerMs || q.timeMs || 0) / 1000 }))
+    .filter((x) => x.sec > 0)
+    .map((x) => ({ q: x.q, sec: x.sec, ratio: x.sec / srsExpectedSec(x.q) }));
+  const sample = s.ratios.concat(timed.map((x) => x.ratio));
+  let med = null;
+  if (sample.length >= 8) {
+    const sorted = sample.slice().sort((a, b) => a - b);
+    const m = Math.floor(sorted.length / 2);
+    med = sorted.length % 2 ? sorted[m] : (sorted[m - 1] + sorted[m]) / 2;
+  }
+  const slow = new Set(
+    regular && med
+      ? timed.filter((x) => x.sec >= SRS_SLOW_MIN_SEC && x.ratio > SRS_SLOW_FACTOR * med).map((x) => x.q.code)
+      : []
+  );
+  let nSlow = 0;
   questions.forEach((q) => {
     if (q.answerIndex === null || q.answerIndex === undefined) return;
     const ok = q.options[q.answerIndex].isCorrect;
@@ -15473,12 +15508,25 @@ function srsRecord(questions, regular) {
       s.items[q.code] = { box: 0, due: s.counter + SRS_INTERVALS[0] };
       return;
     }
+    if (slow.has(q.code)) {
+      // acertou, mas levou muito mais tempo que o seu normal: entra (ou fica) na revisao sem avancar
+      if (!it) {
+        s.items[q.code] = { box: 1, due: s.counter + SRS_INTERVALS[1], slow: true };
+        nSlow++;
+      } else if (it.due <= s.counter) {
+        s.items[q.code] = { box: it.box, due: s.counter + SRS_INTERVALS[it.box], slow: true };
+        nSlow++;
+      }
+      return;
+    }
     if (!it || !regular || it.due > s.counter) return; // acerto fora da hora da revisao nao conta
     const box = it.box + 1;
     if (box >= SRS_INTERVALS.length) delete s.items[q.code];
     else s.items[q.code] = { box, due: s.counter + SRS_INTERVALS[box] };
   });
+  if (regular) s.ratios = sample.slice(-300);
   lsSet(LS_KEYS.srs, s);
+  return nSlow;
 }
 
 function renderSrsSummary() {
@@ -15487,8 +15535,9 @@ function renderSrsSummary() {
   const s = srsLoad();
   const total = Object.keys(s.items).filter((c) => QUESTIONS_DATABASE.some((q) => q.code === c)).length;
   const due = srsDueList(null).length;
+  const nSlow = Object.entries(s.items).filter(([c, it]) => it.slow && QUESTIONS_DATABASE.some((q) => q.code === c)).length;
   el.textContent = total
-    ? `🔁 Revisão espaçada: ${total} questão(ões) na fila; ${due} entra(m) no próximo simulado (as revisões ocupam até ~30% dele).`
+    ? `🔁 Revisão espaçada: ${total} questão(ões) na fila${nSlow ? ` (${nSlow} por demora)` : ""}; ${due} entra(m) no próximo simulado (as revisões ocupam até ~30% dele).`
     : "🔁 Revisão espaçada: as questões que você errar voltam sozinhas nos próximos simulados, em intervalos cada vez maiores.";
 }
 
@@ -15922,6 +15971,8 @@ function selectOption(i) {
   const q = currentQuestion();
   if (App.attempt.mode === "tutor" && q.checked) return; // trava apos conferir a resposta no modo tutor
   q.answerIndex = i;
+  syncActiveTime();
+  q.answerMs = q.timeMs; // tempo ate a resposta (nao conta a leitura da explicacao no modo tutor)
   renderQuizQuestion();
 }
 
@@ -16036,7 +16087,8 @@ function finishQuiz() {
   lsSet(LS_KEYS.weak, Array.from(weak));
 
   // revisao espacada
-  srsRecord(questions, !App.attempt.label);
+  const nSlow = srsRecord(questions, !App.attempt.label);
+  if (nSlow) setTimeout(() => toast(`⏱️ ${nSlow} questão(ões) que você acertou, mas com tempo bem acima do seu ritmo, entrou(aram) na revisão espaçada.`, "info"), 400);
 
   // historico
   const history = lsGet(LS_KEYS.history, []);
