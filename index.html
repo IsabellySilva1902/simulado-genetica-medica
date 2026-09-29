@@ -249,6 +249,7 @@
         <div class="flex items-center justify-between mb-3">
           <h3 class="font-semibold">🎯 Pontos fracos</h3>
         </div>
+        <p id="srs-summary" class="text-sm text-indigo-700 dark:text-indigo-300 mb-2"></p>
         <p id="weak-points-summary" class="text-sm text-slate-600 dark:text-slate-300 mb-3">Você ainda não errou nenhuma questão que continue pendente. 🎉</p>
         <button id="btn-review-weak" class="hidden w-full py-2 rounded-lg border border-rose-400 text-rose-600 dark:text-rose-300 font-medium hover:bg-rose-50 dark:hover:bg-rose-900/30">
           Revisar pontos fracos agora
@@ -437,7 +438,7 @@
       </div>
       <div>
         <p class="font-medium text-slate-800 dark:text-slate-100">🎯 Depois do simulado</p>
-        <p>A seção "Pontos fracos", na página inicial, guarda as questões que você errou — use-a para revisar só o que precisa. Veja também a dica de "caderno de erros" logo no topo da página.</p>
+        <p>As questões que você errar voltam sozinhas nos próximos simulados, em intervalos cada vez maiores (revisão espaçada, como no Anki; aparecem com o selo 🔁 revisão). A seção "Pontos fracos", na página inicial, guarda as questões que você errou — use-a para revisar só o que precisa. Veja também a dica de "caderno de erros" logo no topo da página.</p>
       </div>
       <div>
         <p class="font-medium text-slate-800 dark:text-slate-100">👥 Código de sessão (opcional)</p>
@@ -14914,6 +14915,7 @@ const LS_KEYS = {
   seen: `simfc_${STORAGE_SUBJECT}_seen_ids`,
   history: `simfc_${STORAGE_SUBJECT}_history`,
   weak: `simfc_${STORAGE_SUBJECT}_weak_ids`,
+  srs: `simfc_${STORAGE_SUBJECT}_srs`, // agenda da revisao espacada
   current: `simfc_${STORAGE_SUBJECT}_current_attempt`,
   dark: "simfc_dark_mode", // preferencia de modo escuro compartilhada entre todos os simulados
   tutorialSeen: "simfc_tutorial_seen", // guia "como usar" ja visto, compartilhado entre todos os simulados
@@ -15426,7 +15428,72 @@ function renderHistory() {
     .join("");
 }
 
+/* =========================================================================
+   REVISAO ESPACADA (estilo Anki, contada em simulados)
+   Questao errada -> volta no proximo simulado. Cada acerto na revisao
+   aumenta o intervalo (1, 2, 4, 8 simulados); acertou na ultima etapa ->
+   sai da fila. Errou de novo -> recomeca. So simulados normais (sem
+   "refazer"/"pontos fracos") avancam a contagem.
+   ========================================================================= */
+const SRS_INTERVALS = [1, 2, 4, 8];
+const SRS_MAX_SHARE = 0.3; // revisoes ocupam no maximo ~30% do simulado
+
+function srsLoad() {
+  let s = lsGet(LS_KEYS.srs, null);
+  if (!s || typeof s !== "object" || !s.items || typeof s.counter !== "number") {
+    // primeira vez: as questoes ja marcadas como "pontos fracos" entram na fila
+    s = { counter: 0, items: {} };
+    lsGet(LS_KEYS.weak, []).forEach((id) => {
+      const q = QUESTIONS_DATABASE.find((x) => x.id === id);
+      if (q) s.items[q.code] = { box: 0, due: 1 };
+    });
+    lsSet(LS_KEYS.srs, s);
+  }
+  return s;
+}
+
+function srsDueList(subjects) {
+  const s = srsLoad();
+  const next = s.counter + 1;
+  return Object.entries(s.items)
+    .filter(([, it]) => it.due <= next)
+    .map(([code, it]) => ({ it, q: QUESTIONS_DATABASE.find((x) => x.code === code) }))
+    .filter((x) => x.q && (!subjects || subjects.includes(x.q.category)))
+    .sort((a, b) => a.it.due - b.it.due || a.it.box - b.it.box);
+}
+
+function srsRecord(questions, regular) {
+  const s = srsLoad();
+  if (regular) s.counter++;
+  questions.forEach((q) => {
+    if (q.answerIndex === null || q.answerIndex === undefined) return;
+    const ok = q.options[q.answerIndex].isCorrect;
+    const it = s.items[q.code];
+    if (!ok) {
+      s.items[q.code] = { box: 0, due: s.counter + SRS_INTERVALS[0] };
+      return;
+    }
+    if (!it || !regular || it.due > s.counter) return; // acerto fora da hora da revisao nao conta
+    const box = it.box + 1;
+    if (box >= SRS_INTERVALS.length) delete s.items[q.code];
+    else s.items[q.code] = { box, due: s.counter + SRS_INTERVALS[box] };
+  });
+  lsSet(LS_KEYS.srs, s);
+}
+
+function renderSrsSummary() {
+  const el = document.getElementById("srs-summary");
+  if (!el) return;
+  const s = srsLoad();
+  const total = Object.keys(s.items).filter((c) => QUESTIONS_DATABASE.some((q) => q.code === c)).length;
+  const due = srsDueList(null).length;
+  el.textContent = total
+    ? `🔁 Revisão espaçada: ${total} questão(ões) na fila; ${due} entra(m) no próximo simulado (as revisões ocupam até ~30% dele).`
+    : "🔁 Revisão espaçada: as questões que você errar voltam sozinhas nos próximos simulados, em intervalos cada vez maiores.";
+}
+
 function renderWeakPointsSummary() {
+  renderSrsSummary();
   const weakIds = lsGet(LS_KEYS.weak, []);
   const summaryEl = document.getElementById("weak-points-summary");
   const btnEl = document.getElementById("btn-review-weak");
@@ -15468,12 +15535,21 @@ function startQuiz(opts) {
   const respectAntiRepeat = !sessionCode;
 
   let chosen;
+  const reviewIds = new Set();
   if (poolOverride) {
     // pools de retentativa (erradas/marcadas/fracas): usa o pool inteiro, so embaralha ordem
     chosen = pool.slice(0, qtd);
     shuffleInPlace(chosen, rng);
   } else {
-    chosen = sampleBalanced(pool, subjects, qtd, rng, seen, respectAntiRepeat);
+    // revisoes vencidas entram primeiro (nao em sessoes compartilhadas por codigo)
+    if (!sessionCode) {
+      const cap = Math.max(1, Math.round(qtd * SRS_MAX_SHARE));
+      srsDueList(subjects).slice(0, Math.min(cap, qtd)).forEach((x) => reviewIds.add(x.q.id));
+    }
+    const reviews = pool.filter((q) => reviewIds.has(q.id));
+    const fresh = sampleBalanced(pool.filter((q) => !reviewIds.has(q.id)), subjects, qtd - reviews.length, rng, seen, respectAntiRepeat);
+    chosen = reviews.concat(fresh);
+    shuffleInPlace(chosen, rng);
   }
 
   if (!chosen.length) {
@@ -15491,6 +15567,7 @@ function startQuiz(opts) {
     currentIndex: 0,
     finished: false,
   };
+  App.attempt.questions.forEach((q) => { if (reviewIds.has(q.id)) q.isReview = true; });
   App.timerQuestionIndex = null;
   App.questionStartTs = null;
   saveCurrentAttempt();
@@ -15738,7 +15815,7 @@ function renderQuizQuestion() {
 
   document.getElementById("q-category").textContent = q.category;
   document.getElementById("q-difficulty").textContent = q.difficulty;
-  document.getElementById("q-code").textContent = q.code;
+  document.getElementById("q-code").textContent = q.code + (q.isReview ? " · 🔁 revisão" : "");
   const promptEl = document.getElementById("q-prompt");
   promptEl.innerHTML = renderHighlightedText(q.prompt, q.highlights, true);
   promptEl.querySelectorAll(".hl-mark").forEach((markEl) =>
@@ -15957,6 +16034,9 @@ function finishQuiz() {
     else weak.delete(q.id);
   });
   lsSet(LS_KEYS.weak, Array.from(weak));
+
+  // revisao espacada
+  srsRecord(questions, !App.attempt.label);
 
   // historico
   const history = lsGet(LS_KEYS.history, []);
@@ -16258,6 +16338,7 @@ function exportProgress() {
     seenIds: lsGet(LS_KEYS.seen, []),
     history: lsGet(LS_KEYS.history, []),
     weakIds: lsGet(LS_KEYS.weak, []),
+    srs: lsGet(LS_KEYS.srs, null),
     exportedAt: Date.now(),
     version: 1,
   };
@@ -16293,7 +16374,16 @@ function applyImport(mode) {
     lsSet(LS_KEYS.seen, d.seenIds || []);
     lsSet(LS_KEYS.history, (d.history || []).slice(0, HISTORY_MAX));
     lsSet(LS_KEYS.weak, d.weakIds || []);
+    if (d.srs && d.srs.items) lsSet(LS_KEYS.srs, d.srs);
+    else localStorage.removeItem(LS_KEYS.srs);
   } else {
+    if (d.srs && d.srs.items) {
+      const cur = srsLoad();
+      Object.entries(d.srs.items).forEach(([code, it]) => {
+        if (!cur.items[code]) cur.items[code] = { box: it.box || 0, due: cur.counter + 1 };
+      });
+      lsSet(LS_KEYS.srs, cur);
+    }
     const seen = new Set(lsGet(LS_KEYS.seen, []));
     (d.seenIds || []).forEach((id) => seen.add(id));
     lsSet(LS_KEYS.seen, Array.from(seen));
