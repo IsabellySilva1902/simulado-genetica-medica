@@ -284,7 +284,7 @@
       </div>
 
       <p id="q-prompt" class="text-base sm:text-lg font-medium mb-1.5 leading-relaxed select-text" style="white-space: pre-line"></p>
-      <p class="text-xs text-slate-400 dark:text-slate-500 mb-3">🖍️ Selecione um trecho do enunciado, de uma tabela ou de um gráfico para grifar. Clique num grifo para apagá-lo.</p>
+      <p class="text-xs text-slate-400 dark:text-slate-500 mb-3">🖍️ Selecione um trecho do enunciado, de uma tabela ou de um gráfico para grifar (no celular ou tablet, selecione e toque em "Grifar trecho"). Clique num grifo para apagá-lo.</p>
 
       <div id="q-visual-container"></div>
 
@@ -15893,8 +15893,78 @@ function removeVisualHighlight(index) {
   renderQuizQuestion();
 }
 
+/* Grifo em telas de toque (Android, iPad): a seleção feita segurando o dedo e
+   ajustada pelas "alças" do sistema não dispara touchend no enunciado. Por isso,
+   em toque, a seleção é acompanhada pelo evento selectionchange e um botão
+   flutuante "Grifar trecho" aplica o grifo. Com mouse, continua automático. */
+let lastPointerType = "mouse";
+let pendingTouchHighlight = null;
+
+function touchHighlightButton() {
+  let btn = document.getElementById("btn-touch-highlight");
+  if (btn) return btn;
+  btn = document.createElement("button");
+  btn.id = "btn-touch-highlight";
+  btn.type = "button";
+  btn.textContent = "🖍️ Grifar trecho";
+  btn.setAttribute("aria-label", "Grifar o trecho selecionado");
+  Object.assign(btn.style, {
+    display: "none", position: "fixed", left: "50%", bottom: "24px", transform: "translateX(-50%)",
+    zIndex: "90", padding: "12px 22px", borderRadius: "9999px", border: "none",
+    background: "#fde047", color: "#0f172a", fontWeight: "700", fontSize: "16px",
+    boxShadow: "0 6px 20px rgba(0,0,0,.25)", touchAction: "manipulation",
+  });
+  // aplica já no pointerdown, antes de o toque desfazer a seleção
+  btn.addEventListener("pointerdown", (e) => { e.preventDefault(); applyPendingTouchHighlight(); });
+  btn.addEventListener("click", (e) => { e.preventDefault(); if (pendingTouchHighlight) applyPendingTouchHighlight(); });
+  document.body.appendChild(btn);
+  return btn;
+}
+
+function hideTouchHighlightButton() {
+  pendingTouchHighlight = null;
+  const btn = document.getElementById("btn-touch-highlight");
+  if (btn) btn.style.display = "none";
+}
+
+function applyPendingTouchHighlight() {
+  const p = pendingTouchHighlight;
+  hideTouchHighlightButton();
+  if (!p || !App.attempt) return;
+  const q = currentQuestion();
+  if (p.kind === "prompt") q.highlights = mergeHighlightRanges((q.highlights || []).concat(p.range));
+  else q.visualHighlights = mergeHighlightRanges((q.visualHighlights || []).concat(p.range));
+  const sel = window.getSelection();
+  if (sel) sel.removeAllRanges();
+  renderQuizQuestion();
+}
+
+function onSelectionChangeForTouch() {
+  if (lastPointerType === "mouse" || !App.attempt) return hideTouchHighlightButton();
+  const promptRoot = document.getElementById("q-prompt");
+  if (!promptRoot || !promptRoot.offsetParent) return hideTouchHighlightButton();
+  let kind = "prompt";
+  let range = getPromptSelectionRange(promptRoot);
+  const visualRoot = typeof applyVisualHighlights === "function" ? document.querySelector("#q-visual-container .q-visual") : null;
+  if (!range && visualRoot) { range = getPromptSelectionRange(visualRoot); kind = "visual"; }
+  if (!range) return hideTouchHighlightButton();
+  pendingTouchHighlight = { kind, range };
+  touchHighlightButton().style.display = "block";
+}
+
+document.addEventListener("pointerdown", (e) => {
+  if (e.target && e.target.id === "btn-touch-highlight") return;
+  lastPointerType = e.pointerType || "mouse";
+}, true);
+document.addEventListener("touchstart", (e) => {
+  if (e.target && e.target.id === "btn-touch-highlight") return;
+  lastPointerType = "touch";
+}, { capture: true, passive: true });
+document.addEventListener("selectionchange", onSelectionChangeForTouch);
+
 function renderQuizQuestion() {
   switchTimerToCurrentQuestion();
+  hideTouchHighlightButton();
   const q = currentQuestion();
   if (!q.highlights) q.highlights = []; // compatibilidade com tentativas salvas antes deste recurso
   if (typeof q.timeMs !== "number") q.timeMs = 0; // compatibilidade com tentativas salvas antes deste recurso
@@ -16626,11 +16696,10 @@ function init() {
     renderQuizQuestion();
   });
   const promptEl = document.getElementById("q-prompt");
-  promptEl.addEventListener("mouseup", handlePromptSelection);
-  promptEl.addEventListener("touchend", handlePromptSelection);
+  // com mouse o grifo é automático; em toque, usa o botão "Grifar trecho"
+  promptEl.addEventListener("mouseup", () => { if (lastPointerType === "mouse") handlePromptSelection(); });
   const visualEl = document.getElementById("q-visual-container");
-  visualEl.addEventListener("mouseup", handleVisualSelection);
-  visualEl.addEventListener("touchend", handleVisualSelection);
+  visualEl.addEventListener("mouseup", () => { if (lastPointerType === "mouse") handleVisualSelection(); });
   document.getElementById("btn-prev").addEventListener("click", goPrev);
   document.getElementById("btn-next").addEventListener("click", goNext);
   document.getElementById("btn-finish").addEventListener("click", () => {
